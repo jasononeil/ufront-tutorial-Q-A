@@ -1,0 +1,16 @@
+#
+# Main compile
+# Compile from src/, to out/, using PHP, ufront, spod_macros and the Main class.
+#
+-lib ufront
+-php out/
+-cp src/
+--remap neko:php
+-D spod_macro
+-main Main
+
+# Documentation
+-xml doc/AllTypes.xml
+-cmd cd doc/
+-cmd haxedoc AllTypes.xml > /dev/null
+-cmd cd ../
