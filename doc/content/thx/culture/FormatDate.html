@@ -1,0 +1,211 @@
+<html>
+	
+	<head>
+		<title>API Documentation</title>
+		
+		<script type="text/javascript">
+			<!--
+			function toggle(id) {
+			var e = document.getElementById(id);
+			e.isopen = !e.isopen;
+			e.style.display = e.isopen?"block":"none";
+			return false;
+			}
+				-->
+			</script>
+			
+			<style type="text/css">
+				body {
+				text-align: center;
+				font-family: Trebuchet MS, sans-serif;
+				background-color : #7D7E86;
+				}
+				
+				.document {
+				width : 800px;
+				position : relative;
+				margin : 10px auto 5px auto;
+				border : solid 2px #CFD0D4;
+				text-align : justify;
+				background-color: #F6FAFD;
+				}
+				
+				.title {
+				font-size: 35;
+				font-weight: bold;
+				text-align: center;
+				background-color : #FFD473;
+				color : white;
+				}
+				
+				ul.entry {
+				list-style-type: circle;
+				font-weight : bold;
+				margin-left : 30px;
+				}
+				
+				.package_content {
+				display : none;
+				}
+				
+				a {
+				color : #FFBB00;
+				font-weight : bold;
+				text-decoration : none;
+				}
+				
+				a:hover {
+				color : #FFAE00;
+				text-decoration : underline;
+				}
+				
+				a.package {
+				color : black;
+				}
+				
+				.index {
+				margin-left : 10px;
+				}
+				
+				.kwd {
+				color : #00A;
+				}
+				
+				.classname {
+				font-size : 30;
+				font-weight : bold;
+				margin-left : 10px;
+				margin-bottom : 20px;
+				}
+				
+				.classdoc {
+				border : 1px dashed #666;
+				margin-left : 20px;
+				margin-right : 20px;
+				padding : 5 5 5 5;
+				}
+				
+				.importmod, .extends, .implements, .typedef, .platforms {
+				margin-left: 20px;
+				color : #777;
+				}
+				
+				dd {
+				margin : 0 20 20 40;
+				font-size : 12pt;
+				color : #444;
+				}
+				
+				dt {
+				margin-left : 20px;
+				margin-bottom : 5px;
+				text-align : left;
+				font-size : 10pt;
+				font-family: Courier New, monospace;
+				}
+				
+			</style>
+			
+		</head>
+		
+		<body>
+			
+			<div class="document">
+				
+				<div class="title">API Documentation</div>
+				
+				<a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../../../index.html" class="index">Index</a><div class="classname"><span class="kwd">class </span>thx.culture.FormatDate</div><dl><dt><span class="kwd">static </span><span class="kwd">function </span>date(date : <a href="../../Date.html" class="type">Date</a>, ?culture : <a href="../../thx/culture/Culture.html" class="type">Culture</a>) : <a href="../../String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>dateRfc(date : <a href="../../Date.html" class="type">Date</a>, ?culture : <a href="../../thx/culture/Culture.html" class="type">Culture</a>) : <a href="../../String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>dateShort(date : <a href="../../Date.html" class="type">Date</a>, ?culture : <a href="../../thx/culture/Culture.html" class="type">Culture</a>) : <a href="../../String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>dateTime(date : <a href="../../Date.html" class="type">Date</a>, ?culture : <a href="../../thx/culture/Culture.html" class="type">Culture</a>) : <a href="../../String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>format(pattern : <a href="../../String.html" class="type">String</a>, date : <a href="../../Date.html" class="type">Date</a>, ?culture : <a href="../../thx/culture/Culture.html" class="type">Culture</a>, ?leadingspace : <a href="../../Bool.html" class="type">Bool</a>) : <a href="../../String.html" class="type">String</a></dt><dd><p>Returns a formatted date according to the passed pattern and culture. The pattern
+	 paramter accepts the following modifiers.</p>
+<p><pre>
+    description                                                   example
+===========================================================================
+%a	The abbreviated weekday name according to the current locale. Wed
+%A	The full weekday name according to the current locale.	      Wednesday
+%b	The abbreviated month name according to the current locale.	  Jan
+%B	The full month name according to the current locale.	      January
+%c	The preferred date and time representation for the current locale.
+%C	The century number (year/100) as a 2-digit integer.	          19
+%d	The day of the month as a decimal number (range 01 to 31).	  07
+%D	Equivalent to %m/%d/%y. (This is the USA date format.         06/25/04
+    In many countries %d/%m/%y is the standard date format.
+    Thus, in an international context, both of these formats are
+    ambiguous and should be avoided.)
+%e	Like %d, the day of the month as a decimal number, but a      7
+    leading zero may be replaced by a leadingspace.
+%G	The ISO 8601 year with century as a decimal number. The       2004
+    4-digit year corresponding to the ISO week number (see %V).
+    This has the same format and value as %y, except that if the
+    ISO week number belongs to the previous or next year, that
+    year is used instead.
+%g	Like %G, but without century, i.e., with a 2-digit year       04
+    (00-99).
+%h	Equivalent to %b.	                                          Jan
+%H	The hour as a decimal number using a 24-hour clock            22
+    (range 00 to 23).
+%I	The hour as a decimal number using a 12-hour clock            07
+    (range 01 to 12).
+%j	The day of the year as a decimal number (range 001 to 366).   008
+%k	The hour (24-hour clock) as a decimal number (range 0 to 23); 7
+    single-digits are optionally prefixed by leadingspace.
+    (See also %H.)
+%l	The hour (12-hour clock) as a decimal number (range 1 to 12); 7
+    single-digits are optionally prefixed by leadingspace.
+    (See also %I.)
+%m	The month as a decimal number (range 01 to 12).	              04
+%M	The minute as a decimal number (range 00 to 59).              08
+%n	A newline character.
+%p	Either 'AM' or 'PM' according to the given time value, or the AM
+    corresponding strings for the current locale. Noon is treated
+    as 'pm' and midnight as 'am'.
+%P	Like %p but in lowercase: 'am' or 'pm' or a corresponding     AM
+    string for the current locale.
+%r	The time in a.m. or p.m. notation. In the POSIX locale this   07:08:09 am
+    is equivalent to '%I:%M:%S %p'.
+%R	The time in 24-hour notation (%H:%M). For a version including 07:08
+    the seconds, see %T below.
+%s	The number of seconds since the Epoch, i.e., since            1099928130
+    1970-01-01 00:00:00 UTC.
+%S	The second as a decimal number (range 00 to 61). the upper    07
+    level of the range 61 rather than 59 to allow for the
+    occasional leap second and even more occasional double leap
+    second.
+%t	A tab character.
+%T	The time in 24-hour notation (%H:%M:%S).                      17:08:09
+%u	The day of the week as a decimal, range 1 to 7, Monday
+    being 1. See also %w.
+%U	The week number of the current year as a decimal number,      26
+    range 00 to 53, starting with the first Sunday as the first
+    day of week 01. See also %V and %W.
+%V	The ISO 8601:1988 week number of the current year as a        26
+    decimal number, range 01 to 53, where week 1 is the first
+    week that has at least 4 days in the current year, and with
+    Monday as the first day of the week. See also %U and %W.
+%w	The day of the week as a decimal, range 0 to 6, Sunday being
+    0. See also %u.
+%W	The week number of the current year as a decimal number,
+    range 00 to 53, starting with the first Monday as the first
+    day of week 01.
+%x	The preferred date representation for the current locale
+    without the time.
+%X	The preferred time representation for the current locale
+    without the date.
+%y	The year as a decimal number without a century                04
+    (range 00 to 99).
+%Y	The year as a decimal number including the century.           2004
+%z	The time-zone as hour offset from GMT. Required to emit       -2
+    RFC822-conformant dates (using "%a, %d %b %Y %H:%M:%S %z").
+%Z	The time zone or name or abbreviation.                        GMT
+%%	A literal '%' character.                                      %</p>
+<p>customs for missing features
+%f  The month. Single-digit months may be prefixed by             6
+    leadingspace.
+%i  The minute. Single-digit minutes may be prefixed by           8
+    leadingspace.
+%q  The second. Single-digit seconds may be prefixed by           9
+    leadingspace.
+</pre></p></dd><dt><span class="kwd">static </span><span class="kwd">function </span>month(date : <a href="../../Date.html" class="type">Date</a>, ?culture : <a href="../../thx/culture/Culture.html" class="type">Culture</a>) : <a href="../../String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>monthDay(date : <a href="../../Date.html" class="type">Date</a>, ?culture : <a href="../../thx/culture/Culture.html" class="type">Culture</a>) : <a href="../../String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>monthName(date : <a href="../../Date.html" class="type">Date</a>, ?culture : <a href="../../thx/culture/Culture.html" class="type">Culture</a>) : <a href="../../String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>monthNameShort(date : <a href="../../Date.html" class="type">Date</a>, ?culture : <a href="../../thx/culture/Culture.html" class="type">Culture</a>) : <a href="../../String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>sortable(date : <a href="../../Date.html" class="type">Date</a>, ?culture : <a href="../../thx/culture/Culture.html" class="type">Culture</a>) : <a href="../../String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>time(date : <a href="../../Date.html" class="type">Date</a>, ?culture : <a href="../../thx/culture/Culture.html" class="type">Culture</a>) : <a href="../../String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>timeShort(date : <a href="../../Date.html" class="type">Date</a>, ?culture : <a href="../../thx/culture/Culture.html" class="type">Culture</a>) : <a href="../../String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>universal(date : <a href="../../Date.html" class="type">Date</a>, ?culture : <a href="../../thx/culture/Culture.html" class="type">Culture</a>) : <a href="../../String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>weekDay(date : <a href="../../Date.html" class="type">Date</a>, ?culture : <a href="../../thx/culture/Culture.html" class="type">Culture</a>) : <a href="../../String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>weekDayName(date : <a href="../../Date.html" class="type">Date</a>, ?culture : <a href="../../thx/culture/Culture.html" class="type">Culture</a>) : <a href="../../String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>weekDayNameShort(date : <a href="../../Date.html" class="type">Date</a>, ?culture : <a href="../../thx/culture/Culture.html" class="type">Culture</a>) : <a href="../../String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>year(date : <a href="../../Date.html" class="type">Date</a>, ?culture : <a href="../../thx/culture/Culture.html" class="type">Culture</a>) : <a href="../../String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>yearMonth(date : <a href="../../Date.html" class="type">Date</a>, ?culture : <a href="../../thx/culture/Culture.html" class="type">Culture</a>) : <a href="../../String.html" class="type">String</a></dt><dd></dd></dl><a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../../../index.html" class="index">Index</a>
+				
+			</div>
+			
+		</body>
+	</html> 

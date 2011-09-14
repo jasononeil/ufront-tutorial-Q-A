@@ -1,0 +1,204 @@
+<html>
+	
+	<head>
+		<title>API Documentation</title>
+		
+		<script type="text/javascript">
+			<!--
+			function toggle(id) {
+			var e = document.getElementById(id);
+			e.isopen = !e.isopen;
+			e.style.display = e.isopen?"block":"none";
+			return false;
+			}
+				-->
+			</script>
+			
+			<style type="text/css">
+				body {
+				text-align: center;
+				font-family: Trebuchet MS, sans-serif;
+				background-color : #7D7E86;
+				}
+				
+				.document {
+				width : 800px;
+				position : relative;
+				margin : 10px auto 5px auto;
+				border : solid 2px #CFD0D4;
+				text-align : justify;
+				background-color: #F6FAFD;
+				}
+				
+				.title {
+				font-size: 35;
+				font-weight: bold;
+				text-align: center;
+				background-color : #FFD473;
+				color : white;
+				}
+				
+				ul.entry {
+				list-style-type: circle;
+				font-weight : bold;
+				margin-left : 30px;
+				}
+				
+				.package_content {
+				display : none;
+				}
+				
+				a {
+				color : #FFBB00;
+				font-weight : bold;
+				text-decoration : none;
+				}
+				
+				a:hover {
+				color : #FFAE00;
+				text-decoration : underline;
+				}
+				
+				a.package {
+				color : black;
+				}
+				
+				.index {
+				margin-left : 10px;
+				}
+				
+				.kwd {
+				color : #00A;
+				}
+				
+				.classname {
+				font-size : 30;
+				font-weight : bold;
+				margin-left : 10px;
+				margin-bottom : 20px;
+				}
+				
+				.classdoc {
+				border : 1px dashed #666;
+				margin-left : 20px;
+				margin-right : 20px;
+				padding : 5 5 5 5;
+				}
+				
+				.importmod, .extends, .implements, .typedef, .platforms {
+				margin-left: 20px;
+				color : #777;
+				}
+				
+				dd {
+				margin : 0 20 20 40;
+				font-size : 12pt;
+				color : #444;
+				}
+				
+				dt {
+				margin-left : 20px;
+				margin-bottom : 5px;
+				text-align : left;
+				font-size : 10pt;
+				font-family: Courier New, monospace;
+				}
+				
+			</style>
+			
+		</head>
+		
+		<body>
+			
+			<div class="document">
+				
+				<div class="title">API Documentation</div>
+				
+				<a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../index.html" class="index">Index</a><div class="classname"><span class="kwd">class </span>Strings</div><div class="classdoc">
+  ...
+  @author Franco Ponticelli
+</div><dl><dt><span class="kwd">static </span><span class="kwd">function </span>ascending(a : <a href="String.html" class="type">String</a>, b : <a href="String.html" class="type">String</a>) : <a href="Int.html" class="type">Int</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>capitalize(s : <a href="String.html" class="type">String</a>) : <a href="String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>collapse(value : <a href="String.html" class="type">String</a>) : <a href="String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>dasherize(s : <a href="String.html" class="type">String</a>) : <a href="String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>descending(a : <a href="String.html" class="type">String</a>, b : <a href="String.html" class="type">String</a>) : <a href="Int.html" class="type">Int</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">inline </span><span class="kwd">function </span>digitsOnly(value : <a href="String.html" class="type">String</a>) : <a href="Bool.html" class="type">Bool</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>ellipsis(s : <a href="String.html" class="type">String</a>, ?maxlen : <a href="Int.html" class="type">Int</a>, ?symbol : <a href="String.html" class="type">String</a>) : <a href="String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>ellipsisf(?maxlen : <a href="Int.html" class="type">Int</a>, ?symbol : <a href="String.html" class="type">String</a>) : s : <a href="String.html" class="type">String</a> -> <a href="String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>empty(value : <a href="String.html" class="type">String</a>) : <a href="Bool.html" class="type">Bool</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>format(pattern : <a href="String.html" class="type">String</a>, values : <a href="Array.html" class="type">Array</a>&lt;<a href="Dynamic.html" class="type">Dynamic</a>&gt;, ?nullstring : <a href="String.html" class="type">String</a>, ?culture : <a href="thx/culture/Culture.html" class="type">thx.culture.Culture</a>) : <a href="String.html" class="type">String</a></dt><dd><p>Take a string pattern and replaces the placeholders with the value contained in values.
+	 The culture parameter is needed for proper localization of numeric and date values.
+	 Placeholders follows this schema:
+<pre>
+{pos<code>:format</code><code>,param</code>*}
+</pre>
+	 <em>pos</em> is the position in the array
+	 <em>format</em> is a string sequence that identifies a specific value format (see below)
+	 <em>param</em> is one or more optional parameters specific to certain format values.</p>
+<p><pre>
+Numeric Formats
+---------------
+D (default) Decimal format. The default number of decimals is set by culture. This value can overriden
+            using the length parameter.
+I           Integer format.
+C           Currency format. The default number of decimals is set by culture. This value can overriden
+            using the length parameter. The symbol can be overridden appending a string value after C
+			Ei. "{0:C,3,USD}" will print something like "USD2.000" instead of "$2.00"
+P           Percent format.
+M           Permille format.</p>
+<p>Date Formats
+---------------
+D (default) Date format.
+DS          Short Date format.
+DST         Short date / long time format.
+DSTS        Short date / short time format.
+DT          Long date / long time format.
+DTS         Long date / short time format.
+Y           Year format.
+YM          Year Month format.
+M           Month format.
+MN          Month name format.
+MS          Short Month name format.
+MD          Month Day format.
+WD          Week day format.
+WDN         Week day name format.
+WDS         Short week day name format.
+R           RFC Date format.
+DT          Date Time format.
+U           Universal format.
+S           Sortable format.
+T           Time format.
+TS          Short Time format.
+C			Custom, second parameter is the format as described in FormatDate</p>
+<p>Boolean Formats
+---------------
+B			Normal bool (true, false)
+N			Numeric representation (1, 0)
+R			Replace values with first parameter for true and second for false</p>
+<p>String Formats
+---------------
+S			Normal text.
+T           Truncate. First parameter is the length to trim, second is the ellipsis
+			(optional parameter, defaults to '...')
+PL          Pad left. First parameter is the length, second is filling char
+			(optional parameter, defaults to ' ')
+PR          Pad right. First parameter is the length, second is filling char
+			(optional parameter, defaults to ' ')</p>
+<p>List Formats
+---------------
+J           Joins the elements of the list.
+			The first parameter is the format for individual items
+			The second parameter is what is shown when the list is empty (defaults to '<code></code>')
+			The third is the separator.
+            The fourth is the maximum number of values to show (default to nolimit).
+			The fifth parameter the ellipsis for not included values (defaults to '...'),
+C			Counts the elements in the list</p>
+<p>TODO:
+List Formats
+---------------
+C           Concats the elements of the list</p>
+<p>Other things to do. Nested placeholders
+</pre></p></dd><dt><span class="kwd">static </span><span class="kwd">function </span>formatOne(v : <a href="String.html" class="type">String</a>, ?param : <a href="String.html" class="type">String</a>, ?params : <a href="Array.html" class="type">Array</a>&lt;<a href="String.html" class="type">String</a>&gt;, ?culture : <a href="thx/culture/Culture.html" class="type">thx.culture.Culture</a>) : <a href="String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>formatOnef(?param : <a href="String.html" class="type">String</a>, ?params : <a href="Array.html" class="type">Array</a>&lt;<a href="String.html" class="type">String</a>&gt;, ?culture : <a href="thx/culture/Culture.html" class="type">thx.culture.Culture</a>) : v : <a href="String.html" class="type">String</a> -> <a href="String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>formatf(pattern : <a href="String.html" class="type">String</a>, ?nullstring : <a href="String.html" class="type">String</a>, ?culture : <a href="thx/culture/Culture.html" class="type">thx.culture.Culture</a>) : values : <a href="Array.html" class="type">Array</a>&lt;<a href="Dynamic.html" class="type">Dynamic</a>&gt; -> <a href="String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>humanize(s : <a href="String.html" class="type">String</a>) : <a href="String.html" class="type">String</a></dt><dd>
+	  Replaces undescores with space, finds UC characters, turns them into LC and prepends them with a space.
+	  More than one UC in sequence is left untouched.
+</dd><dt><span class="kwd">static </span><span class="kwd">function </span>interpolate(v : <a href="Float.html" class="type">Float</a>, a : <a href="String.html" class="type">String</a>, b : <a href="String.html" class="type">String</a>, ?equation : <a href="Float.html" class="type">Float</a> -> <a href="Float.html" class="type">Float</a>) : <a href="String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>interpolatef(a : <a href="String.html" class="type">String</a>, b : <a href="String.html" class="type">String</a>, ?equation : <a href="Float.html" class="type">Float</a> -> <a href="Float.html" class="type">Float</a>) : t : <a href="Float.html" class="type">Float</a> -> <a href="String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">inline </span><span class="kwd">function </span>isAlphaNum(value : <a href="String.html" class="type">String</a>) : <a href="Bool.html" class="type">Bool</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">inline </span><span class="kwd">function </span>lcfirst(value : <a href="String.html" class="type">String</a>) : <a href="String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>ltrim(value : <a href="String.html" class="type">String</a>, charlist : <a href="String.html" class="type">String</a>) : <a href="String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>repeat(s : <a href="String.html" class="type">String</a>, times : <a href="Int.html" class="type">Int</a>) : <a href="String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>rtrim(value : <a href="String.html" class="type">String</a>, charlist : <a href="String.html" class="type">String</a>) : <a href="String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>startFrom(value : <a href="String.html" class="type">String</a>, searchFor : <a href="String.html" class="type">String</a>) : <a href="String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>stripTags(s : <a href="String.html" class="type">String</a>) : <a href="String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>succ(s : <a href="String.html" class="type">String</a>) : <a href="String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">inline </span><span class="kwd">function </span>trim(value : <a href="String.html" class="type">String</a>, charlist : <a href="String.html" class="type">String</a>) : <a href="String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">inline </span><span class="kwd">function </span>ucfirst(value : <a href="String.html" class="type">String</a>) : <a href="String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>ucwords(value : <a href="String.html" class="type">String</a>) : <a href="String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>ucwordsws(value : <a href="String.html" class="type">String</a>) : <a href="String.html" class="type">String</a></dt><dd>
+	  Like ucwords but uses only white spaces as boundaries
+	  @param	value
+	  @return
+</dd><dt><span class="kwd">static </span><span class="kwd">function </span>underscore(s : <a href="String.html" class="type">String</a>) : <a href="String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>upTo(value : <a href="String.html" class="type">String</a>, searchFor : <a href="String.html" class="type">String</a>) : <a href="String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>wrapColumns(s : <a href="String.html" class="type">String</a>, ?columns : <a href="Int.html" class="type">Int</a>, ?indent : <a href="String.html" class="type">String</a>, ?newline : <a href="String.html" class="type">String</a>) : <a href="String.html" class="type">String</a></dt><dd></dd></dl><a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../index.html" class="index">Index</a>
+				
+			</div>
+			
+		</body>
+	</html> 

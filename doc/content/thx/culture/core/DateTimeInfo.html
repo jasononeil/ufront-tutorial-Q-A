@@ -1,0 +1,122 @@
+<html>
+	
+	<head>
+		<title>API Documentation</title>
+		
+		<script type="text/javascript">
+			<!--
+			function toggle(id) {
+			var e = document.getElementById(id);
+			e.isopen = !e.isopen;
+			e.style.display = e.isopen?"block":"none";
+			return false;
+			}
+				-->
+			</script>
+			
+			<style type="text/css">
+				body {
+				text-align: center;
+				font-family: Trebuchet MS, sans-serif;
+				background-color : #7D7E86;
+				}
+				
+				.document {
+				width : 800px;
+				position : relative;
+				margin : 10px auto 5px auto;
+				border : solid 2px #CFD0D4;
+				text-align : justify;
+				background-color: #F6FAFD;
+				}
+				
+				.title {
+				font-size: 35;
+				font-weight: bold;
+				text-align: center;
+				background-color : #FFD473;
+				color : white;
+				}
+				
+				ul.entry {
+				list-style-type: circle;
+				font-weight : bold;
+				margin-left : 30px;
+				}
+				
+				.package_content {
+				display : none;
+				}
+				
+				a {
+				color : #FFBB00;
+				font-weight : bold;
+				text-decoration : none;
+				}
+				
+				a:hover {
+				color : #FFAE00;
+				text-decoration : underline;
+				}
+				
+				a.package {
+				color : black;
+				}
+				
+				.index {
+				margin-left : 10px;
+				}
+				
+				.kwd {
+				color : #00A;
+				}
+				
+				.classname {
+				font-size : 30;
+				font-weight : bold;
+				margin-left : 10px;
+				margin-bottom : 20px;
+				}
+				
+				.classdoc {
+				border : 1px dashed #666;
+				margin-left : 20px;
+				margin-right : 20px;
+				padding : 5 5 5 5;
+				}
+				
+				.importmod, .extends, .implements, .typedef, .platforms {
+				margin-left: 20px;
+				color : #777;
+				}
+				
+				dd {
+				margin : 0 20 20 40;
+				font-size : 12pt;
+				color : #444;
+				}
+				
+				dt {
+				margin-left : 20px;
+				margin-bottom : 5px;
+				text-align : left;
+				font-size : 10pt;
+				font-family: Courier New, monospace;
+				}
+				
+			</style>
+			
+		</head>
+		
+		<body>
+			
+			<div class="document">
+				
+				<div class="title">API Documentation</div>
+				
+				<a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../../../../index.html" class="index">Index</a><div class="classname"><span class="kwd">class </span>thx.culture.core.DateTimeInfo</div><dl><dt><span class="kwd">var </span>abbrDays(default,null) : <a href="../../../Array.html" class="type">Array</a>&lt;<a href="../../../String.html" class="type">String</a>&gt;</dt><dd></dd><dt><span class="kwd">var </span>abbrMonths(default,null) : <a href="../../../Array.html" class="type">Array</a>&lt;<a href="../../../String.html" class="type">String</a>&gt;</dt><dd></dd><dt><span class="kwd">var </span>am(default,null) : <a href="../../../String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">var </span>days(default,null) : <a href="../../../Array.html" class="type">Array</a>&lt;<a href="../../../String.html" class="type">String</a>&gt;</dt><dd></dd><dt><span class="kwd">var </span>firstWeekDay(default,null) : <a href="../../../Int.html" class="type">Int</a></dt><dd></dd><dt><span class="kwd">var </span>months(default,null) : <a href="../../../Array.html" class="type">Array</a>&lt;<a href="../../../String.html" class="type">String</a>&gt;</dt><dd></dd><dt><span class="kwd">var </span>patternDate(default,null) : <a href="../../../String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">var </span>patternDateRfc(default,null) : <a href="../../../String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">var </span>patternDateShort(default,null) : <a href="../../../String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">var </span>patternDateTime(default,null) : <a href="../../../String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">var </span>patternMonthDay(default,null) : <a href="../../../String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">var </span>patternSortable(default,null) : <a href="../../../String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">var </span>patternTime(default,null) : <a href="../../../String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">var </span>patternTimeShort(default,null) : <a href="../../../String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">var </span>patternUniversal(default,null) : <a href="../../../String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">var </span>patternYearMonth(default,null) : <a href="../../../String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">var </span>pm(default,null) : <a href="../../../String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">var </span>separatorDate(default,null) : <a href="../../../String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">var </span>separatorTime(default,null) : <a href="../../../String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">var </span>shortDays(default,null) : <a href="../../../Array.html" class="type">Array</a>&lt;<a href="../../../String.html" class="type">String</a>&gt;</dt><dd></dd><dt><span class="kwd">function </span>new(months : <a href="../../../Array.html" class="type">Array</a>&lt;<a href="../../../String.html" class="type">String</a>&gt;, abbrMonths : <a href="../../../Array.html" class="type">Array</a>&lt;<a href="../../../String.html" class="type">String</a>&gt;, days : <a href="../../../Array.html" class="type">Array</a>&lt;<a href="../../../String.html" class="type">String</a>&gt;, abbrDays : <a href="../../../Array.html" class="type">Array</a>&lt;<a href="../../../String.html" class="type">String</a>&gt;, shortDays : <a href="../../../Array.html" class="type">Array</a>&lt;<a href="../../../String.html" class="type">String</a>&gt;, am : <a href="../../../String.html" class="type">String</a>, pm : <a href="../../../String.html" class="type">String</a>, separatorDate : <a href="../../../String.html" class="type">String</a>, separatorTime : <a href="../../../String.html" class="type">String</a>, firstWeekDay : <a href="../../../Int.html" class="type">Int</a>, patternYearMonth : <a href="../../../String.html" class="type">String</a>, patternMonthDay : <a href="../../../String.html" class="type">String</a>, patternDate : <a href="../../../String.html" class="type">String</a>, patternDateShort : <a href="../../../String.html" class="type">String</a>, patternDateRfc : <a href="../../../String.html" class="type">String</a>, patternDateTime : <a href="../../../String.html" class="type">String</a>, patternUniversal : <a href="../../../String.html" class="type">String</a>, patternSortable : <a href="../../../String.html" class="type">String</a>, patternTime : <a href="../../../String.html" class="type">String</a>, patternTimeShort : <a href="../../../String.html" class="type">String</a>) : <a href="../../../Void.html" class="type">Void</a></dt><dd></dd></dl><a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../../../../index.html" class="index">Index</a>
+				
+			</div>
+			
+		</body>
+	</html> 

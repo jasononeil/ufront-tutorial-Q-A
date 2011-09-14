@@ -1,0 +1,122 @@
+<html>
+	
+	<head>
+		<title>API Documentation</title>
+		
+		<script type="text/javascript">
+			<!--
+			function toggle(id) {
+			var e = document.getElementById(id);
+			e.isopen = !e.isopen;
+			e.style.display = e.isopen?"block":"none";
+			return false;
+			}
+				-->
+			</script>
+			
+			<style type="text/css">
+				body {
+				text-align: center;
+				font-family: Trebuchet MS, sans-serif;
+				background-color : #7D7E86;
+				}
+				
+				.document {
+				width : 800px;
+				position : relative;
+				margin : 10px auto 5px auto;
+				border : solid 2px #CFD0D4;
+				text-align : justify;
+				background-color: #F6FAFD;
+				}
+				
+				.title {
+				font-size: 35;
+				font-weight: bold;
+				text-align: center;
+				background-color : #FFD473;
+				color : white;
+				}
+				
+				ul.entry {
+				list-style-type: circle;
+				font-weight : bold;
+				margin-left : 30px;
+				}
+				
+				.package_content {
+				display : none;
+				}
+				
+				a {
+				color : #FFBB00;
+				font-weight : bold;
+				text-decoration : none;
+				}
+				
+				a:hover {
+				color : #FFAE00;
+				text-decoration : underline;
+				}
+				
+				a.package {
+				color : black;
+				}
+				
+				.index {
+				margin-left : 10px;
+				}
+				
+				.kwd {
+				color : #00A;
+				}
+				
+				.classname {
+				font-size : 30;
+				font-weight : bold;
+				margin-left : 10px;
+				margin-bottom : 20px;
+				}
+				
+				.classdoc {
+				border : 1px dashed #666;
+				margin-left : 20px;
+				margin-right : 20px;
+				padding : 5 5 5 5;
+				}
+				
+				.importmod, .extends, .implements, .typedef, .platforms {
+				margin-left: 20px;
+				color : #777;
+				}
+				
+				dd {
+				margin : 0 20 20 40;
+				font-size : 12pt;
+				color : #444;
+				}
+				
+				dt {
+				margin-left : 20px;
+				margin-bottom : 5px;
+				text-align : left;
+				font-size : 10pt;
+				font-family: Courier New, monospace;
+				}
+				
+			</style>
+			
+		</head>
+		
+		<body>
+			
+			<div class="document">
+				
+				<div class="title">API Documentation</div>
+				
+				<a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../../index.html" class="index">Index</a><div class="classname"><span class="kwd">enum </span>hscript.Expr</div><dl><dt>EWhile(cond : <a href="../hscript/Expr.html" class="type">Expr</a>,e : <a href="../hscript/Expr.html" class="type">Expr</a>)</dt><dd></dd><dt>EVar(n : <a href="../String.html" class="type">String</a>,?t : <a href="../hscript/CType.html" class="type">CType</a>,?e : <a href="../hscript/Expr.html" class="type">Expr</a>)</dt><dd></dd><dt>EUnop(op : <a href="../String.html" class="type">String</a>,prefix : <a href="../Bool.html" class="type">Bool</a>,e : <a href="../hscript/Expr.html" class="type">Expr</a>)</dt><dd></dd><dt>ETry(e : <a href="../hscript/Expr.html" class="type">Expr</a>,v : <a href="../String.html" class="type">String</a>,t : <a href="../Null.html" class="type">Null</a>&lt;<a href="../hscript/CType.html" class="type">CType</a>&gt;,ecatch : <a href="../hscript/Expr.html" class="type">Expr</a>)</dt><dd></dd><dt>EThrow(e : <a href="../hscript/Expr.html" class="type">Expr</a>)</dt><dd></dd><dt>ETernary(cond : <a href="../hscript/Expr.html" class="type">Expr</a>,e1 : <a href="../hscript/Expr.html" class="type">Expr</a>,e2 : <a href="../hscript/Expr.html" class="type">Expr</a>)</dt><dd></dd><dt>EReturn(?e : <a href="../hscript/Expr.html" class="type">Expr</a>)</dt><dd></dd><dt>EParent(e : <a href="../hscript/Expr.html" class="type">Expr</a>)</dt><dd></dd><dt>EObject(fl : <a href="../Array.html" class="type">Array</a>&lt;{ name : <a href="../String.html" class="type">String</a>, e : <a href="../hscript/Expr.html" class="type">Expr</a>}&gt;)</dt><dd></dd><dt>ENew(cl : <a href="../String.html" class="type">String</a>,params : <a href="../Array.html" class="type">Array</a>&lt;<a href="../hscript/Expr.html" class="type">Expr</a>&gt;)</dt><dd></dd><dt>EIf(cond : <a href="../hscript/Expr.html" class="type">Expr</a>,e1 : <a href="../hscript/Expr.html" class="type">Expr</a>,?e2 : <a href="../hscript/Expr.html" class="type">Expr</a>)</dt><dd></dd><dt>EIdent(v : <a href="../String.html" class="type">String</a>)</dt><dd></dd><dt>EFunction(args : <a href="../Array.html" class="type">Array</a>&lt;{ t : <a href="../Null.html" class="type">Null</a>&lt;<a href="../hscript/CType.html" class="type">CType</a>&gt;, name : <a href="../String.html" class="type">String</a>}&gt;,e : <a href="../hscript/Expr.html" class="type">Expr</a>,?name : <a href="../String.html" class="type">String</a>,?ret : <a href="../hscript/CType.html" class="type">CType</a>)</dt><dd></dd><dt>EFor(v : <a href="../String.html" class="type">String</a>,it : <a href="../hscript/Expr.html" class="type">Expr</a>,e : <a href="../hscript/Expr.html" class="type">Expr</a>)</dt><dd></dd><dt>EField(e : <a href="../hscript/Expr.html" class="type">Expr</a>,f : <a href="../String.html" class="type">String</a>)</dt><dd></dd><dt>EContinue</dt><dd></dd><dt>EConst(c : <a href="../hscript/Const.html" class="type">Const</a>)</dt><dd></dd><dt>ECall(e : <a href="../hscript/Expr.html" class="type">Expr</a>,params : <a href="../Array.html" class="type">Array</a>&lt;<a href="../hscript/Expr.html" class="type">Expr</a>&gt;)</dt><dd></dd><dt>EBreak</dt><dd></dd><dt>EBlock(e : <a href="../Array.html" class="type">Array</a>&lt;<a href="../hscript/Expr.html" class="type">Expr</a>&gt;)</dt><dd></dd><dt>EBinop(op : <a href="../String.html" class="type">String</a>,e1 : <a href="../hscript/Expr.html" class="type">Expr</a>,e2 : <a href="../hscript/Expr.html" class="type">Expr</a>)</dt><dd></dd><dt>EArrayDecl(e : <a href="../Array.html" class="type">Array</a>&lt;<a href="../hscript/Expr.html" class="type">Expr</a>&gt;)</dt><dd></dd><dt>EArray(e : <a href="../hscript/Expr.html" class="type">Expr</a>,index : <a href="../hscript/Expr.html" class="type">Expr</a>)</dt><dd></dd></dl><a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../../index.html" class="index">Index</a>
+				
+			</div>
+			
+		</body>
+	</html> 

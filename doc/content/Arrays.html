@@ -1,0 +1,125 @@
+<html>
+	
+	<head>
+		<title>API Documentation</title>
+		
+		<script type="text/javascript">
+			<!--
+			function toggle(id) {
+			var e = document.getElementById(id);
+			e.isopen = !e.isopen;
+			e.style.display = e.isopen?"block":"none";
+			return false;
+			}
+				-->
+			</script>
+			
+			<style type="text/css">
+				body {
+				text-align: center;
+				font-family: Trebuchet MS, sans-serif;
+				background-color : #7D7E86;
+				}
+				
+				.document {
+				width : 800px;
+				position : relative;
+				margin : 10px auto 5px auto;
+				border : solid 2px #CFD0D4;
+				text-align : justify;
+				background-color: #F6FAFD;
+				}
+				
+				.title {
+				font-size: 35;
+				font-weight: bold;
+				text-align: center;
+				background-color : #FFD473;
+				color : white;
+				}
+				
+				ul.entry {
+				list-style-type: circle;
+				font-weight : bold;
+				margin-left : 30px;
+				}
+				
+				.package_content {
+				display : none;
+				}
+				
+				a {
+				color : #FFBB00;
+				font-weight : bold;
+				text-decoration : none;
+				}
+				
+				a:hover {
+				color : #FFAE00;
+				text-decoration : underline;
+				}
+				
+				a.package {
+				color : black;
+				}
+				
+				.index {
+				margin-left : 10px;
+				}
+				
+				.kwd {
+				color : #00A;
+				}
+				
+				.classname {
+				font-size : 30;
+				font-weight : bold;
+				margin-left : 10px;
+				margin-bottom : 20px;
+				}
+				
+				.classdoc {
+				border : 1px dashed #666;
+				margin-left : 20px;
+				margin-right : 20px;
+				padding : 5 5 5 5;
+				}
+				
+				.importmod, .extends, .implements, .typedef, .platforms {
+				margin-left: 20px;
+				color : #777;
+				}
+				
+				dd {
+				margin : 0 20 20 40;
+				font-size : 12pt;
+				color : #444;
+				}
+				
+				dt {
+				margin-left : 20px;
+				margin-bottom : 5px;
+				text-align : left;
+				font-size : 10pt;
+				font-family: Courier New, monospace;
+				}
+				
+			</style>
+			
+		</head>
+		
+		<body>
+			
+			<div class="document">
+				
+				<div class="title">API Documentation</div>
+				
+				<a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../index.html" class="index">Index</a><div class="classname"><span class="kwd">class </span>Arrays</div><div class="classdoc">
+  ...
+  @author Franco Ponticelli
+</div><dl><dt><span class="kwd">static </span><span class="kwd">inline </span><span class="kwd">function </span>add&lt;T&gt;(arr : <a href="Array.html" class="type">Array</a>&lt;T&gt;, value : T) : <a href="Array.html" class="type">Array</a>&lt;T&gt;</dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>addIf&lt;T&gt;(arr : <a href="Array.html" class="type">Array</a>&lt;T&gt;, ?condition : <a href="Bool.html" class="type">Bool</a>, value : <a href="Null.html" class="type">Null</a>&lt;T&gt;) : <a href="Array.html" class="type">Array</a>&lt;T&gt;</dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">inline </span><span class="kwd">function </span>all&lt;T&gt;(arr : <a href="Array.html" class="type">Array</a>&lt;T&gt;, f : T -> <a href="Bool.html" class="type">Bool</a>) : <a href="Bool.html" class="type">Bool</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">inline </span><span class="kwd">function </span>any&lt;T&gt;(arr : <a href="Array.html" class="type">Array</a>&lt;T&gt;, f : T -> <a href="Bool.html" class="type">Bool</a>) : <a href="Bool.html" class="type">Bool</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">inline </span><span class="kwd">function </span>delete&lt;T&gt;(arr : <a href="Array.html" class="type">Array</a>&lt;T&gt;, value : T) : <a href="Array.html" class="type">Array</a>&lt;T&gt;</dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>each&lt;T&gt;(arr : <a href="Array.html" class="type">Array</a>&lt;T&gt;, f : T -> <a href="Int.html" class="type">Int</a> -> <a href="Void.html" class="type">Void</a>) : <a href="Void.html" class="type">Void</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>every&lt;T&gt;(arr : <a href="Array.html" class="type">Array</a>&lt;T&gt;, f : T -> <a href="Int.html" class="type">Int</a> -> <a href="Bool.html" class="type">Bool</a>) : <a href="Bool.html" class="type">Bool</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>exists&lt;T&gt;(arr : <a href="Array.html" class="type">Array</a>&lt;T&gt;, ?value : T, ?f : T -> <a href="Bool.html" class="type">Bool</a>) : <a href="Bool.html" class="type">Bool</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>filter&lt;T&gt;(arr : <a href="Array.html" class="type">Array</a>&lt;T&gt;, f : T -> <a href="Bool.html" class="type">Bool</a>) : <a href="Array.html" class="type">Array</a>&lt;T&gt;</dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">inline </span><span class="kwd">function </span>first&lt;T&gt;(arr : <a href="Array.html" class="type">Array</a>&lt;T&gt;) : <a href="Null.html" class="type">Null</a>&lt;T&gt;</dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>firstf&lt;T&gt;(arr : <a href="Array.html" class="type">Array</a>&lt;T&gt;, f : T -> <a href="Bool.html" class="type">Bool</a>) : <a href="Null.html" class="type">Null</a>&lt;T&gt;</dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>flatten&lt;T&gt;(arr : <a href="Array.html" class="type">Array</a>&lt;<a href="Array.html" class="type">Array</a>&lt;T&gt;&gt;) : <a href="Array.html" class="type">Array</a>&lt;T&gt;</dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>floatMax&lt;T&gt;(arr : <a href="Array.html" class="type">Array</a>&lt;T&gt;, f : T -> <a href="Float.html" class="type">Float</a>) : <a href="Float.html" class="type">Float</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>floatMin&lt;T&gt;(arr : <a href="Array.html" class="type">Array</a>&lt;T&gt;, f : T -> <a href="Float.html" class="type">Float</a>) : <a href="Float.html" class="type">Float</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>format(v : <a href="Array.html" class="type">Array</a>&lt;<a href="Dynamic.html" class="type">Dynamic</a>&gt;, ?param : <a href="String.html" class="type">String</a>, ?params : <a href="Array.html" class="type">Array</a>&lt;<a href="String.html" class="type">String</a>&gt;, ?culture : <a href="thx/culture/Culture.html" class="type">thx.culture.Culture</a>) : <a href="String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>formatf(?param : <a href="String.html" class="type">String</a>, ?params : <a href="Array.html" class="type">Array</a>&lt;<a href="String.html" class="type">String</a>&gt;, ?culture : <a href="thx/culture/Culture.html" class="type">thx.culture.Culture</a>) : v : <a href="Array.html" class="type">Array</a>&lt;<a href="Dynamic.html" class="type">Dynamic</a>&gt; -> <a href="String.html" class="type">String</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>indexOf&lt;T&gt;(arr : <a href="Array.html" class="type">Array</a>&lt;T&gt;, el : T) : <a href="Int.html" class="type">Int</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>interpolate(v : <a href="Float.html" class="type">Float</a>, a : <a href="Array.html" class="type">Array</a>&lt;<a href="Float.html" class="type">Float</a>&gt;, b : <a href="Array.html" class="type">Array</a>&lt;<a href="Float.html" class="type">Float</a>&gt;, ?equation : <a href="Float.html" class="type">Float</a> -> <a href="Float.html" class="type">Float</a>) : <a href="Array.html" class="type">Array</a>&lt;<a href="Float.html" class="type">Float</a>&gt;</dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>interpolateInts(v : <a href="Float.html" class="type">Float</a>, a : <a href="Array.html" class="type">Array</a>&lt;<a href="Int.html" class="type">Int</a>&gt;, b : <a href="Array.html" class="type">Array</a>&lt;<a href="Int.html" class="type">Int</a>&gt;, ?equation : <a href="Float.html" class="type">Float</a> -> <a href="Float.html" class="type">Float</a>) : <a href="Array.html" class="type">Array</a>&lt;<a href="Int.html" class="type">Int</a>&gt;</dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>interpolateIntsf(a : <a href="Array.html" class="type">Array</a>&lt;<a href="Int.html" class="type">Int</a>&gt;, b : <a href="Array.html" class="type">Array</a>&lt;<a href="Int.html" class="type">Int</a>&gt;, ?equation : <a href="Float.html" class="type">Float</a> -> <a href="Float.html" class="type">Float</a>) : t : <a href="Float.html" class="type">Float</a> -> <a href="Array.html" class="type">Array</a>&lt;<a href="Int.html" class="type">Int</a>&gt;</dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>interpolateStrings(v : <a href="Float.html" class="type">Float</a>, a : <a href="Array.html" class="type">Array</a>&lt;<a href="String.html" class="type">String</a>&gt;, b : <a href="Array.html" class="type">Array</a>&lt;<a href="String.html" class="type">String</a>&gt;, ?equation : <a href="Float.html" class="type">Float</a> -> <a href="Float.html" class="type">Float</a>) : <a href="Array.html" class="type">Array</a>&lt;<a href="String.html" class="type">String</a>&gt;</dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>interpolateStringsf(a : <a href="Array.html" class="type">Array</a>&lt;<a href="String.html" class="type">String</a>&gt;, b : <a href="Array.html" class="type">Array</a>&lt;<a href="String.html" class="type">String</a>&gt;, ?equation : <a href="Float.html" class="type">Float</a> -> <a href="Float.html" class="type">Float</a>) : t : <a href="Float.html" class="type">Float</a> -> <a href="Array.html" class="type">Array</a>&lt;<a href="String.html" class="type">String</a>&gt;</dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>interpolatef(a : <a href="Array.html" class="type">Array</a>&lt;<a href="Float.html" class="type">Float</a>&gt;, b : <a href="Array.html" class="type">Array</a>&lt;<a href="Float.html" class="type">Float</a>&gt;, ?equation : <a href="Float.html" class="type">Float</a> -> <a href="Float.html" class="type">Float</a>) : t : <a href="Float.html" class="type">Float</a> -> <a href="Array.html" class="type">Array</a>&lt;<a href="Float.html" class="type">Float</a>&gt;</dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">inline </span><span class="kwd">function </span>last&lt;T&gt;(arr : <a href="Array.html" class="type">Array</a>&lt;T&gt;) : <a href="Null.html" class="type">Null</a>&lt;T&gt;</dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>lastf&lt;T&gt;(arr : <a href="Array.html" class="type">Array</a>&lt;T&gt;, f : T -> <a href="Bool.html" class="type">Bool</a>) : <a href="Null.html" class="type">Null</a>&lt;T&gt;</dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">inline </span><span class="kwd">function </span>map&lt;TIn, TOut&gt;(arr : <a href="Array.html" class="type">Array</a>&lt;TIn&gt;, f : TIn -> <a href="Int.html" class="type">Int</a> -> TOut) : <a href="Array.html" class="type">Array</a>&lt;TOut&gt;</dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>max&lt;T&gt;(arr : <a href="Array.html" class="type">Array</a>&lt;T&gt;, ?f : T -> <a href="Float.html" class="type">Float</a>) : <a href="Null.html" class="type">Null</a>&lt;T&gt;</dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>min&lt;T&gt;(arr : <a href="Array.html" class="type">Array</a>&lt;T&gt;, ?f : T -> <a href="Float.html" class="type">Float</a>) : <a href="Null.html" class="type">Null</a>&lt;T&gt;</dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">inline </span><span class="kwd">function </span>order&lt;T&gt;(arr : <a href="Array.html" class="type">Array</a>&lt;T&gt;, ?f : T -> T -> <a href="Int.html" class="type">Int</a>) : <a href="Array.html" class="type">Array</a>&lt;T&gt;</dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>random&lt;T&gt;(arr : <a href="Array.html" class="type">Array</a>&lt;T&gt;) : T</dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">inline </span><span class="kwd">function </span>reduce&lt;TIn, TOut&gt;(arr : <a href="Array.html" class="type">Array</a>&lt;TIn&gt;, f : TOut -> TIn -> <a href="Int.html" class="type">Int</a> -> TOut, initialValue : TOut) : TOut</dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>split&lt;T&gt;(arr : <a href="Array.html" class="type">Array</a>&lt;T&gt;, ?f : T -> <a href="Int.html" class="type">Int</a> -> <a href="Bool.html" class="type">Bool</a>) : <a href="Array.html" class="type">Array</a>&lt;<a href="Array.html" class="type">Array</a>&lt;T&gt;&gt;</dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">function </span>string&lt;T&gt;(arr : <a href="Array.html" class="type">Array</a>&lt;T&gt;) : <a href="String.html" class="type">String</a></dt><dd></dd></dl><a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../index.html" class="index">Index</a>
+				
+			</div>
+			
+		</body>
+	</html> 

@@ -1,0 +1,122 @@
+<html>
+	
+	<head>
+		<title>API Documentation</title>
+		
+		<script type="text/javascript">
+			<!--
+			function toggle(id) {
+			var e = document.getElementById(id);
+			e.isopen = !e.isopen;
+			e.style.display = e.isopen?"block":"none";
+			return false;
+			}
+				-->
+			</script>
+			
+			<style type="text/css">
+				body {
+				text-align: center;
+				font-family: Trebuchet MS, sans-serif;
+				background-color : #7D7E86;
+				}
+				
+				.document {
+				width : 800px;
+				position : relative;
+				margin : 10px auto 5px auto;
+				border : solid 2px #CFD0D4;
+				text-align : justify;
+				background-color: #F6FAFD;
+				}
+				
+				.title {
+				font-size: 35;
+				font-weight: bold;
+				text-align: center;
+				background-color : #FFD473;
+				color : white;
+				}
+				
+				ul.entry {
+				list-style-type: circle;
+				font-weight : bold;
+				margin-left : 30px;
+				}
+				
+				.package_content {
+				display : none;
+				}
+				
+				a {
+				color : #FFBB00;
+				font-weight : bold;
+				text-decoration : none;
+				}
+				
+				a:hover {
+				color : #FFAE00;
+				text-decoration : underline;
+				}
+				
+				a.package {
+				color : black;
+				}
+				
+				.index {
+				margin-left : 10px;
+				}
+				
+				.kwd {
+				color : #00A;
+				}
+				
+				.classname {
+				font-size : 30;
+				font-weight : bold;
+				margin-left : 10px;
+				margin-bottom : 20px;
+				}
+				
+				.classdoc {
+				border : 1px dashed #666;
+				margin-left : 20px;
+				margin-right : 20px;
+				padding : 5 5 5 5;
+				}
+				
+				.importmod, .extends, .implements, .typedef, .platforms {
+				margin-left: 20px;
+				color : #777;
+				}
+				
+				dd {
+				margin : 0 20 20 40;
+				font-size : 12pt;
+				color : #444;
+				}
+				
+				dt {
+				margin-left : 20px;
+				margin-bottom : 5px;
+				text-align : left;
+				font-size : 10pt;
+				font-family: Courier New, monospace;
+				}
+				
+			</style>
+			
+		</head>
+		
+		<body>
+			
+			<div class="document">
+				
+				<div class="title">API Documentation</div>
+				
+				<a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../../../index.html" class="index">Index</a><div class="classname"><span class="kwd">class </span>ufront.acl.Acl</div><dl><dt><span class="kwd">function </span>new() : <a href="../../Void.html" class="type">Void</a></dt><dd></dd><dt><span class="kwd">function </span>addResource(resource : <a href="../../String.html" class="type">String</a>, ?parent : <a href="../../String.html" class="type">String</a>) : <a href="../../ufront/acl/Acl.html" class="type">Acl</a></dt><dd></dd><dt><span class="kwd">function </span>addRole(role : <a href="../../String.html" class="type">String</a>, ?parent : <a href="../../String.html" class="type">String</a>, ?parents : <a href="../../Array.html" class="type">Array</a>&lt;<a href="../../String.html" class="type">String</a>&gt;) : <a href="../../ufront/acl/Acl.html" class="type">Acl</a></dt><dd></dd><dt><span class="kwd">function </span>allow(roles : <a href="../../Array.html" class="type">Array</a>&lt;<a href="../../String.html" class="type">String</a>&gt;, ?resources : <a href="../../Array.html" class="type">Array</a>&lt;<a href="../../String.html" class="type">String</a>&gt;, ?privileges : <a href="../../Array.html" class="type">Array</a>&lt;<a href="../../String.html" class="type">String</a>&gt;, ?assert : <a href="../../ufront/acl/Acl.html" class="type">Acl</a> -> <a href="../../String.html" class="type">String</a> -> <a href="../../String.html" class="type">String</a> -> <a href="../../String.html" class="type">String</a> -> <a href="../../Bool.html" class="type">Bool</a>) : <a href="../../ufront/acl/Acl.html" class="type">Acl</a></dt><dd></dd><dt><span class="kwd">function </span>deny(roles : <a href="../../Array.html" class="type">Array</a>&lt;<a href="../../String.html" class="type">String</a>&gt;, ?resources : <a href="../../Array.html" class="type">Array</a>&lt;<a href="../../String.html" class="type">String</a>&gt;, ?privileges : <a href="../../Array.html" class="type">Array</a>&lt;<a href="../../String.html" class="type">String</a>&gt;, ?assert : <a href="../../ufront/acl/Acl.html" class="type">Acl</a> -> <a href="../../String.html" class="type">String</a> -> <a href="../../String.html" class="type">String</a> -> <a href="../../String.html" class="type">String</a> -> <a href="../../Bool.html" class="type">Bool</a>) : <a href="../../ufront/acl/Acl.html" class="type">Acl</a></dt><dd></dd><dt><span class="kwd">function </span>existsResource(resource : <a href="../../String.html" class="type">String</a>) : <a href="../../Bool.html" class="type">Bool</a></dt><dd></dd><dt><span class="kwd">function </span>existsRole(role : <a href="../../String.html" class="type">String</a>) : <a href="../../Bool.html" class="type">Bool</a></dt><dd></dd><dt><span class="kwd">function </span>getResources() : <a href="../../Iterator.html" class="type">Iterator</a>&lt;<a href="../../String.html" class="type">String</a>&gt;</dt><dd></dd><dt><span class="kwd">function </span>getRoles() : <a href="../../Iterator.html" class="type">Iterator</a>&lt;<a href="../../String.html" class="type">String</a>&gt;</dt><dd></dd><dt><span class="kwd">function </span>inheritsResource(resource : <a href="../../String.html" class="type">String</a>, inherit : <a href="../../String.html" class="type">String</a>, ?onlyParent : <a href="../../Bool.html" class="type">Bool</a>) : <a href="../../Bool.html" class="type">Bool</a></dt><dd></dd><dt><span class="kwd">function </span>inheritsRole(role : <a href="../../String.html" class="type">String</a>, inherit : <a href="../../String.html" class="type">String</a>, ?onlyParents : <a href="../../Bool.html" class="type">Bool</a>) : <a href="../../Bool.html" class="type">Bool</a></dt><dd></dd><dt><span class="kwd">function </span>isAllowed(?role : <a href="../../String.html" class="type">String</a>, ?resource : <a href="../../String.html" class="type">String</a>, ?privilege : <a href="../../String.html" class="type">String</a>) : <a href="../../Null.html" class="type">Null</a>&lt;<a href="../../Bool.html" class="type">Bool</a>&gt;</dt><dd></dd><dt><span class="kwd">function </span>removeAll() : <a href="../../ufront/acl/Acl.html" class="type">Acl</a></dt><dd></dd><dt><span class="kwd">function </span>removeAllow(roles : <a href="../../Array.html" class="type">Array</a>&lt;<a href="../../String.html" class="type">String</a>&gt;, ?resources : <a href="../../Array.html" class="type">Array</a>&lt;<a href="../../String.html" class="type">String</a>&gt;, ?privileges : <a href="../../Array.html" class="type">Array</a>&lt;<a href="../../String.html" class="type">String</a>&gt;, ?assert : <a href="../../ufront/acl/Acl.html" class="type">Acl</a> -> <a href="../../String.html" class="type">String</a> -> <a href="../../String.html" class="type">String</a> -> <a href="../../String.html" class="type">String</a> -> <a href="../../Bool.html" class="type">Bool</a>) : <a href="../../ufront/acl/Acl.html" class="type">Acl</a></dt><dd></dd><dt><span class="kwd">function </span>removeDeny(roles : <a href="../../Array.html" class="type">Array</a>&lt;<a href="../../String.html" class="type">String</a>&gt;, ?resources : <a href="../../Array.html" class="type">Array</a>&lt;<a href="../../String.html" class="type">String</a>&gt;, ?privileges : <a href="../../Array.html" class="type">Array</a>&lt;<a href="../../String.html" class="type">String</a>&gt;, ?assert : <a href="../../ufront/acl/Acl.html" class="type">Acl</a> -> <a href="../../String.html" class="type">String</a> -> <a href="../../String.html" class="type">String</a> -> <a href="../../String.html" class="type">String</a> -> <a href="../../Bool.html" class="type">Bool</a>) : <a href="../../ufront/acl/Acl.html" class="type">Acl</a></dt><dd></dd><dt><span class="kwd">function </span>removeResource(resource : <a href="../../String.html" class="type">String</a>) : <a href="../../Bool.html" class="type">Bool</a></dt><dd></dd><dt><span class="kwd">function </span>removeRole(role : <a href="../../String.html" class="type">String</a>) : <a href="../../Bool.html" class="type">Bool</a></dt><dd></dd><dt><span class="kwd">function </span>removeRoleAll() : <a href="../../ufront/acl/Acl.html" class="type">Acl</a></dt><dd></dd><dt><span class="kwd">function </span>setRule(operation : <a href="../../ufront/acl/Operation.html" class="type">Operation</a>, type : <a href="../../ufront/acl/AccessType.html" class="type">AccessType</a>, ?roles : <a href="../../Array.html" class="type">Array</a>&lt;<a href="../../String.html" class="type">String</a>&gt;, ?resources : <a href="../../Array.html" class="type">Array</a>&lt;<a href="../../String.html" class="type">String</a>&gt;, ?privileges : <a href="../../Array.html" class="type">Array</a>&lt;<a href="../../String.html" class="type">String</a>&gt;, ?assert : <a href="../../ufront/acl/Acl.html" class="type">Acl</a> -> <a href="../../String.html" class="type">String</a> -> <a href="../../String.html" class="type">String</a> -> <a href="../../String.html" class="type">String</a> -> <a href="../../Bool.html" class="type">Bool</a>) : <a href="../../ufront/acl/Acl.html" class="type">Acl</a></dt><dd></dd></dl><a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../../../index.html" class="index">Index</a>
+				
+			</div>
+			
+		</body>
+	</html> 

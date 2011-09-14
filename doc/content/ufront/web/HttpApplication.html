@@ -1,0 +1,167 @@
+<html>
+	
+	<head>
+		<title>API Documentation</title>
+		
+		<script type="text/javascript">
+			<!--
+			function toggle(id) {
+			var e = document.getElementById(id);
+			e.isopen = !e.isopen;
+			e.style.display = e.isopen?"block":"none";
+			return false;
+			}
+				-->
+			</script>
+			
+			<style type="text/css">
+				body {
+				text-align: center;
+				font-family: Trebuchet MS, sans-serif;
+				background-color : #7D7E86;
+				}
+				
+				.document {
+				width : 800px;
+				position : relative;
+				margin : 10px auto 5px auto;
+				border : solid 2px #CFD0D4;
+				text-align : justify;
+				background-color: #F6FAFD;
+				}
+				
+				.title {
+				font-size: 35;
+				font-weight: bold;
+				text-align: center;
+				background-color : #FFD473;
+				color : white;
+				}
+				
+				ul.entry {
+				list-style-type: circle;
+				font-weight : bold;
+				margin-left : 30px;
+				}
+				
+				.package_content {
+				display : none;
+				}
+				
+				a {
+				color : #FFBB00;
+				font-weight : bold;
+				text-decoration : none;
+				}
+				
+				a:hover {
+				color : #FFAE00;
+				text-decoration : underline;
+				}
+				
+				a.package {
+				color : black;
+				}
+				
+				.index {
+				margin-left : 10px;
+				}
+				
+				.kwd {
+				color : #00A;
+				}
+				
+				.classname {
+				font-size : 30;
+				font-weight : bold;
+				margin-left : 10px;
+				margin-bottom : 20px;
+				}
+				
+				.classdoc {
+				border : 1px dashed #666;
+				margin-left : 20px;
+				margin-right : 20px;
+				padding : 5 5 5 5;
+				}
+				
+				.importmod, .extends, .implements, .typedef, .platforms {
+				margin-left: 20px;
+				color : #777;
+				}
+				
+				dd {
+				margin : 0 20 20 40;
+				font-size : 12pt;
+				color : #444;
+				}
+				
+				dt {
+				margin-left : 20px;
+				margin-bottom : 5px;
+				text-align : left;
+				font-size : 10pt;
+				font-family: Courier New, monospace;
+				}
+				
+			</style>
+			
+		</head>
+		
+		<body>
+			
+			<div class="document">
+				
+				<div class="title">API Documentation</div>
+				
+				<a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../../../index.html" class="index">Index</a><div class="classname"><span class="kwd">class </span>ufront.web.HttpApplication</div><div class="classdoc">
+  ...
+  @author Franco Ponticelli
+</div><dl><dt><span class="kwd">var </span>httpContext(default,null) : <a href="../../ufront/web/HttpContext.html" class="type">HttpContext</a></dt><dd></dd><dt><span class="kwd">var </span>modules(default,null) : <a href="../../List.html" class="type">List</a>&lt;<a href="../../ufront/web/IHttpModule.html" class="type">IHttpModule</a>&gt;</dt><dd></dd><dt><span class="kwd">var </span>onAcquireRequestState(default,null) : <a href="../../hxevents/AsyncDispatcher.html" class="type">hxevents.AsyncDispatcher</a>&lt;<a href="../../ufront/web/HttpApplication.html" class="type">HttpApplication</a>&gt;</dt><dd>
+	  Occurs when the current state (for example, session state) that is associated with the current
+	  request is acquired.
+</dd><dt><span class="kwd">var </span>onApplicationError(default,null) : <a href="../../hxevents/AsyncDispatcher.html" class="type">hxevents.AsyncDispatcher</a>&lt;{ error : <a href="../../thx/error/Error.html" class="type">thx.error.Error</a>, application : <a href="../../ufront/web/HttpApplication.html" class="type">HttpApplication</a>}&gt;</dt><dd>
+	  Occurs when an unhandled exception is thrown.
+</dd><dt><span class="kwd">var </span>onBeginRequest(default,null) : <a href="../../hxevents/AsyncDispatcher.html" class="type">hxevents.AsyncDispatcher</a>&lt;<a href="../../ufront/web/HttpApplication.html" class="type">HttpApplication</a>&gt;</dt><dd>
+	  The onBeginRequest event signals the creation of any given new request.
+	  This event is always raised and is always the first event to occur during the processing of a request.
+</dd><dt><span class="kwd">var </span>onEndRequest(default,null) : <a href="../../hxevents/Dispatcher.html" class="type">hxevents.Dispatcher</a>&lt;<a href="../../ufront/web/HttpApplication.html" class="type">HttpApplication</a>&gt;</dt><dd>
+	  Occurs as the last event in the HTTP pipeline chain of execution when responding to a request.
+</dd><dt><span class="kwd">var </span>onLogRequest(default,null) : <a href="../../hxevents/AsyncDispatcher.html" class="type">hxevents.AsyncDispatcher</a>&lt;<a href="../../ufront/web/HttpApplication.html" class="type">HttpApplication</a>&gt;</dt><dd>
+	  Occurs just before any logging is performed for the current request.
+</dd><dt><span class="kwd">var </span>onMapRequestHandler(default,null) : <a href="../../hxevents/AsyncDispatcher.html" class="type">hxevents.AsyncDispatcher</a>&lt;<a href="../../ufront/web/HttpApplication.html" class="type">HttpApplication</a>&gt;</dt><dd>
+	  Occurs when a request handler is selected to respond to the request.
+</dd><dt><span class="kwd">var </span>onPostAcquireRequestState(default,null) : <a href="../../hxevents/AsyncDispatcher.html" class="type">hxevents.AsyncDispatcher</a>&lt;<a href="../../ufront/web/HttpApplication.html" class="type">HttpApplication</a>&gt;</dt><dd>
+	  Occurs when the request state (for example, session state) that is associated with the current
+	  request has been obtained.
+</dd><dt><span class="kwd">var </span>onPostLogRequest(default,null) : <a href="../../hxevents/AsyncDispatcher.html" class="type">hxevents.AsyncDispatcher</a>&lt;<a href="../../ufront/web/HttpApplication.html" class="type">HttpApplication</a>&gt;</dt><dd>
+	  Occurs when all the event handlers for the LogRequest event has completed processing.
+</dd><dt><span class="kwd">var </span>onPostMapRequestHandler(default,null) : <a href="../../hxevents/AsyncDispatcher.html" class="type">hxevents.AsyncDispatcher</a>&lt;<a href="../../ufront/web/HttpApplication.html" class="type">HttpApplication</a>&gt;</dt><dd>
+	  Occurs when the current request is mapped to the appropriate event handler.
+</dd><dt><span class="kwd">var </span>onPostReleaseRequestState(default,null) : <a href="../../hxevents/AsyncDispatcher.html" class="type">hxevents.AsyncDispatcher</a>&lt;<a href="../../ufront/web/HttpApplication.html" class="type">HttpApplication</a>&gt;</dt><dd>
+	  Occurs when all request event handlers have completed executing and the request state data has been stored.
+</dd><dt><span class="kwd">var </span>onPostRequestHandlerExecute(default,null) : <a href="../../hxevents/AsyncDispatcher.html" class="type">hxevents.AsyncDispatcher</a>&lt;<a href="../../ufront/web/HttpApplication.html" class="type">HttpApplication</a>&gt;</dt><dd>
+	  Occurs when the event handler (for example, a page or an XML Web service) finishes execution.
+</dd><dt><span class="kwd">var </span>onPostResolveRequestCache(default,null) : <a href="../../hxevents/AsyncDispatcher.html" class="type">hxevents.AsyncDispatcher</a>&lt;<a href="../../ufront/web/HttpApplication.html" class="type">HttpApplication</a>&gt;</dt><dd>
+	  Occurs when execution of the current event handler is bypassed and allows a caching module to
+	  serve a request from the cache.
+</dd><dt><span class="kwd">var </span>onPostUpdateRequestCache(default,null) : <a href="../../hxevents/AsyncDispatcher.html" class="type">hxevents.AsyncDispatcher</a>&lt;<a href="../../ufront/web/HttpApplication.html" class="type">HttpApplication</a>&gt;</dt><dd>
+	  Occurs when caching modules are finished updating and storing responses that are used to serve subsequent
+	  requests from the cache.
+</dd><dt><span class="kwd">var </span>onPreRequestHandlerExecute(default,null) : <a href="../../hxevents/AsyncDispatcher.html" class="type">hxevents.AsyncDispatcher</a>&lt;<a href="../../ufront/web/HttpApplication.html" class="type">HttpApplication</a>&gt;</dt><dd>
+	  Occurs just before executing an event handler (for example, a page or an XML Web service).
+</dd><dt><span class="kwd">var </span>onReleaseRequestState(default,null) : <a href="../../hxevents/AsyncDispatcher.html" class="type">hxevents.AsyncDispatcher</a>&lt;<a href="../../ufront/web/HttpApplication.html" class="type">HttpApplication</a>&gt;</dt><dd>
+	  Occurs after ASP.NET finishes executing all request event handlers. This event causes state
+	  modules to save the current state data.
+</dd><dt><span class="kwd">var </span>onResolveRequestCache(default,null) : <a href="../../hxevents/AsyncDispatcher.html" class="type">hxevents.AsyncDispatcher</a>&lt;<a href="../../ufront/web/HttpApplication.html" class="type">HttpApplication</a>&gt;</dt><dd>
+	  Occurs to let the caching modules serve requests from the cache, bypassing execution of the event
+	  handler (for example, a page or an XML Web service).
+</dd><dt><span class="kwd">var </span>onUpdateRequestCache(default,null) : <a href="../../hxevents/AsyncDispatcher.html" class="type">hxevents.AsyncDispatcher</a>&lt;<a href="../../ufront/web/HttpApplication.html" class="type">HttpApplication</a>&gt;</dt><dd>
+	  Occurs when an event handler finishes execution in order to let caching modules store responses that will
+	  be used to serve subsequent requests from the cache.
+</dd><dt><span class="kwd">var </span>request(getRequest,null) : <a href="../../ufront/web/HttpRequest.html" class="type">HttpRequest</a></dt><dd></dd><dt><span class="kwd">var </span>response(getResponse,null) : <a href="../../ufront/web/HttpResponse.html" class="type">HttpResponse</a></dt><dd></dd><dt><span class="kwd">var </span>session(getSession,null) : <a href="../../ufront/web/IHttpSessionState.html" class="type">IHttpSessionState</a></dt><dd></dd><dt><span class="kwd">function </span>new(?httpContext : <a href="../../ufront/web/HttpContext.html" class="type">HttpContext</a>) : <a href="../../Void.html" class="type">Void</a></dt><dd></dd><dt><span class="kwd">function </span>completeRequest() : <a href="../../Void.html" class="type">Void</a></dt><dd></dd><dt><span class="kwd">function </span>execute() : <a href="../../Void.html" class="type">Void</a></dt><dd></dd></dl><a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../../../index.html" class="index">Index</a>
+				
+			</div>
+			
+		</body>
+	</html> 
