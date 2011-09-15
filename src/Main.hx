@@ -10,6 +10,7 @@ class Main
 		// this line uses Macros to import all classes in the "controller" package
 		// you can import controllers one by one if you prefer using "import controller.Home;"
 		Imports.pack("controller"); 
+		Imports.pack("model"); 
 		
 		// AppConfiguration takes the arguments (controllerPackage:String, modRewrite:Bool, basePath:String)
 		// The values I have here assume you have a package called "controllers", that you have modRewrite enabled,
