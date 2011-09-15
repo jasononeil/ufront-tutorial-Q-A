@@ -9,6 +9,13 @@ Relationships:
  - OneToOne: Question.userID = User.id
  - OneToMany: Answer.questionID = Question.id
 */
+
+// INDEXES (please note, don't use semicolon at end of these lines)
+// add basic indexes to search by
+@:index(userID)
+@:index(date)
+@:index(answered)
+
 class Question extends sys.db.Object 
 {	
 	/** The unique ID of this model */
@@ -25,6 +32,9 @@ class Question extends sys.db.Object
 	
 	/** The date this question was posted */
 	public var date:SDateTime;
+	
+	/** Is this asker satisfied with the snwer to this question? */
+	public var answered:Bool;
 	
 	// Each SPOD needs its own manager.  This line creates the Manager for this SPOD.
 	static var manager = new sys.db.Manager<Question>(Question);

@@ -10,6 +10,12 @@ Relationships:
  - OneToOne: Answer.questionID = Question.id
  - OneToMany: Votes.answerID = Answer.id
 */
+
+// INDEXES (please note, don't use semicolon at end of these lines)
+// Basic indexes to search by these fields
+@:index(userID)
+@:index(questionID)
+
 class Answer extends sys.db.Object 
 {	
 	/** The unique ID of this model */

@@ -4,6 +4,12 @@ import sys.db.Types;
 /** 
 Model for our users.  
 */
+
+// INDEXES (please note, don't use semicolon at end of these lines)
+// Add a basic index to prevent duplicate usernames or emails
+@:index(username,unique)
+@:index(username,email)
+
 class User extends sys.db.Object 
 {	
 	/** The unique ID of this model */

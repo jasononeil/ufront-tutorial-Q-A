@@ -25,5 +25,5 @@ class model_User extends sys_db_Object {
 	static $manager;
 	function __toString() { return 'model.User'; }
 }
-model_User::$__meta__ = _hx_anonymous(array("obj" => _hx_anonymous(array("rtti" => new _hx_array(array("oy9:relationsahy3:keyay2:idhy4:namey4:Usery6:fieldsaoy1:tjy15:sys.db.SpodType:2:0R3R2y6:isNullfgoR6jR7:9:1i40R3y8:usernameR8fgoR6jR7:9:1i255R3y8:passwordR8fgoR6jR7:9:1i255R3y5:emailR8fgoR6jR7:11:0R3y16:registrationDateR8fghy7:hfieldsbR12r12R2r4R11r10R9r6R10r8hy7:indexesahg"))))));
+model_User::$__meta__ = _hx_anonymous(array("obj" => _hx_anonymous(array("rtti" => new _hx_array(array("oy9:relationsahy3:keyay2:idhy4:namey4:Usery6:fieldsaoy1:tjy15:sys.db.SpodType:2:0R3R2y6:isNullfgoR6jR7:9:1i40R3y8:usernameR8fgoR6jR7:9:1i255R3y8:passwordR8fgoR6jR7:9:1i255R3y5:emailR8fgoR6jR7:11:0R3y16:registrationDateR8fghy7:hfieldsbR12r12R2r4R11r10R9r6R10r8hy7:indexesaoy4:keysaR9hy6:uniquetgoR15aR9R11hR16fghg"))))));
 model_User::$manager = new sys_db_Manager(_hx_qtype("model.User"));
