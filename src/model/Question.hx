@@ -1,0 +1,31 @@
+package model;
+import sys.db.Types;
+import model.User;
+
+/** 
+Model for our questions.  
+
+Relationships:
+ - OneToOne: Question.userID = User.id
+ - OneToMany: Answer.questionID = Question.id
+*/
+class Question extends sys.db.Object 
+{	
+	/** The unique ID of this model */
+	public var id:SUId;
+	
+	/** The userID of the user who posted this question */
+	@:relation(userID) public var user:User;
+	
+	/** The title of this question */
+	public var title:SString<255>;
+	
+	/** Any extra text content (HTML) to be included in this question.  Can be null. */
+	public var text:Null<SSmallText>;
+	
+	/** The date this question was posted */
+	public var date:SDateTime;
+	
+	// Each SPOD needs its own manager.  This line creates the Manager for this SPOD.
+	static var manager = new sys.db.Manager<Question>(Question);
+}

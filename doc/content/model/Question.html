@@ -114,9 +114,10 @@
 				
 				<div class="title">API Documentation</div>
 				
-				<a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../index.html" class="index">Index</a><div class="classname"><span class="kwd">extern </span><span class="kwd">class </span>Int</div><div class="extends">extends <a href="Float.html" class="type">Float</a></div><div class="importmod">import sys.db.Types</div><div class="classdoc">
-	The standard Int type. Its precision depends on the platform.
-</div><dl></dl><a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../index.html" class="index">Index</a>
+				<a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../../index.html" class="index">Index</a><div class="classname"><span class="kwd">class </span>model.Question</div><div class="extends">extends <a href="../sys/db/Object.html" class="type">sys.db.Object</a></div><div class="classdoc"><p>Model for our questions.</p>
+<p>Relationships:
+ - OneToOne: Question.userID = User.id
+ - OneToMany: Answer.questionID = Question.id</p></div><dl><dt><span class="kwd">var </span>date : <a href="../sys/db/SDateTime.html" class="type">sys.db.SDateTime</a></dt><dd> The date this question was posted</dd><dt><span class="kwd">var </span>id : <a href="../sys/db/SUId.html" class="type">sys.db.SUId</a></dt><dd> The unique ID of this model</dd><dt><span class="kwd">var </span>text : <a href="../Null.html" class="type">Null</a>&lt;<a href="../sys/db/SSmallText.html" class="type">sys.db.SSmallText</a>&gt;</dt><dd> Any extra text content (HTML) to be included in this question.  Can be null.</dd><dt><span class="kwd">var </span>title : <a href="../sys/db/SString.html" class="type">sys.db.SString</a>&lt;<a href="../I255.html" class="type">I255</a>&gt;</dt><dd> The title of this question</dd><dt><span class="kwd">var </span>user(dynamic,dynamic) : <a href="../model/User.html" class="type">User</a></dt><dd> The userID of the user who posted this question</dd><dt><span class="kwd">function </span>new() : <a href="../Void.html" class="type">Void</a></dt><dd></dd><dt><span class="kwd">static </span><span class="kwd">var </span>__meta__ : <a href="../Dynamic.html" class="type">Dynamic</a></dt><dd></dd></dl><a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../../index.html" class="index">Index</a>
 				
 			</div>
 			
