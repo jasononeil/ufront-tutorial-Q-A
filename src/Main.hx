@@ -11,7 +11,6 @@ class Main
 		// this line uses Macros to import all classes in the "controller" package
 		// you can import controllers one by one if you prefer using "import controller.Home;"
 		Imports.pack("controller"); 
-		Imports.pack("model"); 
 		
 		// Connect to the database
 		connectToDB();
