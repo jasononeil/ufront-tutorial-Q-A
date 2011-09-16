@@ -1,0 +1,13 @@
+This is the source code for a tutorial for creating a basic Web-App in Haxe/uFront
+
+I'll post a link to the tutorial when I'm done.
+
+The App we're creating is a basic question and answer app, similar to Stack Overflow or Yahoo Answers.  Essentially, users should be able to ask questions, and users should be able to give answers, and everyone can vote on the answers, with the most popular answers rising to the top.
+
+Hope you enjoy!
+(And if you want to turn it into a full blown app, let me know!)
+
+All code GPL.
+All other content CC-SA-NC-BY.
+
+Jason O'Neil
