@@ -1,6 +1,7 @@
 package model;
 import sys.db.Types;
 import model.User;
+import model.Answer;
 
 /** 
 Model for our questions.  
@@ -36,6 +37,13 @@ class Question extends sys.db.Object
 	/** Is this asker satisfied with the snwer to this question? */
 	public var answered:Bool;
 	
+	/** */
+	public function answers():List<Answer>
+	{
+		// Search the Answer table for Answer.questionID = id, orderBy
+		return Answer.manager.search($questionID == id, { orderBy : date });
+	}
+	
 	// Each SPOD needs its own manager.  This line creates the Manager for this SPOD.
-	static var manager = new sys.db.Manager<Question>(Question);
+	public static var manager = new sys.db.Manager<Question>(Question);
 }

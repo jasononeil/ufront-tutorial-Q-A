@@ -29,6 +29,18 @@ class User extends sys.db.Object
 	/** The date this question was posted */
 	public var registrationDate:SDateTime;
 	
+	public function getQuestions():List<Question>
+	{
+		// Search the Question table for Question.userID = id
+		return Question.manager.search($userID == id);
+	}
+	
+	public function getAnswers():List<Answer>
+	{
+		// Search the Answer table for Answer.userID = id
+		return Answer.manager.search($userID == id);
+	}
+	
 	// Each SPOD needs its own manager.  This line creates the Manager for this SPOD.
-	static var manager = new sys.db.Manager<User>(User);
+	public static var manager = new sys.db.Manager<User>(User);
 }

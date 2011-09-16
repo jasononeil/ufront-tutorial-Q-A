@@ -1,6 +1,7 @@
 package model;
 import sys.db.Types;
 import model.User;
+import model.Vote;
 
 /** 
 Model for our answers to questions.  
@@ -34,6 +35,18 @@ class Answer extends sys.db.Object
 	/** The date this question was posted */
 	public var date:SDateTime;
 	
+	public function countUpVotes():Int
+	{
+		// Search the Vote table for Vote.answerID = id, vote = true (up)
+		return Vote.manager.count($answerID == id && $vote == true);
+	}
+	
+	public function countDownVotes():Int
+	{
+		// Search the Vote table for Vote.answerID = id, vote = false (down)
+		return Vote.manager.count($answerID == id && $vote == false);
+	}
+	
 	// Each SPOD needs its own manager.  This line creates the Manager for this SPOD.
-	static var manager = new sys.db.Manager<Answer>(Answer);
+	public static var manager = new sys.db.Manager<Answer>(Answer);
 }

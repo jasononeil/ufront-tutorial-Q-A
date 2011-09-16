@@ -37,5 +37,5 @@ class Vote extends sys.db.Object
 	private function voteDown() { vote = false; }
 	
 	// Each SPOD needs its own manager.  This line creates the Manager for this SPOD.
-	static var manager = new sys.db.Manager<Vote>(Vote);
+	public static var manager = new sys.db.Manager<Vote>(Vote);
 }
