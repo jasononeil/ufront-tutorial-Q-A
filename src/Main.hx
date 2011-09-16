@@ -2,6 +2,7 @@ import ufront.web.mvc.MvcApplication;
 import ufront.web.AppConfiguration;
 import ufront.web.routing.RouteCollection;
 import thx.util.Imports;
+import AppConfig;
 
 class Main 
 {
@@ -11,6 +12,9 @@ class Main
 		// you can import controllers one by one if you prefer using "import controller.Home;"
 		Imports.pack("controller"); 
 		Imports.pack("model"); 
+		
+		// Connect to the database
+		connectToDB();
 		
 		// AppConfiguration takes the arguments (controllerPackage:String, modRewrite:Bool, basePath:String)
 		// The values I have here assume you have a package called "controllers", that you have modRewrite enabled,
@@ -40,5 +44,18 @@ class Main
 		// Let it know the AppConfiguration and RouteCollection we're starting with.
 		// You can optionally send it a "httpContext" as well, but I don't understand this yet.
 		new MvcApplication(config, routes).execute();
+	}
+	
+	static public function connectToDB()
+	{
+		var cnx = sys.db.Mysql.connect({
+		   host : AppConfig.dbServer,
+		   port : AppConfig.dbPort,
+		   user : AppConfig.dbUser,
+		   pass : AppConfig.dbPass,
+		   database : AppConfig.dbDatabase,
+		   socket : AppConfig.dbSocket,
+		});
+		sys.db.Manager.cnx = cnx;
 	}
 }

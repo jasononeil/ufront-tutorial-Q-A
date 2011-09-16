@@ -1355,326 +1355,6 @@ Other things to do. Nested placeholders
  * @author Franco Ponticelli
  </haxe_doc>
 	</enum>
-	<class path="sys.db.Object" params="" file="/usr/share/haxe/std/sys/db/Object.hx">
-		<_locked set="null"><e path="Bool"/></_locked>
-		<_manager set="null"><c path="sys.db.Manager"><d/></c></_manager>
-		<insert public="1" set="method" line="40"><f a=""><e path="Void"/></f></insert>
-		<update public="1" set="method" line="44"><f a=""><e path="Void"/></f></update>
-		<lock public="1" set="method" line="48"><f a=""><e path="Void"/></f></lock>
-		<delete public="1" set="method" line="52"><f a=""><e path="Void"/></f></delete>
-		<toString public="1" set="method" line="56"><f a=""><unknown/></f></toString>
-		<new public="1" set="method" line="37"><f a=""><e path="Void"/></f></new>
-		<haxe_doc>
-	SPOD Object : the persistent object base type. See the tutorial on haXe
-	website to learn how to use SPOD.
-</haxe_doc>
-	</class>
-	<class path="Hash" params="T" file="/usr/share/haxe/std/php/_std/Hash.hx">
-		<implements path="php.IteratorAggregate"><c path="Hash.T"/></implements>
-		<h><c path="ArrayAccess"><c path="Hash.T"/></c></h>
-		<set public="1" set="method" line="33">
-			<f a="key:value">
-				<c path="String"/>
-				<c path="Hash.T"/>
-				<e path="Void"/>
-			</f>
-			<haxe_doc>
-		Set a value for the given key.
-	</haxe_doc>
-		</set>
-		<get public="1" set="method" line="37">
-			<f a="key">
-				<c path="String"/>
-				<t path="Null"><c path="Hash.T"/></t>
-			</f>
-			<haxe_doc>
-		Get a value for the given key.
-	</haxe_doc>
-		</get>
-		<exists public="1" set="method" line="44">
-			<f a="key">
-				<c path="String"/>
-				<e path="Bool"/>
-			</f>
-			<haxe_doc>
-		Tells if a value exists for the given key.
-		In particular, it's useful to tells if a key has
-		a [null] value versus no value.
-	</haxe_doc>
-		</exists>
-		<remove public="1" set="method" line="48">
-			<f a="key">
-				<c path="String"/>
-				<e path="Bool"/>
-			</f>
-			<haxe_doc>
-		Removes a hashtable entry. Returns [true] if
-		there was such entry.
-	</haxe_doc>
-		</remove>
-		<keys public="1" set="method" line="56">
-			<f a=""><t path="Iterator"><c path="String"/></t></f>
-			<haxe_doc>
-		Returns an iterator of all keys in the hashtable.
-	</haxe_doc>
-		</keys>
-		<iterator public="1" set="method" line="60">
-			<f a=""><t path="Iterator"><c path="Hash.T"/></t></f>
-			<haxe_doc>
-		Returns an iterator of all values in the hashtable.
-	</haxe_doc>
-		</iterator>
-		<toString public="1" set="method" line="64">
-			<f a=""><c path="String"/></f>
-			<haxe_doc>
-		Returns an displayable representation of the hashtable content.
-	</haxe_doc>
-		</toString>
-		<getIterator set="method" line="81">
-			<f a=""><t path="Iterator"><c path="Hash.T"/></t></f>
-			<haxe_doc>
-		Implement IteratorAggregate for native php iteration
-	</haxe_doc>
-		</getIterator>
-		<new public="1" set="method" line="29"><f a=""><e path="Void"/></f></new>
-		<haxe_doc>
-	Hashtable over a set of elements, using [String] as keys.
-	Other kind of keys are not possible on all platforms since they
-	can't always be implemented efficiently.
-</haxe_doc>
-	</class>
-	<class path="sys.db.Manager" params="T" file="/usr/share/haxe/std/sys/db/Manager.hx">
-		<cnx public="1" set="setConnection" static="1"><c path="sys.db.Connection"/></cnx>
-		<lockMode public="1" static="1"><c path="String"/></lockMode>
-		<cache_field get="inline" set="null" line="44" static="1"><c path="String"/></cache_field>
-		<object_cache line="46" static="1"><c path="Hash"><c path="sys.db.Object"/></c></object_cache>
-		<init_list line="47" static="1"><c path="List"><c path="sys.db.Manager"><d/></c></c></init_list>
-		<KEYWORDS line="49" static="1"><c path="Hash"><e path="Bool"/></c></KEYWORDS>
-		<setConnection set="method" line="56" static="1"><f a="c">
-	<c path="sys.db.Connection"/>
-	<c path="sys.db.Connection"/>
-</f></setConnection>
-		<initialize public="1" set="method" line="399" static="1"><f a=""><e path="Void"/></f></initialize>
-		<cleanup public="1" set="method" line="407" static="1"><f a=""><e path="Void"/></f></cleanup>
-		<quoteAny set="method" line="499" static="1"><f a="v">
-	<d/>
-	<c path="String"/>
-</f></quoteAny>
-		<quoteInt public="1" get="inline" set="null" line="505" static="1"><f a="v">
-	<c path="Int"/>
-	<c path="String"/>
-</f></quoteInt>
-		<quoteFloat public="1" get="inline" set="null" line="509" static="1"><f a="v">
-	<c path="Float"/>
-	<c path="String"/>
-</f></quoteFloat>
-		<quoteDate public="1" get="inline" set="null" line="513" static="1"><f a="v">
-	<c path="Date"/>
-	<c path="String"/>
-</f></quoteDate>
-		<quoteString public="1" get="inline" set="null" line="517" static="1"><f a="v">
-	<c path="String"/>
-	<c path="String"/>
-</f></quoteString>
-		<quoteBool public="1" get="inline" set="null" line="521" static="1"><f a="v">
-	<e path="Bool"/>
-	<c path="String"/>
-</f></quoteBool>
-		<quoteBytes public="1" get="inline" set="null" line="525" static="1"><f a="v">
-	<c path="haxe.io.Bytes"/>
-	<c path="String"/>
-</f></quoteBytes>
-		<table_infos><t path="sys.db.SpodInfos"/></table_infos>
-		<table_name><c path="String"/></table_name>
-		<table_fields><c path="List"><c path="String"/></c></table_fields>
-		<table_keys><c path="Array"><c path="String"/></c></table_keys>
-		<class_proto><a><prototype><d/></prototype></a></class_proto>
-		<all public="1" set="method" line="86"><f a="?lock">
-	<e path="Bool"/>
-	<c path="List"><c path="sys.db.Manager.T"/></c>
-</f></all>
-		<get public="1" set="method"><f a="id:?lock">
-	<d/>
-	<e path="Bool"/>
-	<c path="sys.db.Manager.T"/>
-</f></get>
-		<select public="1" set="method"><f a="cond:?options:?lock">
-	<d/>
-	<d/>
-	<e path="Bool"/>
-	<c path="sys.db.Manager.T"/>
-</f></select>
-		<search public="1" set="method"><f a="cond:?options:?lock">
-	<d/>
-	<d/>
-	<e path="Bool"/>
-	<c path="List"><c path="sys.db.Manager.T"/></c>
-</f></search>
-		<count public="1" set="method"><f a="cond">
-	<d/>
-	<c path="Int"/>
-</f></count>
-		<delete public="1" set="method"><f a="cond">
-	<d/>
-	<e path="Void"/>
-</f></delete>
-		<dynamicSearch public="1" set="method" line="110"><f a="x:?lock">
-	<a/>
-	<e path="Bool"/>
-	<c path="List"><c path="sys.db.Manager.T"/></c>
-</f></dynamicSearch>
-		<quote set="method" line="119"><f a="s">
-	<c path="String"/>
-	<c path="String"/>
-</f></quote>
-		<doInsert set="method" line="125"><f a="x">
-	<c path="sys.db.Manager.T"/>
-	<e path="Void"/>
-</f></doInsert>
-		<doUpdate set="method" line="159"><f a="x">
-	<c path="sys.db.Manager.T"/>
-	<e path="Void"/>
-</f></doUpdate>
-		<doDelete set="method" line="190"><f a="x">
-	<c path="sys.db.Manager.T"/>
-	<e path="Void"/>
-</f></doDelete>
-		<doLock set="method" line="200"><f a="i">
-	<c path="sys.db.Manager.T"/>
-	<e path="Void"/>
-</f></doLock>
-		<objectToString set="method" line="224"><f a="it">
-	<c path="sys.db.Manager.T"/>
-	<c path="String"/>
-</f></objectToString>
-		<cacheObject set="method" line="249"><f a="x:lock">
-	<c path="sys.db.Manager.T"/>
-	<e path="Bool"/>
-	<e path="Void"/>
-</f></cacheObject>
-		<make set="method" line="256"><f a="x">
-	<c path="sys.db.Manager.T"/>
-	<e path="Void"/>
-</f></make>
-		<unmake set="method" line="259"><f a="x">
-	<c path="sys.db.Manager.T"/>
-	<e path="Void"/>
-</f></unmake>
-		<quoteField set="method" line="262"><f a="f">
-	<c path="String"/>
-	<c path="String"/>
-</f></quoteField>
-		<addKeys set="method" line="266"><f a="s:x">
-	<c path="StringBuf"/>
-	<a/>
-	<e path="Void"/>
-</f></addKeys>
-		<unsafeExecute set="method" line="282"><f a="sql">
-	<c path="String"/>
-	<c path="sys.db.ResultSet"/>
-</f></unsafeExecute>
-		<unsafeObject public="1" set="method" line="286"><f a="sql:lock">
-	<c path="String"/>
-	<e path="Bool"/>
-	<c path="sys.db.Manager.T"/>
-</f></unsafeObject>
-		<unsafeObjects public="1" set="method" line="302"><f a="sql:lock">
-	<c path="String"/>
-	<e path="Bool"/>
-	<c path="List"><c path="sys.db.Manager.T"/></c>
-</f></unsafeObjects>
-		<unsafeCount public="1" set="method" line="322"><f a="sql">
-	<c path="String"/>
-	<c path="Int"/>
-</f></unsafeCount>
-		<unsafeDelete public="1" set="method" line="326"><f a="sql">
-	<c path="String"/>
-	<e path="Void"/>
-</f></unsafeDelete>
-		<unsafeGet public="1" set="method" line="330"><f a="id:?lock">
-	<d/>
-	<e path="Bool"/>
-	<c path="sys.db.Manager.T"/>
-</f></unsafeGet>
-		<unsafeGetWithKeys public="1" set="method" line="349"><f a="keys:?lock">
-	<a/>
-	<e path="Bool"/>
-	<c path="sys.db.Manager.T"/>
-</f></unsafeGetWithKeys>
-		<addCondition set="method" line="362"><f a="s:x">
-	<c path="StringBuf"/>
-	<a/>
-	<e path="Void"/>
-</f></addCondition>
-		<dbClass public="1" set="method" line="385"><f a=""><c path="Class"><d/></c></f></dbClass>
-		<getCnx set="method" line="389"><f a=""><c path="sys.db.Connection"/></f></getCnx>
-		<getLockMode set="method" line="393"><f a=""><c path="String"/></f></getLockMode>
-		<initRelation set="method" line="411"><f a="r">
-	<t path="sys.db.SpodRelation"/>
-	<e path="Void"/>
-</f></initRelation>
-		<makeCacheKey set="method" line="448"><f a="x">
-	<c path="sys.db.Manager.T"/>
-	<c path="String"/>
-</f></makeCacheKey>
-		<addToCache set="method" line="467"><f a="x">
-	<c path="sys.db.Manager.T"/>
-	<e path="Void"/>
-</f></addToCache>
-		<removeFromCache set="method" line="471"><f a="x">
-	<c path="sys.db.Manager.T"/>
-	<e path="Void"/>
-</f></removeFromCache>
-		<getFromCacheKey set="method" line="475"><f a="key">
-	<c path="String"/>
-	<c path="sys.db.Manager.T"/>
-</f></getFromCacheKey>
-		<getFromCache set="method" line="479"><f a="x:lock">
-	<c path="sys.db.Manager.T"/>
-	<e path="Bool"/>
-	<c path="sys.db.Manager.T"/>
-</f></getFromCache>
-		<new public="1" set="method" line="70"><f a="classval">
-	<c path="Class"><c path="sys.db.Manager.T"/></c>
-	<e path="Void"/>
-</f></new>
-		<haxe_doc>
-	SPOD Manager : the persistent object database manager. See the tutorial on
-	haXe website to learn how to use SPOD.
-</haxe_doc>
-	</class>
-	<class path="model.Vote" params="" file="src/model/Votes.hx" module="model.Votes">
-		<extends path="sys.db.Object"/>
-		<__meta__ public="1" line="22" static="1"><d/></__meta__>
-		<manager line="40" static="1"><c path="sys.db.Manager"><c path="model.Vote"/></c></manager>
-		<id public="1">
-			<t path="sys.db.SUId"/>
-			<haxe_doc> The unique ID of this model </haxe_doc>
-		</id>
-		<user public="1" get="get_user" set="set_user">
-			<c path="model.User"/>
-			<haxe_doc> The userID of the user who gave this answer </haxe_doc>
-		</user>
-		<answer public="1" get="get_answer" set="set_answer">
-			<c path="model.Answer"/>
-			<haxe_doc> The questionID of the question we're answering </haxe_doc>
-		</answer>
-		<vote public="1">
-			<t path="sys.db.SBool"/>
-			<haxe_doc> true=1, vote up.  false=0, vote down </haxe_doc>
-		</vote>
-		<voteUp set="method" line="36"><f a=""><e path="Void"/></f></voteUp>
-		<voteDown set="method" line="37"><f a=""><e path="Void"/></f></voteDown>
-		<new public="1" set="method" line="22"><f a=""><e path="Void"/></f></new>
-		<haxe_doc> 
-Model for our answers to questions.  
-
-Relationships:
- - OneToOne: Vote.userID = User.id
- - OneToOne: Answer.questionID = Question.id
- - OneToMany: Votes.answerID = Answer.id
-</haxe_doc>
-	</class>
 	<class path="Bools" params="" file="/usr/lib/haxe/lib/thx/0,2,0/Bools.hx">
 		<format public="1" set="method" line="11" static="1"><f a="v:?param:?params:?culture">
 	<e path="Bool"/>
@@ -2367,6 +2047,80 @@ Relationships:
 		<Remove/>
 		<Add/>
 	</enum>
+	<class path="Hash" params="T" file="/usr/share/haxe/std/php/_std/Hash.hx">
+		<implements path="php.IteratorAggregate"><c path="Hash.T"/></implements>
+		<h><c path="ArrayAccess"><c path="Hash.T"/></c></h>
+		<set public="1" set="method" line="33">
+			<f a="key:value">
+				<c path="String"/>
+				<c path="Hash.T"/>
+				<e path="Void"/>
+			</f>
+			<haxe_doc>
+		Set a value for the given key.
+	</haxe_doc>
+		</set>
+		<get public="1" set="method" line="37">
+			<f a="key">
+				<c path="String"/>
+				<t path="Null"><c path="Hash.T"/></t>
+			</f>
+			<haxe_doc>
+		Get a value for the given key.
+	</haxe_doc>
+		</get>
+		<exists public="1" set="method" line="44">
+			<f a="key">
+				<c path="String"/>
+				<e path="Bool"/>
+			</f>
+			<haxe_doc>
+		Tells if a value exists for the given key.
+		In particular, it's useful to tells if a key has
+		a [null] value versus no value.
+	</haxe_doc>
+		</exists>
+		<remove public="1" set="method" line="48">
+			<f a="key">
+				<c path="String"/>
+				<e path="Bool"/>
+			</f>
+			<haxe_doc>
+		Removes a hashtable entry. Returns [true] if
+		there was such entry.
+	</haxe_doc>
+		</remove>
+		<keys public="1" set="method" line="56">
+			<f a=""><t path="Iterator"><c path="String"/></t></f>
+			<haxe_doc>
+		Returns an iterator of all keys in the hashtable.
+	</haxe_doc>
+		</keys>
+		<iterator public="1" set="method" line="60">
+			<f a=""><t path="Iterator"><c path="Hash.T"/></t></f>
+			<haxe_doc>
+		Returns an iterator of all values in the hashtable.
+	</haxe_doc>
+		</iterator>
+		<toString public="1" set="method" line="64">
+			<f a=""><c path="String"/></f>
+			<haxe_doc>
+		Returns an displayable representation of the hashtable content.
+	</haxe_doc>
+		</toString>
+		<getIterator set="method" line="81">
+			<f a=""><t path="Iterator"><c path="Hash.T"/></t></f>
+			<haxe_doc>
+		Implement IteratorAggregate for native php iteration
+	</haxe_doc>
+		</getIterator>
+		<new public="1" set="method" line="29"><f a=""><e path="Void"/></f></new>
+		<haxe_doc>
+	Hashtable over a set of elements, using [String] as keys.
+	Other kind of keys are not possible on all platforms since they
+	can't always be implemented efficiently.
+</haxe_doc>
+	</class>
 	<class path="ufront.web.mvc.ActionResult" params="" file="/usr/lib/haxe/lib/ufront/0,1,2/ufront/web/mvc/ActionResult.hx"><executeResult public="1" set="method" line="5"><f a="controllerContext">
 	<c path="ufront.web.mvc.ControllerContext"/>
 	<e path="Void"/>
@@ -2960,6 +2714,206 @@ Relationships:
  * ...
  * @author Franco Ponticelli
  </haxe_doc>
+	</class>
+	<class path="sys.db.Manager" params="T" file="/usr/share/haxe/std/sys/db/Manager.hx">
+		<cnx public="1" set="setConnection" static="1"><c path="sys.db.Connection"/></cnx>
+		<lockMode public="1" static="1"><c path="String"/></lockMode>
+		<cache_field get="inline" set="null" line="44" static="1"><c path="String"/></cache_field>
+		<object_cache line="46" static="1"><c path="Hash"><c path="sys.db.Object"/></c></object_cache>
+		<init_list line="47" static="1"><c path="List"><c path="sys.db.Manager"><d/></c></c></init_list>
+		<KEYWORDS line="49" static="1"><c path="Hash"><e path="Bool"/></c></KEYWORDS>
+		<setConnection set="method" line="56" static="1"><f a="c">
+	<c path="sys.db.Connection"/>
+	<c path="sys.db.Connection"/>
+</f></setConnection>
+		<initialize public="1" set="method" line="399" static="1"><f a=""><e path="Void"/></f></initialize>
+		<cleanup public="1" set="method" line="407" static="1"><f a=""><e path="Void"/></f></cleanup>
+		<quoteAny set="method" line="499" static="1"><f a="v">
+	<d/>
+	<c path="String"/>
+</f></quoteAny>
+		<quoteInt public="1" get="inline" set="null" line="505" static="1"><f a="v">
+	<c path="Int"/>
+	<c path="String"/>
+</f></quoteInt>
+		<quoteFloat public="1" get="inline" set="null" line="509" static="1"><f a="v">
+	<c path="Float"/>
+	<c path="String"/>
+</f></quoteFloat>
+		<quoteDate public="1" get="inline" set="null" line="513" static="1"><f a="v">
+	<c path="Date"/>
+	<c path="String"/>
+</f></quoteDate>
+		<quoteString public="1" get="inline" set="null" line="517" static="1"><f a="v">
+	<c path="String"/>
+	<c path="String"/>
+</f></quoteString>
+		<quoteBool public="1" get="inline" set="null" line="521" static="1"><f a="v">
+	<e path="Bool"/>
+	<c path="String"/>
+</f></quoteBool>
+		<quoteBytes public="1" get="inline" set="null" line="525" static="1"><f a="v">
+	<c path="haxe.io.Bytes"/>
+	<c path="String"/>
+</f></quoteBytes>
+		<table_infos><t path="sys.db.SpodInfos"/></table_infos>
+		<table_name><c path="String"/></table_name>
+		<table_fields><c path="List"><c path="String"/></c></table_fields>
+		<table_keys><c path="Array"><c path="String"/></c></table_keys>
+		<class_proto><a><prototype><d/></prototype></a></class_proto>
+		<all public="1" set="method" line="86"><f a="?lock">
+	<e path="Bool"/>
+	<c path="List"><c path="sys.db.Manager.T"/></c>
+</f></all>
+		<get public="1" set="method"><f a="id:?lock">
+	<d/>
+	<e path="Bool"/>
+	<c path="sys.db.Manager.T"/>
+</f></get>
+		<select public="1" set="method"><f a="cond:?options:?lock">
+	<d/>
+	<d/>
+	<e path="Bool"/>
+	<c path="sys.db.Manager.T"/>
+</f></select>
+		<search public="1" set="method"><f a="cond:?options:?lock">
+	<d/>
+	<d/>
+	<e path="Bool"/>
+	<c path="List"><c path="sys.db.Manager.T"/></c>
+</f></search>
+		<count public="1" set="method"><f a="cond">
+	<d/>
+	<c path="Int"/>
+</f></count>
+		<delete public="1" set="method"><f a="cond">
+	<d/>
+	<e path="Void"/>
+</f></delete>
+		<dynamicSearch public="1" set="method" line="110"><f a="x:?lock">
+	<a/>
+	<e path="Bool"/>
+	<c path="List"><c path="sys.db.Manager.T"/></c>
+</f></dynamicSearch>
+		<quote set="method" line="119"><f a="s">
+	<c path="String"/>
+	<c path="String"/>
+</f></quote>
+		<doInsert set="method" line="125"><f a="x">
+	<c path="sys.db.Manager.T"/>
+	<e path="Void"/>
+</f></doInsert>
+		<doUpdate set="method" line="159"><f a="x">
+	<c path="sys.db.Manager.T"/>
+	<e path="Void"/>
+</f></doUpdate>
+		<doDelete set="method" line="190"><f a="x">
+	<c path="sys.db.Manager.T"/>
+	<e path="Void"/>
+</f></doDelete>
+		<doLock set="method" line="200"><f a="i">
+	<c path="sys.db.Manager.T"/>
+	<e path="Void"/>
+</f></doLock>
+		<objectToString set="method" line="224"><f a="it">
+	<c path="sys.db.Manager.T"/>
+	<c path="String"/>
+</f></objectToString>
+		<cacheObject set="method" line="249"><f a="x:lock">
+	<c path="sys.db.Manager.T"/>
+	<e path="Bool"/>
+	<e path="Void"/>
+</f></cacheObject>
+		<make set="method" line="256"><f a="x">
+	<c path="sys.db.Manager.T"/>
+	<e path="Void"/>
+</f></make>
+		<unmake set="method" line="259"><f a="x">
+	<c path="sys.db.Manager.T"/>
+	<e path="Void"/>
+</f></unmake>
+		<quoteField set="method" line="262"><f a="f">
+	<c path="String"/>
+	<c path="String"/>
+</f></quoteField>
+		<addKeys set="method" line="266"><f a="s:x">
+	<c path="StringBuf"/>
+	<a/>
+	<e path="Void"/>
+</f></addKeys>
+		<unsafeExecute set="method" line="282"><f a="sql">
+	<c path="String"/>
+	<c path="sys.db.ResultSet"/>
+</f></unsafeExecute>
+		<unsafeObject public="1" set="method" line="286"><f a="sql:lock">
+	<c path="String"/>
+	<e path="Bool"/>
+	<c path="sys.db.Manager.T"/>
+</f></unsafeObject>
+		<unsafeObjects public="1" set="method" line="302"><f a="sql:lock">
+	<c path="String"/>
+	<e path="Bool"/>
+	<c path="List"><c path="sys.db.Manager.T"/></c>
+</f></unsafeObjects>
+		<unsafeCount public="1" set="method" line="322"><f a="sql">
+	<c path="String"/>
+	<c path="Int"/>
+</f></unsafeCount>
+		<unsafeDelete public="1" set="method" line="326"><f a="sql">
+	<c path="String"/>
+	<e path="Void"/>
+</f></unsafeDelete>
+		<unsafeGet public="1" set="method" line="330"><f a="id:?lock">
+	<d/>
+	<e path="Bool"/>
+	<c path="sys.db.Manager.T"/>
+</f></unsafeGet>
+		<unsafeGetWithKeys public="1" set="method" line="349"><f a="keys:?lock">
+	<a/>
+	<e path="Bool"/>
+	<c path="sys.db.Manager.T"/>
+</f></unsafeGetWithKeys>
+		<addCondition set="method" line="362"><f a="s:x">
+	<c path="StringBuf"/>
+	<a/>
+	<e path="Void"/>
+</f></addCondition>
+		<dbClass public="1" set="method" line="385"><f a=""><c path="Class"><d/></c></f></dbClass>
+		<getCnx set="method" line="389"><f a=""><c path="sys.db.Connection"/></f></getCnx>
+		<getLockMode set="method" line="393"><f a=""><c path="String"/></f></getLockMode>
+		<initRelation set="method" line="411"><f a="r">
+	<t path="sys.db.SpodRelation"/>
+	<e path="Void"/>
+</f></initRelation>
+		<makeCacheKey set="method" line="448"><f a="x">
+	<c path="sys.db.Manager.T"/>
+	<c path="String"/>
+</f></makeCacheKey>
+		<addToCache set="method" line="467"><f a="x">
+	<c path="sys.db.Manager.T"/>
+	<e path="Void"/>
+</f></addToCache>
+		<removeFromCache set="method" line="471"><f a="x">
+	<c path="sys.db.Manager.T"/>
+	<e path="Void"/>
+</f></removeFromCache>
+		<getFromCacheKey set="method" line="475"><f a="key">
+	<c path="String"/>
+	<c path="sys.db.Manager.T"/>
+</f></getFromCacheKey>
+		<getFromCache set="method" line="479"><f a="x:lock">
+	<c path="sys.db.Manager.T"/>
+	<e path="Bool"/>
+	<c path="sys.db.Manager.T"/>
+</f></getFromCache>
+		<new public="1" set="method" line="70"><f a="classval">
+	<c path="Class"><c path="sys.db.Manager.T"/></c>
+	<e path="Void"/>
+</f></new>
+		<haxe_doc>
+	SPOD Manager : the persistent object database manager. See the tutorial on
+	haXe website to learn how to use SPOD.
+</haxe_doc>
 	</class>
 	<class path="StringTools" params="" file="/usr/share/haxe/std/php/_std/StringTools.hx">
 		<urlEncode public="1" get="inline" set="null" line="28" static="1">
@@ -4831,10 +4785,24 @@ Relationships:
  * @author Franco Ponticelli
  </haxe_doc>
 	</class>
+	<class path="sys.db.Object" params="" file="/usr/share/haxe/std/sys/db/Object.hx">
+		<_locked set="null"><e path="Bool"/></_locked>
+		<_manager set="null"><c path="sys.db.Manager"><d/></c></_manager>
+		<insert public="1" set="method" line="40"><f a=""><e path="Void"/></f></insert>
+		<update public="1" set="method" line="44"><f a=""><e path="Void"/></f></update>
+		<lock public="1" set="method" line="48"><f a=""><e path="Void"/></f></lock>
+		<delete public="1" set="method" line="52"><f a=""><e path="Void"/></f></delete>
+		<toString public="1" set="method" line="56"><f a=""><unknown/></f></toString>
+		<new public="1" set="method" line="37"><f a=""><e path="Void"/></f></new>
+		<haxe_doc>
+	SPOD Object : the persistent object base type. See the tutorial on haXe
+	website to learn how to use SPOD.
+</haxe_doc>
+	</class>
 	<class path="model.Answer" params="" file="src/model/Answer.hx">
 		<extends path="sys.db.Object"/>
-		<__meta__ public="1" line="19" static="1"><d/></__meta__>
-		<manager line="38" static="1"><c path="sys.db.Manager"><c path="model.Answer"/></c></manager>
+		<__meta__ public="1" line="20" static="1"><d/></__meta__>
+		<manager public="1" line="51" static="1"><c path="sys.db.Manager"><c path="model.Answer"/></c></manager>
 		<id public="1">
 			<t path="sys.db.SUId"/>
 			<haxe_doc> The unique ID of this model </haxe_doc>
@@ -4855,7 +4823,9 @@ Relationships:
 			<t path="sys.db.SDateTime"/>
 			<haxe_doc> The date this question was posted </haxe_doc>
 		</date>
-		<new public="1" set="method" line="19"><f a=""><e path="Void"/></f></new>
+		<countUpVotes public="1" set="method" line="38"><f a=""><c path="Int"/></f></countUpVotes>
+		<countDownVotes public="1" set="method" line="44"><f a=""><c path="Int"/></f></countDownVotes>
+		<new public="1" set="method" line="20"><f a=""><e path="Void"/></f></new>
 		<haxe_doc> 
 Model for our answers to questions.  
 
@@ -5749,8 +5719,8 @@ Relationships:
 	</class>
 	<class path="model.Question" params="" file="src/model/Question.hx">
 		<extends path="sys.db.Object"/>
-		<__meta__ public="1" line="19" static="1"><d/></__meta__>
-		<manager line="40" static="1"><c path="sys.db.Manager"><c path="model.Question"/></c></manager>
+		<__meta__ public="1" line="20" static="1"><d/></__meta__>
+		<manager public="1" line="48" static="1"><c path="sys.db.Manager"><c path="model.Question"/></c></manager>
 		<id public="1">
 			<t path="sys.db.SUId"/>
 			<haxe_doc> The unique ID of this model </haxe_doc>
@@ -5775,7 +5745,11 @@ Relationships:
 			<e path="Bool"/>
 			<haxe_doc> Is this asker satisfied with the snwer to this question? </haxe_doc>
 		</answered>
-		<new public="1" set="method" line="19"><f a=""><e path="Void"/></f></new>
+		<answers public="1" set="method" line="41">
+			<f a=""><c path="List"><c path="model.Answer"/></c></f>
+			<haxe_doc> </haxe_doc>
+		</answers>
+		<new public="1" set="method" line="20"><f a=""><e path="Void"/></f></new>
 		<haxe_doc> 
 Model for our questions.  
 
@@ -6729,6 +6703,38 @@ Relationships:
  * @author Franco Ponticelli
  </haxe_doc>
 	</class>
+	<class path="model.Vote" params="" file="src/model/Vote.hx">
+		<extends path="sys.db.Object"/>
+		<__meta__ public="1" line="22" static="1"><d/></__meta__>
+		<manager public="1" line="40" static="1"><c path="sys.db.Manager"><c path="model.Vote"/></c></manager>
+		<id public="1">
+			<t path="sys.db.SUId"/>
+			<haxe_doc> The unique ID of this model </haxe_doc>
+		</id>
+		<user public="1" get="get_user" set="set_user">
+			<c path="model.User"/>
+			<haxe_doc> The userID of the user who gave this answer </haxe_doc>
+		</user>
+		<answer public="1" get="get_answer" set="set_answer">
+			<c path="model.Answer"/>
+			<haxe_doc> The questionID of the question we're answering </haxe_doc>
+		</answer>
+		<vote public="1">
+			<t path="sys.db.SBool"/>
+			<haxe_doc> true=1, vote up.  false=0, vote down </haxe_doc>
+		</vote>
+		<voteUp set="method" line="36"><f a=""><e path="Void"/></f></voteUp>
+		<voteDown set="method" line="37"><f a=""><e path="Void"/></f></voteDown>
+		<new public="1" set="method" line="22"><f a=""><e path="Void"/></f></new>
+		<haxe_doc> 
+Model for our answers to questions.  
+
+Relationships:
+ - OneToOne: Vote.userID = User.id
+ - OneToOne: Answer.questionID = Question.id
+ - OneToMany: Votes.answerID = Answer.id
+</haxe_doc>
+	</class>
 	<class path="ufront.web.mvc.FilterInfo" params="" file="/usr/lib/haxe/lib/ufront/0,1,2/ufront/web/mvc/FilterInfo.hx">
 		<authorizationFilters public="1" set="null"><c path="Array"><c path="ufront.web.mvc.IAuthorizationFilter"/></c></authorizationFilters>
 		<actionFilters public="1" set="null"><c path="Array"><c path="ufront.web.mvc.IActionFilter"/></c></actionFilters>
@@ -7346,7 +7352,10 @@ Relationships:
 </f></trace>
 		<clear public="1" set="dynamic" line="43" static="1"><f a=""><e path="Void"/></f></clear>
 	</class>
-	<class path="Main" params="" file="src/Main.hx"><main set="method" line="8" static="1"><f a=""><e path="Void"/></f></main></class>
+	<class path="Main" params="" file="src/Main.hx">
+		<main set="method" line="9" static="1"><f a=""><e path="Void"/></f></main>
+		<connectToDB public="1" set="method" line="49" static="1"><f a=""><e path="Void"/></f></connectToDB>
+	</class>
 	<class path="ufront.web.mvc.ActionExecutingContext" params="" file="/usr/lib/haxe/lib/ufront/0,1,2/ufront/web/mvc/ActionExecutingContext.hx">
 		<actionName public="1" set="null"><c path="String"/></actionName>
 		<controllerContext public="1" set="null"><c path="ufront.web.mvc.ControllerContext"/></controllerContext>
@@ -8077,6 +8086,14 @@ customs for missing features
 		<haxe_doc>
  * The invoker property (IActionInvoker) must be set to use execute().
  </haxe_doc>
+	</class>
+	<class path="AppConfig" params="" file="src/AppConfig.hx">
+		<dbServer public="1" line="4" static="1"><c path="String"/></dbServer>
+		<dbPort public="1" line="5" static="1"><c path="Int"/></dbPort>
+		<dbUser public="1" line="6" static="1"><c path="String"/></dbUser>
+		<dbPass public="1" line="7" static="1"><c path="String"/></dbPass>
+		<dbDatabase public="1" line="8" static="1"><c path="String"/></dbDatabase>
+		<dbSocket public="1" line="9" static="1"><c path="String"/></dbSocket>
 	</class>
 	<class path="ufront.web.mvc.IValueProvider" params="" file="/usr/lib/haxe/lib/ufront/0,1,2/ufront/web/mvc/IValueProvider.hx" interface="1">
 		<containsPrefix public="1" set="method"><f a="prefix">
@@ -8932,6 +8949,89 @@ customs for missing features
 </f></unprocessableEntityErrory>
 		<new public="1" set="method" line="11"><f a=""><e path="Void"/></f></new>
 	</class>
+	<class path="sys.db._Mysql.MysqlConnection" params="" file="/usr/share/haxe/std/php/_std/sys/db/Mysql.hx" private="1" module="sys.db.Mysql">
+		<implements path="sys.db.Connection"/>
+		<c><e path="Void"/></c>
+		<close public="1" set="method" line="37"><f a=""><e path="Void"/></f></close>
+		<request public="1" set="method" line="42"><f a="s">
+	<c path="String"/>
+	<c path="sys.db.ResultSet"/>
+</f></request>
+		<escape public="1" set="method" line="49"><f a="s">
+	<c path="String"/>
+	<c path="String"/>
+</f></escape>
+		<quote public="1" set="method" line="53"><f a="s">
+	<c path="String"/>
+	<c path="String"/>
+</f></quote>
+		<addValue public="1" set="method" line="57"><f a="s:v">
+	<c path="StringBuf"/>
+	<d/>
+	<e path="Void"/>
+</f></addValue>
+		<lastInsertId public="1" set="method" line="66"><f a=""><c path="Int"/></f></lastInsertId>
+		<dbName public="1" set="method" line="70"><f a=""><c path="String"/></f></dbName>
+		<startTransaction public="1" set="method" line="74"><f a=""><e path="Void"/></f></startTransaction>
+		<commit public="1" set="method" line="78"><f a=""><e path="Void"/></f></commit>
+		<rollback public="1" set="method" line="82"><f a=""><e path="Void"/></f></rollback>
+		<new public="1" set="method" line="33"><f a="c">
+	<e path="Void"/>
+	<e path="Void"/>
+</f></new>
+	</class>
+	<class path="sys.db._Mysql.MysqlResultSet" params="" file="/usr/share/haxe/std/php/_std/sys/db/Mysql.hx" private="1" module="sys.db.Mysql">
+		<implements path="sys.db.ResultSet"/>
+		<length public="1" get="getLength" set="null"><c path="Int"/></length>
+		<nfields public="1" get="getNFields" set="null"><c path="Int"/></nfields>
+		<__r><e path="Void"/></__r>
+		<__c><e path="Void"/></__c>
+		<cache><d/></cache>
+		<getLength set="method" line="100"><f a=""><c path="Int"/></f></getLength>
+		<_nfields><c path="Int"/></_nfields>
+		<getNFields set="method" line="109"><f a=""><c path="Int"/></f></getNFields>
+		<_fieldsDesc><c path="Array"><d/></c></_fieldsDesc>
+		<getFieldsDescription set="method" line="116"><f a=""><c path="Array"><d/></c></f></getFieldsDescription>
+		<convert set="method" line="130"><f a="v:type">
+	<c path="String"/>
+	<c path="String"/>
+	<d/>
+</f></convert>
+		<hasNext public="1" set="method" line="144"><f a=""><e path="Bool"/></f></hasNext>
+		<cRow><c path="ArrayAccess"><c path="String"/></c></cRow>
+		<fetchRow set="method" line="151"><f a=""><e path="Bool"/></f></fetchRow>
+		<next public="1" set="method" line="156"><f a=""><d/></f></next>
+		<results public="1" set="method" line="171"><f a=""><c path="List"><d/></c></f></results>
+		<getResult public="1" set="method" line="178"><f a="n">
+	<c path="Int"/>
+	<c path="String"/>
+</f></getResult>
+		<getIntResult public="1" set="method" line="185"><f a="n">
+	<c path="Int"/>
+	<c path="Int"/>
+</f></getIntResult>
+		<getFloatResult public="1" set="method" line="189"><f a="n">
+	<c path="Int"/>
+	<c path="Float"/>
+</f></getFloatResult>
+		<getFieldsNames public="1" set="method" line="193"><f a=""><c path="Array"><c path="String"/></c></f></getFieldsNames>
+		<new public="1" set="method" line="95"><f a="r:c">
+	<e path="Void"/>
+	<e path="Void"/>
+	<e path="Void"/>
+</f></new>
+	</class>
+	<class path="sys.db.Mysql" params="" file="/usr/share/haxe/std/php/_std/sys/db/Mysql.hx"><connect public="1" set="method" line="204" static="1"><f a="params">
+	<a>
+		<user><c path="String"/></user>
+		<socket><c path="String"/></socket>
+		<port><c path="Int"/></port>
+		<pass><c path="String"/></pass>
+		<host><c path="String"/></host>
+		<database><c path="String"/></database>
+	</a>
+	<c path="sys.db.Connection"/>
+</f></connect></class>
 	<class path="php.NativeString" params="" file="/usr/share/haxe/std/php/NativeString.hx" extern="1"/>
 	<class path="thx.collections.CascadeHash" params="T" file="/usr/lib/haxe/lib/thx/0,2,0/thx/collections/CascadeHash.hx">
 		<_h><c path="List"><c path="Hash"><c path="thx.collections.CascadeHash.T"/></c></c></_h>
@@ -9556,7 +9656,7 @@ customs for missing features
 	<class path="model.User" params="" file="src/model/User.hx">
 		<extends path="sys.db.Object"/>
 		<__meta__ public="1" line="13" static="1"><d/></__meta__>
-		<manager line="33" static="1"><c path="sys.db.Manager"><c path="model.User"/></c></manager>
+		<manager public="1" line="45" static="1"><c path="sys.db.Manager"><c path="model.User"/></c></manager>
 		<id public="1">
 			<t path="sys.db.SUId"/>
 			<haxe_doc> The unique ID of this model </haxe_doc>
@@ -9579,6 +9679,8 @@ customs for missing features
 			<t path="sys.db.SDateTime"/>
 			<haxe_doc> The date this question was posted </haxe_doc>
 		</registrationDate>
+		<getQuestions public="1" set="method" line="32"><f a=""><c path="List"><c path="model.Question"/></c></f></getQuestions>
+		<getAnswers public="1" set="method" line="38"><f a=""><c path="List"><c path="model.Answer"/></c></f></getAnswers>
 		<new public="1" set="method" line="13"><f a=""><e path="Void"/></f></new>
 		<haxe_doc> 
 Model for our users.  

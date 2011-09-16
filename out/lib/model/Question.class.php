@@ -15,6 +15,9 @@ class model_Question extends sys_db_Object {
 	public $text;
 	public $date;
 	public $answered;
+	public function answers() {
+		return model_Answer::$manager->unsafeObjects("SELECT * FROM Answer WHERE questionID = " . sys_db_Manager::quoteAny($this->id), null);
+	}
 	public function __call($m, $a) {
 		if(isset($this->$m) && is_callable($this->$m))
 			return call_user_func_array($this->$m, $a);

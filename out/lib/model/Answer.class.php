@@ -18,6 +18,12 @@ class model_Answer extends sys_db_Object {
 	public $question;
 	public $text;
 	public $date;
+	public function countUpVotes() {
+		return model_Vote::$manager->unsafeCount("SELECT COUNT(*) FROM Vote WHERE answerID = " . sys_db_Manager::quoteAny($this->id) . " AND vote = 1");
+	}
+	public function countDownVotes() {
+		return model_Vote::$manager->unsafeCount("SELECT COUNT(*) FROM Vote WHERE answerID = " . sys_db_Manager::quoteAny($this->id) . " AND vote = 0");
+	}
 	public function __call($m, $a) {
 		if(isset($this->$m) && is_callable($this->$m))
 			return call_user_func_array($this->$m, $a);

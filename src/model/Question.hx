@@ -41,7 +41,7 @@ class Question extends sys.db.Object
 	public function answers():List<Answer>
 	{
 		// Search the Answer table for Answer.questionID = id, orderBy
-		return Answer.manager.search($questionID == id, { orderBy : date });
+		return Answer.manager.search($questionID == id);
 	}
 	
 	// Each SPOD needs its own manager.  This line creates the Manager for this SPOD.

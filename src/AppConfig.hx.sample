@@ -1,0 +1,10 @@
+class AppConfig 
+{
+	// Database Settings...
+	static var dbServer:String = "localhost";
+	static var dbPort:Int = null;
+	static var dbUser:String = "qanda";
+	static var dbPass:String = "";
+	static var dbDatabase:String = "qanda";
+	static var dbSocket:String = null;
+}
