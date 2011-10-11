@@ -2,7 +2,7 @@
 @for (question in questions)
 {
 	<div class="question">
-		<h2>@question.title</h2>
+		<h2><a href="/q/@question.slug/">@question.title</a></h2>
 		<h4 class="user">User: @question.user.username</h4>
 		<h4 class="date">Date: @question.date</h4>
 		<h4 class="date">Number of Answers: @question.numberOfAnswers()</h4>

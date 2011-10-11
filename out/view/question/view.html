@@ -1,0 +1,17 @@
+<h1>@question.title</h1>
+
+<h4 class="user">User: @question.user.username</h4>
+<h4 class="date">Date: @question.date</h4>
+<h4 class="date">Number of Answers: @question.numberOfAnswers()</h4>
+
+<p>@question.text</p>
+
+<h2>Answers</h2>
+
+@for (answer in question.answers())
+{
+	<h3><a href="/q/@question.slug/@answer.id/">@answer.user.username:</a></h3>
+	<h4 class="date">Date: @answer.date</h4>
+	<h4 class="votes">UP: @answer.countUpVotes() DOWN: @answer.countDownVotes()</h4>
+	<p>@answer.text</p>
+}
