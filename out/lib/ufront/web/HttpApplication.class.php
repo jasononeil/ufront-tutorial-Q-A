@@ -166,8 +166,11 @@ class ufront_web_HttpApplication {
 		else
 			throw new HException('Unable to call «'.$m.'»');
 	}
+	static function __meta__() { $»args = func_get_args(); return call_user_func_array(self::$__meta__, $»args); }
+	static $__meta__;
 	function __toString() { return 'ufront.web.HttpApplication'; }
 }
+ufront_web_HttpApplication::$__meta__ = _hx_anonymous(array("fields" => _hx_anonymous(array("request" => _hx_anonymous(array("get" => new _hx_array(array("getRequest")))), "response" => _hx_anonymous(array("get" => new _hx_array(array("getResponse")))), "session" => _hx_anonymous(array("get" => new _hx_array(array("getSession"))))))));
 function ufront_web_HttpApplication_0(&$e, $f, $a1) {
 	{
 		return array(new _hx_lambda(array(&$a1, &$e, &$f), "ufront_web_HttpApplication_1"), 'execute');

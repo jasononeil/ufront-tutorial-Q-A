@@ -67,6 +67,8 @@ class ufront_web_HttpCookie {
 		else
 			throw new HException('Unable to call «'.$m.'»');
 	}
+	static function __meta__() { $»args = func_get_args(); return call_user_func_array(self::$__meta__, $»args); }
+	static $__meta__;
 	static function addPair($buf, $name, $value, $allowNullValue) {
 		if($allowNullValue === null) {
 			$allowNullValue = false;
@@ -124,3 +126,4 @@ class ufront_web_HttpCookie {
 	}
 	function __toString() { return $this->toString(); }
 }
+ufront_web_HttpCookie::$__meta__ = _hx_anonymous(array("fields" => _hx_anonymous(array("value" => _hx_anonymous(array("set" => new _hx_array(array("setValue"))))))));

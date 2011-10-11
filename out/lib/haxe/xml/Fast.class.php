@@ -73,8 +73,11 @@ class haxe_xml_Fast {
 		else
 			throw new HException('Unable to call «'.$m.'»');
 	}
+	static function __meta__() { $»args = func_get_args(); return call_user_func_array(self::$__meta__, $»args); }
+	static $__meta__;
 	function __toString() { return 'haxe.xml.Fast'; }
 }
+haxe_xml_Fast::$__meta__ = _hx_anonymous(array("fields" => _hx_anonymous(array("name" => _hx_anonymous(array("get" => new _hx_array(array("getName")))), "innerData" => _hx_anonymous(array("get" => new _hx_array(array("getInnerData")))), "innerHTML" => _hx_anonymous(array("get" => new _hx_array(array("getInnerHTML")))), "elements" => _hx_anonymous(array("get" => new _hx_array(array("getElements"))))))));
 function haxe_xml_Fast_0(&$it) {
 	{
 		$x = $it->next();

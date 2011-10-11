@@ -28,7 +28,6 @@ class Answer extends sys.db.Object
 	/** The questionID of the question we're answering */
 	@:relation(questionID) public var question:Question;
 	
-	
 	/** Any extra text content (HTML) to be included in this question.  Can be null. */
 	public var text:Null<SSmallText>;
 	

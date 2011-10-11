@@ -215,6 +215,8 @@ class Xml {
 		else
 			throw new HException('Unable to call «'.$m.'»');
 	}
+	static function __meta__() { $»args = func_get_args(); return call_user_func_array(self::$__meta__, $»args); }
+	static $__meta__;
 	static $Element;
 	static $PCData;
 	static $CData;
@@ -343,6 +345,7 @@ class Xml {
 	Xml::$Prolog = "prolog";
 	Xml::$Document = "document";
 }
+Xml::$__meta__ = _hx_anonymous(array("fields" => _hx_anonymous(array("nodeName" => _hx_anonymous(array("set" => new _hx_array(array("setNodeName")), "get" => new _hx_array(array("getNodeName")))), "nodeValue" => _hx_anonymous(array("set" => new _hx_array(array("setNodeValue")), "get" => new _hx_array(array("getNodeValue")))), "parent" => _hx_anonymous(array("get" => new _hx_array(array("getParent"))))))));
 Xml::$reHeader = new EReg("\\s*(?:<\\?(.+?)\\?>)?(?:<!DOCTYPE ([^>]+)>)?", "mi");
 function Xml_0(&$it, &$me) {
 	{

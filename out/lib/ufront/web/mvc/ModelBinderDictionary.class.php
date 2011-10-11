@@ -81,8 +81,11 @@ class ufront_web_mvc_ModelBinderDictionary {
 		else
 			throw new HException('Unable to call «'.$m.'»');
 	}
+	static function __meta__() { $»args = func_get_args(); return call_user_func_array(self::$__meta__, $»args); }
+	static $__meta__;
 	function __toString() { return 'ufront.web.mvc.ModelBinderDictionary'; }
 }
+ufront_web_mvc_ModelBinderDictionary::$__meta__ = _hx_anonymous(array("fields" => _hx_anonymous(array("count" => _hx_anonymous(array("get" => new _hx_array(array("getCount")))), "defaultBinder" => _hx_anonymous(array("set" => new _hx_array(array("setDefaultBinder")), "get" => new _hx_array(array("getDefaultBinder")))), "keys" => _hx_anonymous(array("get" => new _hx_array(array("getKeys")))), "values" => _hx_anonymous(array("get" => new _hx_array(array("getValues"))))))));
 function ufront_web_mvc_ModelBinderDictionary_0(&$item, $binder) {
 	{
 		return $binder === $item;

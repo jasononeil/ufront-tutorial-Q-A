@@ -67,6 +67,8 @@ class ufront_web_HttpContext {
 		else
 			throw new HException('Unable to call «'.$m.'»');
 	}
+	static function __meta__() { $»args = func_get_args(); return call_user_func_array(self::$__meta__, $»args); }
+	static $__meta__;
 	static function createWebContext($sessionpath, $request, $response) {
 		if(null === $request) {
 			$request = ufront_web_HttpRequest::getInstance();
@@ -81,6 +83,7 @@ class ufront_web_HttpContext {
 	}
 	function __toString() { return 'ufront.web.HttpContext'; }
 }
+ufront_web_HttpContext::$__meta__ = _hx_anonymous(array("fields" => _hx_anonymous(array("request" => _hx_anonymous(array("get" => new _hx_array(array("getRequest")))), "response" => _hx_anonymous(array("get" => new _hx_array(array("getResponse")))), "session" => _hx_anonymous(array("get" => new _hx_array(array("getSession"))))))));
 function ufront_web_HttpContext_0(&$»this) {
 	throw new HException(new thx_error_AbstractMethod(_hx_anonymous(array("fileName" => "HttpContext.hx", "lineNumber" => 71, "className" => "ufront.web.HttpContext", "methodName" => "getRequest"))));
 }

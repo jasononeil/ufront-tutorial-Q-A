@@ -437,6 +437,7 @@ Other things to do. Nested placeholders
  </haxe_doc>
 	</class>
 	<class path="haxe.io.Output" params="" file="/usr/share/haxe/std/haxe/io/Output.hx">
+		<__meta__ public="1" line="33" static="1"><d/></__meta__>
 		<bigEndian public="1" set="setEndian"><e path="Bool"/></bigEndian>
 		<writeByte public="1" set="method" line="37"><f a="c">
 	<c path="Int"/>
@@ -836,6 +837,7 @@ Other things to do. Nested placeholders
 	</class>
 	<class path="ufront.web.routing.Route" params="" file="/usr/lib/haxe/lib/ufront/0,1,2/ufront/web/routing/Route.hx">
 		<extends path="ufront.web.routing.RouteBase"/>
+		<__meta__ public="1" line="18" static="1"><d/></__meta__>
 		<parser public="1" line="20" static="1"><c path="ufront.web.routing.RouteUriParser"/></parser>
 		<url public="1" get="getUrl" set="null"><c path="String"/></url>
 		<handler public="1" set="null"><c path="ufront.web.routing.IRouteHandler"/></handler>
@@ -1438,6 +1440,7 @@ Other things to do. Nested placeholders
 </haxe_doc>
 	</class>
 	<class path="ufront.web.HttpContext" params="" file="/usr/lib/haxe/lib/ufront/0,1,2/ufront/web/HttpContext.hx">
+		<__meta__ public="1" line="13" static="1"><d/></__meta__>
 		<createWebContext public="1" set="method" line="16" static="1"><f a="?sessionpath:?request:?response">
 	<c path="String"/>
 	<c path="ufront.web.HttpRequest"/>
@@ -2157,6 +2160,7 @@ Other things to do. Nested placeholders
 </f></new>
 	</class>
 	<class path="ufront.web.HttpResponse" params="" file="/usr/lib/haxe/lib/ufront/0,1,2/ufront/web/HttpResponse.hx">
+		<__meta__ public="1" line="16" static="1"><d/></__meta__>
 		<instance public="1" get="getInstance" set="null" static="1"><c path="ufront.web.HttpResponse"/></instance>
 		<getInstance set="method" line="19" static="1"><f a=""><c path="ufront.web.HttpResponse"/></f></getInstance>
 		<CONTENT_TYPE get="inline" set="null" line="34" static="1"><c path="String"/></CONTENT_TYPE>
@@ -3292,6 +3296,7 @@ Other things to do. Nested placeholders
 </f></new>
 	</class>
 	<class path="haxe.io.Input" params="" file="/usr/share/haxe/std/haxe/io/Input.hx">
+		<__meta__ public="1" line="31" static="1"><d/></__meta__>
 		<bigEndian public="1" set="setEndian"><e path="Bool"/></bigEndian>
 		<readByte public="1" set="method" line="35"><f a=""><c path="Int"/></f></readByte>
 		<readBytes public="1" set="method" line="44"><f a="s:pos:len">
@@ -4085,6 +4090,7 @@ Other things to do. Nested placeholders
  </haxe_doc>
 	</class>
 	<class path="ufront.web.HttpApplication" params="" file="/usr/lib/haxe/lib/ufront/0,1,2/ufront/web/HttpApplication.hx">
+		<__meta__ public="1" line="20" static="1"><d/></__meta__>
 		<httpContext public="1" set="null"><c path="ufront.web.HttpContext"/></httpContext>
 		<request public="1" get="getRequest" set="null"><c path="ufront.web.HttpRequest"/></request>
 		<response public="1" get="getResponse" set="null"><c path="ufront.web.HttpResponse"/></response>
@@ -4254,6 +4260,7 @@ Other things to do. Nested placeholders
  </haxe_doc>
 	</class>
 	<class path="ufront.web.HttpCookie" params="" file="/usr/lib/haxe/lib/ufront/0,1,2/ufront/web/HttpCookie.hx">
+		<__meta__ public="1" line="8" static="1"><d/></__meta__>
 		<addPair set="method" line="59" static="1"><f a="buf:name:?value:?allowNullValue">
 	<c path="StringBuf"/>
 	<c path="String"/>
@@ -4446,6 +4453,7 @@ Other things to do. Nested placeholders
  </haxe_doc>
 	</class>
 	<class path="ufront.web.mvc.ModelBinderDictionary" params="" file="/usr/lib/haxe/lib/ufront/0,1,2/ufront/web/mvc/ModelBinderDictionary.hx">
+		<__meta__ public="1" line="8" static="1"><d/></__meta__>
 		<count public="1" get="getCount" set="null"><c path="Int"/></count>
 		<getCount set="method" line="11"><f a=""><c path="Int"/></f></getCount>
 		<_defaultBinder><c path="ufront.web.mvc.IModelBinder"/></_defaultBinder>
@@ -4802,7 +4810,7 @@ Other things to do. Nested placeholders
 	<class path="model.Answer" params="" file="src/model/Answer.hx">
 		<extends path="sys.db.Object"/>
 		<__meta__ public="1" line="20" static="1"><d/></__meta__>
-		<manager public="1" line="51" static="1"><c path="sys.db.Manager"><c path="model.Answer"/></c></manager>
+		<manager public="1" line="50" static="1"><c path="sys.db.Manager"><c path="model.Answer"/></c></manager>
 		<id public="1">
 			<t path="sys.db.SUId"/>
 			<haxe_doc> The unique ID of this model </haxe_doc>
@@ -4823,8 +4831,8 @@ Other things to do. Nested placeholders
 			<t path="sys.db.SDateTime"/>
 			<haxe_doc> The date this question was posted </haxe_doc>
 		</date>
-		<countUpVotes public="1" set="method" line="38"><f a=""><c path="Int"/></f></countUpVotes>
-		<countDownVotes public="1" set="method" line="44"><f a=""><c path="Int"/></f></countDownVotes>
+		<countUpVotes public="1" set="method" line="37"><f a=""><c path="Int"/></f></countUpVotes>
+		<countDownVotes public="1" set="method" line="43"><f a=""><c path="Int"/></f></countDownVotes>
 		<get_user set="method" line="26"><f a=""><c path="model.User"/></f></get_user>
 		<set_user set="method" line="26"><f a="_v">
 	<c path="model.User"/>
@@ -4899,7 +4907,7 @@ Relationships:
 	Get informations about the call stack.
 </haxe_doc>
 	</class>
-	<enum path="erazor.TBlock" params="" file="/usr/lib/haxe/lib/erazor/0,1,1/erazor/TBlock.hx">
+	<enum path="erazor.TBlock" params="" file="/home/jason/workspace/erazor/src/erazor/TBlock.hx">
 		<printBlock a="s"><c path="String"/></printBlock>
 		<literal a="s"><c path="String"/></literal>
 		<codeBlock a="s"><c path="String"/></codeBlock>
@@ -5254,6 +5262,175 @@ Relationships:
  * @author Franco Ponticelli
  </haxe_doc>
 	</class>
+	<typedef path="haxe.macro.Ref" params="T" file="/usr/share/haxe/std/haxe/macro/Type.hx" module="haxe.macro.Type"><a>
+	<toString set="method"><f a=""><c path="String"/></f></toString>
+	<get set="method"><f a=""><c path="haxe.macro.Ref.T"/></f></get>
+</a></typedef>
+	<enum path="haxe.macro.Type" params="" file="/usr/share/haxe/std/haxe/macro/Type.hx">
+		<TType a="t:params">
+			<t path="haxe.macro.Ref"><t path="haxe.macro.DefType"/></t>
+			<c path="Array"><e path="haxe.macro.Type"/></c>
+		</TType>
+		<TMono a="t"><t path="haxe.macro.Ref"><t path="Null"><e path="haxe.macro.Type"/></t></t></TMono>
+		<TLazy a="f"><f a=""><e path="haxe.macro.Type"/></f></TLazy>
+		<TInst a="t:params">
+			<t path="haxe.macro.Ref"><t path="haxe.macro.ClassType"/></t>
+			<c path="Array"><e path="haxe.macro.Type"/></c>
+		</TInst>
+		<TFun a="args:ret">
+			<c path="Array"><a>
+	<t><e path="haxe.macro.Type"/></t>
+	<opt><e path="Bool"/></opt>
+	<name><c path="String"/></name>
+</a></c>
+			<e path="haxe.macro.Type"/>
+		</TFun>
+		<TEnum a="t:params">
+			<t path="haxe.macro.Ref"><t path="haxe.macro.EnumType"/></t>
+			<c path="Array"><e path="haxe.macro.Type"/></c>
+		</TEnum>
+		<TDynamic a="t"><t path="Null"><e path="haxe.macro.Type"/></t></TDynamic>
+		<TAnonymous a="a"><t path="haxe.macro.Ref"><t path="haxe.macro.AnonType"/></t></TAnonymous>
+	</enum>
+	<typedef path="haxe.macro.AnonType" params="" file="/usr/share/haxe/std/haxe/macro/Type.hx" module="haxe.macro.Type"><a><fields><c path="Array"><t path="haxe.macro.ClassField"/></c></fields></a></typedef>
+	<typedef path="haxe.macro.BaseType" params="" file="/usr/share/haxe/std/haxe/macro/Type.hx" module="haxe.macro.Type"><a>
+	<pos><t path="haxe.macro.Position"/></pos>
+	<params><c path="Array"><a>
+	<t><e path="haxe.macro.Type"/></t>
+	<name><c path="String"/></name>
+</a></c></params>
+	<pack><c path="Array"><c path="String"/></c></pack>
+	<name><c path="String"/></name>
+	<module><c path="String"/></module>
+	<meta><t path="haxe.macro.MetaAccess"/></meta>
+	<isPrivate><e path="Bool"/></isPrivate>
+	<isExtern><e path="Bool"/></isExtern>
+	<exclude set="method"><f a=""><e path="Void"/></f></exclude>
+	<doc><t path="Null"><c path="String"/></t></doc>
+</a></typedef>
+	<typedef path="haxe.macro.ClassField" params="" file="/usr/share/haxe/std/haxe/macro/Type.hx" module="haxe.macro.Type"><a>
+	<type><e path="haxe.macro.Type"/></type>
+	<pos><t path="haxe.macro.Position"/></pos>
+	<params><c path="Array"><a>
+	<t><e path="haxe.macro.Type"/></t>
+	<name><c path="String"/></name>
+</a></c></params>
+	<name><c path="String"/></name>
+	<meta><t path="haxe.macro.MetaAccess"/></meta>
+	<kind><e path="haxe.macro.FieldKind"/></kind>
+	<isPublic><e path="Bool"/></isPublic>
+	<expr><t path="Null"><e path="haxe.macro.TypedExpr"/></t></expr>
+	<doc><t path="Null"><c path="String"/></t></doc>
+</a></typedef>
+	<typedef path="haxe.macro.ClassType" params="" file="/usr/share/haxe/std/haxe/macro/Type.hx" module="haxe.macro.Type"><a>
+	<superClass><t path="Null"><a>
+	<t><t path="haxe.macro.Ref"><t path="haxe.macro.ClassType"/></t></t>
+	<params><c path="Array"><e path="haxe.macro.Type"/></c></params>
+</a></t></superClass>
+	<statics><t path="haxe.macro.Ref"><c path="Array"><t path="haxe.macro.ClassField"/></c></t></statics>
+	<pos><t path="haxe.macro.Position"/></pos>
+	<params><c path="Array"><a>
+	<t><e path="haxe.macro.Type"/></t>
+	<name><c path="String"/></name>
+</a></c></params>
+	<pack><c path="Array"><c path="String"/></c></pack>
+	<name><c path="String"/></name>
+	<module><c path="String"/></module>
+	<meta><t path="haxe.macro.MetaAccess"/></meta>
+	<isPrivate><e path="Bool"/></isPrivate>
+	<isInterface><e path="Bool"/></isInterface>
+	<isExtern><e path="Bool"/></isExtern>
+	<interfaces><c path="Array"><a>
+	<t><t path="haxe.macro.Ref"><t path="haxe.macro.ClassType"/></t></t>
+	<params><c path="Array"><e path="haxe.macro.Type"/></c></params>
+</a></c></interfaces>
+	<init><t path="Null"><e path="haxe.macro.TypedExpr"/></t></init>
+	<fields><t path="haxe.macro.Ref"><c path="Array"><t path="haxe.macro.ClassField"/></c></t></fields>
+	<exclude set="method"><f a=""><e path="Void"/></f></exclude>
+	<doc><t path="Null"><c path="String"/></t></doc>
+	<constructor><t path="Null"><t path="haxe.macro.Ref"><t path="haxe.macro.ClassField"/></t></t></constructor>
+</a></typedef>
+	<typedef path="haxe.macro.EnumField" params="" file="/usr/share/haxe/std/haxe/macro/Type.hx" module="haxe.macro.Type"><a>
+	<type><e path="haxe.macro.Type"/></type>
+	<pos><t path="haxe.macro.Position"/></pos>
+	<name><c path="String"/></name>
+	<meta><t path="haxe.macro.MetaAccess"/></meta>
+	<index><c path="Int"/></index>
+	<doc><t path="Null"><c path="String"/></t></doc>
+</a></typedef>
+	<typedef path="haxe.macro.EnumType" params="" file="/usr/share/haxe/std/haxe/macro/Type.hx" module="haxe.macro.Type"><a>
+	<pos><t path="haxe.macro.Position"/></pos>
+	<params><c path="Array"><a>
+	<t><e path="haxe.macro.Type"/></t>
+	<name><c path="String"/></name>
+</a></c></params>
+	<pack><c path="Array"><c path="String"/></c></pack>
+	<names><c path="Array"><c path="String"/></c></names>
+	<name><c path="String"/></name>
+	<module><c path="String"/></module>
+	<meta><t path="haxe.macro.MetaAccess"/></meta>
+	<isPrivate><e path="Bool"/></isPrivate>
+	<isExtern><e path="Bool"/></isExtern>
+	<exclude set="method"><f a=""><e path="Void"/></f></exclude>
+	<doc><t path="Null"><c path="String"/></t></doc>
+	<constructs><c path="Hash"><t path="haxe.macro.EnumField"/></c></constructs>
+</a></typedef>
+	<typedef path="haxe.macro.DefType" params="" file="/usr/share/haxe/std/haxe/macro/Type.hx" module="haxe.macro.Type"><a>
+	<type><e path="haxe.macro.Type"/></type>
+	<pos><t path="haxe.macro.Position"/></pos>
+	<params><c path="Array"><a>
+	<t><e path="haxe.macro.Type"/></t>
+	<name><c path="String"/></name>
+</a></c></params>
+	<pack><c path="Array"><c path="String"/></c></pack>
+	<name><c path="String"/></name>
+	<module><c path="String"/></module>
+	<meta><t path="haxe.macro.MetaAccess"/></meta>
+	<isPrivate><e path="Bool"/></isPrivate>
+	<isExtern><e path="Bool"/></isExtern>
+	<exclude set="method"><f a=""><e path="Void"/></f></exclude>
+	<doc><t path="Null"><c path="String"/></t></doc>
+</a></typedef>
+	<typedef path="haxe.macro.MetaAccess" params="" file="/usr/share/haxe/std/haxe/macro/Type.hx" module="haxe.macro.Type"><a>
+	<remove set="method"><f a="name">
+	<c path="String"/>
+	<e path="Void"/>
+</f></remove>
+	<has set="method"><f a="name">
+	<c path="String"/>
+	<e path="Bool"/>
+</f></has>
+	<get set="method"><f a=""><t path="haxe.macro.Metadata"/></f></get>
+	<add set="method"><f a="name:params:pos">
+	<c path="String"/>
+	<c path="Array"><t path="haxe.macro.Expr"/></c>
+	<t path="haxe.macro.Position"/>
+	<e path="Void"/>
+</f></add>
+</a></typedef>
+	<enum path="haxe.macro.FieldKind" params="" file="/usr/share/haxe/std/haxe/macro/Type.hx" module="haxe.macro.Type">
+		<FVar a="read:write">
+			<e path="haxe.macro.VarAccess"/>
+			<e path="haxe.macro.VarAccess"/>
+		</FVar>
+		<FMethod a="k"><e path="haxe.macro.MethodKind"/></FMethod>
+	</enum>
+	<enum path="haxe.macro.VarAccess" params="" file="/usr/share/haxe/std/haxe/macro/Type.hx" module="haxe.macro.Type">
+		<AccResolve/>
+		<AccRequire a="r"><c path="String"/></AccRequire>
+		<AccNormal/>
+		<AccNo/>
+		<AccNever/>
+		<AccInline/>
+		<AccCall a="m"><c path="String"/></AccCall>
+	</enum>
+	<enum path="haxe.macro.MethodKind" params="" file="/usr/share/haxe/std/haxe/macro/Type.hx" module="haxe.macro.Type">
+		<MethNormal/>
+		<MethMacro/>
+		<MethInline/>
+		<MethDynamic/>
+	</enum>
+	<enum path="haxe.macro.TypedExpr" params="" file="/usr/share/haxe/std/haxe/macro/Type.hx" module="haxe.macro.Type"/>
 	<class path="ufront.web.mvc.IController" params="" file="/usr/lib/haxe/lib/ufront/0,1,2/ufront/web/mvc/IController.hx" interface="1">
 		<execute public="1" set="method"><f a="requestContext:async">
 	<c path="ufront.web.routing.RequestContext"/>
@@ -5789,6 +5966,7 @@ Relationships:
  </haxe_doc>
 	</class>
 	<class path="sys.db.ResultSet" params="" file="/usr/share/haxe/std/sys/db/ResultSet.hx" interface="1">
+		<__meta__ public="1" line="27" static="1"><d/></__meta__>
 		<length public="1" get="getLength" set="null"><c path="Int"/></length>
 		<nfields public="1" get="getNFields" set="null"><c path="Int"/></nfields>
 		<hasNext public="1" set="method"><f a=""><e path="Bool"/></f></hasNext>
@@ -5815,6 +5993,7 @@ Relationships:
 	<c path="String"/>
 </f></escapeERegChars>
 	</class>
+	<class path="erazor.hscript.ReflectMacro" params="" file="/home/jason/workspace/erazor/src/erazor/hscript/ReflectMacro.hx"/>
 	<class path="thx.culture.Language" params="" file="/usr/lib/haxe/lib/thx/0,2,0/thx/culture/Language.hx">
 		<extends path="thx.culture.Info"/>
 		<languages get="getLanguages" set="null" static="1"><c path="Hash"><c path="thx.culture.Language"/></c></languages>
@@ -6488,6 +6667,7 @@ Relationships:
 	<class path="ufront.web.mvc.ControllerBase" params="" file="/usr/lib/haxe/lib/ufront/0,1,2/ufront/web/mvc/ControllerBase.hx">
 		<implements path="haxe.rtti.Infos"/>
 		<implements path="ufront.web.mvc.IController"/>
+		<__meta__ public="1" line="15" static="1"><d/></__meta__>
 		<__rtti public="1" line="15" static="1"><c path="String"/></__rtti>
 		<controllerContext public="1">
 			<c path="ufront.web.mvc.ControllerContext"/>
@@ -6524,6 +6704,7 @@ Relationships:
 		<implements path="ufront.web.mvc.IResultFilter"/>
 		<implements path="ufront.web.mvc.IAuthorizationFilter"/>
 		<implements path="ufront.web.mvc.IActionFilter"/>
+		<__meta__ public="1" line="11" static="1"><d/></__meta__>
 		<__rtti public="1" line="11" static="1"><c path="String"/></__rtti>
 		<_invoker><c path="ufront.web.mvc.IActionInvoker"/></_invoker>
 		<invoker public="1" get="getInvoker" set="setInvoker"><c path="ufront.web.mvc.IActionInvoker"/></invoker>
@@ -6985,7 +7166,7 @@ Relationships:
 	<e path="Void"/>
 </f></new>
 	</class>
-	<class path="erazor.ScriptBuilder" params="" file="/usr/lib/haxe/lib/erazor/0,1,1/erazor/ScriptBuilder.hx">
+	<class path="erazor.ScriptBuilder" params="" file="/home/jason/workspace/erazor/src/erazor/ScriptBuilder.hx">
 		<context><c path="String"/></context>
 		<build public="1" set="method" line="12"><f a="blocks">
 	<c path="Array"><e path="erazor.TBlock"/></c>
@@ -7146,37 +7327,39 @@ Relationships:
  * @author Franco Ponticelli
  </haxe_doc>
 	</class>
-	<typedef path="erazor._Parser.Block" params="" file="/usr/lib/haxe/lib/erazor/0,1,1/erazor/Parser.hx" private="1" module="erazor.Parser"><a>
+	<typedef path="erazor._Parser.Block" params="" file="/home/jason/workspace/erazor/src/erazor/Parser.hx" private="1" module="erazor.Parser"><a>
 	<length><c path="Int"/></length>
 	<block><e path="erazor.TBlock"/></block>
 </a></typedef>
-	<enum path="erazor._Parser.ParseContext" params="" file="/usr/lib/haxe/lib/erazor/0,1,1/erazor/Parser.hx" private="1" module="erazor.Parser">
+	<enum path="erazor._Parser.ParseContext" params="" file="/home/jason/workspace/erazor/src/erazor/Parser.hx" private="1" module="erazor.Parser">
 		<literal/>
 		<code/>
 	</enum>
-	<enum path="erazor._Parser.ParseResult" params="" file="/usr/lib/haxe/lib/erazor/0,1,1/erazor/Parser.hx" private="1" module="erazor.Parser">
+	<enum path="erazor._Parser.ParseResult" params="" file="/home/jason/workspace/erazor/src/erazor/Parser.hx" private="1" module="erazor.Parser">
 		<keepGoing/>
 		<doneSkipCurrent/>
 		<doneIncludeCurrent/>
 	</enum>
-	<class path="erazor.Parser" params="" file="/usr/lib/haxe/lib/erazor/0,1,1/erazor/Parser.hx">
+	<class path="erazor.Parser" params="" file="/home/jason/workspace/erazor/src/erazor/Parser.hx">
 		<at line="21" static="1"><c path="String"/></at>
+		<bracketMismatch line="33" static="1"><c path="String"/></bracketMismatch>
 		<condMatch><c path="EReg"/></condMatch>
 		<inConditionalMatch><c path="EReg"/></inConditionalMatch>
 		<variableChar><c path="EReg"/></variableChar>
 		<context><e path="erazor._Parser.ParseContext"/></context>
+		<bracketStack><c path="Array"><e path="erazor._Parser.ParseContext"/></c></bracketStack>
 		<conditionalStack><c path="Int"/></conditionalStack>
-		<parseScriptPart set="method" line="32"><f a="template:startBrace:endBrace">
+		<parseScriptPart set="method" line="35"><f a="template:startBrace:endBrace">
 	<c path="String"/>
 	<c path="String"/>
 	<c path="String"/>
 	<c path="String"/>
 </f></parseScriptPart>
-		<parseContext set="method" line="81"><f a="template">
+		<parseContext set="method" line="84"><f a="template">
 	<c path="String"/>
 	<e path="erazor._Parser.ParseContext"/>
 </f></parseContext>
-		<accept set="method" line="95"><f a="template:acceptor:throwAtEnd">
+		<accept set="method" line="101"><f a="template:acceptor:throwAtEnd">
 	<c path="String"/>
 	<f a="">
 		<c path="String"/>
@@ -7185,21 +7368,21 @@ Relationships:
 	<e path="Bool"/>
 	<c path="String"/>
 </f></accept>
-		<isIdentifier set="method" line="102"><f a="char:?first">
+		<isIdentifier set="method" line="108"><f a="char:?first">
 	<c path="String"/>
 	<e path="Bool"/>
 	<e path="Bool"/>
 </f></isIdentifier>
-		<acceptIdentifier set="method" line="109"><f a="template">
+		<acceptIdentifier set="method" line="115"><f a="template">
 	<c path="String"/>
 	<c path="String"/>
 </f></acceptIdentifier>
-		<acceptBracket set="method" line="121"><f a="template:bracket">
+		<acceptBracket set="method" line="127"><f a="template:bracket">
 	<c path="String"/>
 	<c path="String"/>
 	<c path="String"/>
 </f></acceptBracket>
-		<parseBlock set="method" line="129">
+		<parseBlock set="method" line="135">
 			<f a="template">
 				<c path="String"/>
 				<t path="erazor._Parser.Block"/>
@@ -7208,28 +7391,28 @@ Relationships:
 	 * Main block parse method, called from parse().
 	 </haxe_doc>
 		</parseBlock>
-		<parseConditional set="method" line="135"><f a="template">
+		<parseConditional set="method" line="141"><f a="template">
 	<c path="String"/>
 	<t path="erazor._Parser.Block"/>
 </f></parseConditional>
-		<peek set="method" line="141"><f a="template:?offset">
+		<peek set="method" line="147"><f a="template:?offset">
 	<c path="String"/>
 	<c path="Int"/>
 	<c path="String"/>
 </f></peek>
-		<parseVariable set="method" line="146"><f a="template">
+		<parseVariable set="method" line="152"><f a="template">
 	<c path="String"/>
 	<t path="erazor._Parser.Block"/>
 </f></parseVariable>
-		<parseVariableChar set="method" line="190"><f a="char">
+		<parseVariableChar set="method" line="196"><f a="char">
 	<c path="String"/>
 	<e path="erazor._Parser.ParseResult"/>
 </f></parseVariableChar>
-		<parseCodeBlock set="method" line="195"><f a="template">
+		<parseCodeBlock set="method" line="201"><f a="template">
 	<c path="String"/>
 	<t path="erazor._Parser.Block"/>
 </f></parseCodeBlock>
-		<parseString set="method" line="239"><f a="str:modifier:throwAtEnd">
+		<parseString set="method" line="247"><f a="str:modifier:throwAtEnd">
 	<c path="String"/>
 	<f a="">
 		<c path="String"/>
@@ -7238,15 +7421,15 @@ Relationships:
 	<e path="Bool"/>
 	<c path="String"/>
 </f></parseString>
-		<parseLiteral set="method" line="284"><f a="template">
+		<parseLiteral set="method" line="292"><f a="template">
 	<c path="String"/>
 	<t path="erazor._Parser.Block"/>
 </f></parseLiteral>
-		<escapeLiteral set="method" line="324"><f a="input">
+		<escapeLiteral set="method" line="334"><f a="input">
 	<c path="String"/>
 	<c path="String"/>
 </f></escapeLiteral>
-		<parse public="1" set="method" line="334">
+		<parse public="1" set="method" line="344">
 			<f a="template">
 				<c path="String"/>
 				<c path="Array"><e path="erazor.TBlock"/></c>
@@ -7257,7 +7440,7 @@ Relationships:
 	 * @return
 	 </haxe_doc>
 		</parse>
-		<new public="1" set="method" line="354"><f a=""><e path="Void"/></f></new>
+		<new public="1" set="method" line="367"><f a=""><e path="Void"/></f></new>
 	</class>
 	<class path="ufront.web.mvc.DefaultModelBinder" params="" file="/usr/lib/haxe/lib/ufront/0,1,2/ufront/web/mvc/DefaultModelBinder.hx">
 		<implements path="ufront.web.mvc.IModelBinder"/>
@@ -7687,6 +7870,7 @@ customs for missing features
 </f></weekDayNameShort>
 	</class>
 	<class path="ufront.web.HttpRequest" params="" file="/usr/lib/haxe/lib/ufront/0,1,2/ufront/web/HttpRequest.hx">
+		<__meta__ public="1" line="14" static="1"><d/></__meta__>
 		<instance public="1" get="getInstance" set="null" static="1"><c path="ufront.web.HttpRequest"/></instance>
 		<getInstance set="method" line="17" static="1"><f a=""><c path="ufront.web.HttpRequest"/></f></getInstance>
 		<params public="1" get="getParams" set="null">
@@ -8063,6 +8247,7 @@ customs for missing features
  </haxe_doc>
 	</class>
 	<class path="ufront.web.mvc.ControllerBuilder" params="" file="/usr/lib/haxe/lib/ufront/0,1,2/ufront/web/mvc/ControllerBuilder.hx">
+		<__meta__ public="1" line="5" static="1"><d/></__meta__>
 		<current public="1" line="7" static="1"><c path="ufront.web.mvc.ControllerBuilder"/></current>
 		<packages public="1" set="null"><c path="List"><c path="String"/></c></packages>
 		<attributes public="1" set="null"><c path="List"><c path="String"/></c></attributes>
@@ -8586,13 +8771,13 @@ customs for missing features
 	A linked-list of elements. A different class is created for each container used in platforms where it matters
 </haxe_doc>
 	</class>
-	<typedef path="erazor.PropertyObject" params="" file="/usr/lib/haxe/lib/erazor/0,1,1/erazor/Template.hx" module="erazor.Template">
+	<typedef path="erazor.PropertyObject" params="" file="/home/jason/workspace/erazor/src/erazor/Template.hx" module="erazor.Template">
 		<d/>
 		<haxe_doc>
  * Can be any object with properties or a Hash.
  </haxe_doc>
 	</typedef>
-	<class path="erazor.Template" params="" file="/usr/lib/haxe/lib/erazor/0,1,1/erazor/Template.hx">
+	<class path="erazor.Template" params="" file="/home/jason/workspace/erazor/src/erazor/Template.hx">
 		<template><c path="String"/></template>
 		<variables public="1" set="null"><c path="Hash"><d/></c></variables>
 		<execute public="1" set="method" line="22"><f a="?content">
@@ -8670,6 +8855,7 @@ customs for missing features
 		<haxe_dynamic><c path="List"><c path="haxe.xml.Fast"/></c></haxe_dynamic>
 	</class>
 	<class path="haxe.xml.Fast" params="" file="/usr/share/haxe/std/haxe/xml/Fast.hx">
+		<__meta__ public="1" line="112" static="1"><d/></__meta__>
 		<x public="1" set="null"><c path="Xml"/></x>
 		<name public="1" get="getName" set="null"><c path="String"/></name>
 		<innerData public="1" get="getInnerData" set="null"><c path="String"/></innerData>
@@ -8885,6 +9071,7 @@ customs for missing features
 </a></typedef>
 	<class path="ufront.web.mvc.ExceptionContext" params="" file="/usr/lib/haxe/lib/ufront/0,1,2/ufront/web/mvc/ExceptionContext.hx">
 		<extends path="ufront.web.mvc.ControllerContext"/>
+		<__meta__ public="1" line="8" static="1"><d/></__meta__>
 		<exception public="1"><d/></exception>
 		<exceptionHandled public="1"><e path="Bool"/></exceptionHandled>
 		<result public="1" get="getResult" set="setResult"><c path="ufront.web.mvc.ActionResult"/></result>
@@ -9030,6 +9217,7 @@ customs for missing features
 	</class>
 	<class path="sys.db._Mysql.MysqlResultSet" params="" file="/usr/share/haxe/std/php/_std/sys/db/Mysql.hx" private="1" module="sys.db.Mysql">
 		<implements path="sys.db.ResultSet"/>
+		<__meta__ public="1" line="88" static="1"><d/></__meta__>
 		<length public="1" get="getLength" set="null"><c path="Int"/></length>
 		<nfields public="1" get="getNFields" set="null"><c path="Int"/></nfields>
 		<__r><e path="Void"/></__r>
@@ -9506,6 +9694,7 @@ customs for missing features
 	</class>
 	<class path="ufront.web.mvc.MvcHandler" params="" file="/usr/lib/haxe/lib/ufront/0,1,2/ufront/web/mvc/MvcHandler.hx">
 		<implements path="ufront.web.IHttpHandler"/>
+		<__meta__ public="1" line="10" static="1"><d/></__meta__>
 		<requestContext public="1" set="null"><c path="ufront.web.routing.RequestContext"/></requestContext>
 		<controllerBuilder public="1" get="getControllerBuilder" set="setControllerBuilder"><c path="ufront.web.mvc.ControllerBuilder"/></controllerBuilder>
 		<processRequest public="1" set="method" line="19"><f a="httpContext:async">
@@ -9919,28 +10108,28 @@ Model for our users.
 		<list public="1" set="method" line="7"><f a=""><c path="ufront.web.mvc.ViewResult"/></f></list>
 		<view public="1" set="method" line="15"><f a="name">
 	<c path="String"/>
-	<c path="String"/>
+	<c path="ufront.web.mvc.ViewResult"/>
 </f></view>
-		<answer public="1" set="method" line="20"><f a="name">
+		<answer public="1" set="method" line="23"><f a="name">
 	<c path="String"/>
 	<c path="String"/>
 </f></answer>
-		<viewanswer public="1" set="method" line="25"><f a="questionname:answernumber">
+		<viewanswer public="1" set="method" line="28"><f a="questionname:answerid">
 	<c path="String"/>
-	<c path="String"/>
-	<c path="String"/>
+	<c path="Int"/>
+	<c path="ufront.web.mvc.ViewResult"/>
 </f></viewanswer>
-		<voteup public="1" set="method" line="30"><f a="questionname:answernumber">
+		<voteup public="1" set="method" line="37"><f a="questionname:answerid">
 	<c path="String"/>
-	<c path="String"/>
+	<c path="Int"/>
 	<c path="String"/>
 </f></voteup>
-		<votedown public="1" set="method" line="35"><f a="questionname:answernumber">
+		<votedown public="1" set="method" line="42"><f a="questionname:answerid">
 	<c path="String"/>
-	<c path="String"/>
+	<c path="Int"/>
 	<c path="String"/>
 </f></votedown>
-		<ask public="1" set="method" line="40"><f a=""><c path="String"/></f></ask>
+		<ask public="1" set="method" line="47"><f a=""><c path="String"/></f></ask>
 		<new public="1" set="method" line="5"><f a=""><e path="Void"/></f></new>
 	</class>
 	<typedef path="thx.sys.FileSystem" params="" file="/usr/lib/haxe/lib/thx/0,2,0/thx/sys/FileSystem.hx">
@@ -10342,23 +10531,34 @@ Model for our users.
 	<c path="Array"><c path="String"/></c>
 </f></readDirectory>
 	</class>
-	<class path="erazor.hscript.EnhancedInterp" params="" file="/usr/lib/haxe/lib/erazor/0,1,1/erazor/hscript/EnhancedInterp.hx">
+	<class path="erazor.hscript.EnhancedInterp" params="" file="/home/jason/workspace/erazor/src/erazor/hscript/EnhancedInterp.hx">
 		<extends path="hscript.Interp"/>
 		<re line="11" static="1"><c path="EReg"/></re>
-		<call set="method" line="13" override="1"><f a="o:f:args">
+		<get set="method" line="20" override="1"><f a="o:f">
+	<d/>
+	<c path="String"/>
+	<d/>
+</f></get>
+		<call set="method" line="30" override="1"><f a="o:f:args">
 	<d/>
 	<d/>
 	<c path="Array"><d/></c>
 	<d/>
 </f></call>
-		<expr public="1" set="method" line="65" override="1"><f a="e">
+		<expr public="1" set="method" line="82" override="1"><f a="e">
 	<e path="hscript.Expr"/>
 	<d/>
 </f></expr>
-		<new public="1" set="method" line="6"><f a=""><e path="Void"/></f></new>
+		<new public="1" set="method" line="13"><f a=""><e path="Void"/></f></new>
 	</class>
+	<class path="erazor.hscript.EnhancedReflect" params="" file="/home/jason/workspace/erazor/src/erazor/hscript/EnhancedReflect.hx"><getProperty public="1" set="method" line="7" static="1"><f a="o:field">
+	<d/>
+	<c path="String"/>
+	<unknown/>
+</f></getProperty></class>
 	<enum path="XmlType" params="" file="/usr/share/haxe/std/php/_std/Xml.hx" module="Xml"/>
 	<class path="Xml" params="" file="/usr/share/haxe/std/php/_std/Xml.hx">
+		<__meta__ public="1" line="30" static="1"><d/></__meta__>
 		<Element public="1" set="null" static="1">
 			<e path="XmlType"/>
 			<haxe_doc>

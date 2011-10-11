@@ -188,8 +188,11 @@ class haxe_io_Output {
 		else
 			throw new HException('Unable to call «'.$m.'»');
 	}
+	static function __meta__() { $»args = func_get_args(); return call_user_func_array(self::$__meta__, $»args); }
+	static $__meta__;
 	function __toString() { return 'haxe.io.Output'; }
 }
+haxe_io_Output::$__meta__ = _hx_anonymous(array("fields" => _hx_anonymous(array("bigEndian" => _hx_anonymous(array("set" => new _hx_array(array("setEndian"))))))));
 function haxe_io_Output_0(&$»this, &$x) {
 	{
 		$x1 = _hx_shift_right($x, 24);

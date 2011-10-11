@@ -14,7 +14,10 @@ class QuestionController extends Controller
 	
 	public function view(name:String)
 	{
-		return "View a specific question: " + name;
+		var question = model.Question.manager.select($slug == name);
+		return new ViewResult( { 
+			question : question
+		});
 	}
 	
 	public function answer(name:String)
@@ -22,19 +25,23 @@ class QuestionController extends Controller
 		return "Answer a specific question: " + name;
 	}
 	
-	public function viewanswer(questionname:String, answernumber:String)
+	public function viewanswer(questionname:String, answerid:Int)
 	{
-		return "View a specific question/answer combo. Q: " + questionname + ", with A: " + answernumber;
+		var answer = model.Answer.manager.get(answerid);
+		return new ViewResult( { 
+			answer : answer,
+			question : answer.question
+		});
 	}
 	
-	public function voteup(questionname:String, answernumber:String)
+	public function voteup(questionname:String, answerid:Int)
 	{
-		return "Vote up answer " + answernumber + " on question " + questionname;
+		return "Vote up answer " + answerid + " on question " + questionname;
 	}
 	
-	public function votedown(questionname:String, answernumber:String)
+	public function votedown(questionname:String, answerid:Int)
 	{
-		return "Vote down answer " + answernumber + " on question " + questionname;
+		return "Vote down answer " + answerid + " on question " + questionname;
 	}
 	
 	public function ask()

@@ -10,4 +10,5 @@ interface sys_db_ResultSet {
 	function getIntResult($n);
 	function getFloatResult($n);
 	function getFieldsNames();
+	//;
 }

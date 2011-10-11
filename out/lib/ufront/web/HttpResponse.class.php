@@ -137,6 +137,8 @@ class ufront_web_HttpResponse {
 		else
 			throw new HException('Unable to call «'.$m.'»');
 	}
+	static function __meta__() { $»args = func_get_args(); return call_user_func_array(self::$__meta__, $»args); }
+	static $__meta__;
 	static $instance;
 	static function getInstance() {
 		if(null === ufront_web_HttpResponse::$instance) {
@@ -156,3 +158,4 @@ class ufront_web_HttpResponse {
 	static $INTERNAL_SERVER_ERROR = 500;
 	function __toString() { return 'ufront.web.HttpResponse'; }
 }
+ufront_web_HttpResponse::$__meta__ = _hx_anonymous(array("fields" => _hx_anonymous(array("contentType" => _hx_anonymous(array("set" => new _hx_array(array("setContentType")), "get" => new _hx_array(array("getContentType")))), "redirectLocation" => _hx_anonymous(array("set" => new _hx_array(array("setRedirectLocation")), "get" => new _hx_array(array("getRedirectLocation"))))))));

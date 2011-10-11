@@ -122,7 +122,10 @@ class ufront_web_routing_Route extends ufront_web_routing_RouteBase {
 		else
 			throw new HException('Unable to call «'.$m.'»');
 	}
+	static function __meta__() { $»args = func_get_args(); return call_user_func_array(self::$__meta__, $»args); }
+	static $__meta__;
 	static $parser;
 	function __toString() { return $this->toString(); }
 }
+ufront_web_routing_Route::$__meta__ = _hx_anonymous(array("fields" => _hx_anonymous(array("url" => _hx_anonymous(array("get" => new _hx_array(array("getUrl"))))))));
 ufront_web_routing_Route::$parser = new ufront_web_routing_RouteUriParser();

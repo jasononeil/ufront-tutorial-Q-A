@@ -204,8 +204,11 @@ class haxe_io_Input {
 		else
 			throw new HException('Unable to call «'.$m.'»');
 	}
+	static function __meta__() { $»args = func_get_args(); return call_user_func_array(self::$__meta__, $»args); }
+	static $__meta__;
 	function __toString() { return 'haxe.io.Input'; }
 }
+haxe_io_Input::$__meta__ = _hx_anonymous(array("fields" => _hx_anonymous(array("bigEndian" => _hx_anonymous(array("set" => new _hx_array(array("setEndian"))))))));
 function haxe_io_Input_0(&$»this) {
 	throw new HException("Not implemented");
 }

@@ -11,6 +11,7 @@ class erazor_Parser {
 	public $inConditionalMatch;
 	public $variableChar;
 	public $context;
+	public $bracketStack;
 	public $conditionalStack;
 	public function parseScriptPart($template, $startBrace, $endBrace) {
 		$insideSingleQuote = false;
@@ -58,7 +59,15 @@ class erazor_Parser {
 			return erazor__Parser_ParseContext::$code;
 		}
 		if($this->conditionalStack > 0 && $this->peek($template, null) === "}") {
-			return erazor__Parser_ParseContext::$code;
+			$퍁 = ($this->bracketStack[$this->bracketStack->length - 1]);
+			switch($퍁->index) {
+			case 1:
+			{
+				return erazor__Parser_ParseContext::$code;
+			}break;
+			default:{
+			}break;
+			}
 		}
 		return erazor__Parser_ParseContext::$literal;
 	}
@@ -121,15 +130,18 @@ class erazor_Parser {
 		return (($this->variableChar->match($char)) ? erazor__Parser_ParseResult::$keepGoing : erazor__Parser_ParseResult::$doneSkipCurrent);
 	}
 	public function parseCodeBlock($template) {
-		if($this->conditionalStack > 0 && $this->peek($template, null) === "}") {
+		if($this->bracketStack->length > 0 && $this->peek($template, null) === "}") {
 			if($this->inConditionalMatch->match($template)) {
 				$str = $this->parseScriptPart($template, "", "{");
 				return _hx_anonymous(array("block" => erazor_TBlock::codeBlock($str), "length" => strlen($str)));
 			}
-			--$this->conditionalStack;
+			if(erazor_Parser_3($this, $template)) {
+				throw new HException(erazor_Parser::$bracketMismatch);
+			}
 			return _hx_anonymous(array("block" => erazor_TBlock::codeBlock("}"), "length" => 1));
 		}
 		if($this->condMatch->match($template)) {
+			$this->bracketStack->push(erazor__Parser_ParseContext::$code);
 			++$this->conditionalStack;
 			return $this->parseConditional($template);
 		}
@@ -191,30 +203,48 @@ class erazor_Parser {
 		return $str;
 	}
 	public function parseLiteral($template) {
-		$nextAt = _hx_index_of($template, erazor_Parser::$at, null);
-		$nextBracket = (($this->conditionalStack > 0) ? _hx_index_of($template, "}", null) : -1);
-		while($nextAt >= 0 || $nextBracket >= 0) {
-			if($nextBracket >= 0 && ($nextAt === -1 || $nextBracket < $nextAt)) {
-				return _hx_anonymous(array("block" => erazor_TBlock::literal($this->escapeLiteral(_hx_substr($template, 0, $nextBracket))), "length" => $nextBracket));
+		$len = strlen($template);
+		$i = -1;
+		while(++$i < $len) {
+			$char = _hx_char_at($template, $i);
+			switch($char) {
+			case erazor_Parser::$at:{
+				if($len > $i + 1 && _hx_char_at($template, $i + 1) !== erazor_Parser::$at) {
+					return _hx_anonymous(array("block" => erazor_TBlock::literal($this->escapeLiteral(_hx_substr($template, 0, $i))), "length" => $i));
+				}
+				++$i;
+			}break;
+			case "}":{
+				if($this->bracketStack->length > 0) {
+					$퍁 = ($this->bracketStack[$this->bracketStack->length - 1]);
+					switch($퍁->index) {
+					case 1:
+					{
+						return _hx_anonymous(array("block" => erazor_TBlock::literal($this->escapeLiteral(_hx_substr($template, 0, $i))), "length" => $i));
+					}break;
+					case 0:
+					{
+						$this->bracketStack->pop();
+					}break;
+					}
+				} else {
+					throw new HException(erazor_Parser::$bracketMismatch);
+				}
+			}break;
+			case "{":{
+				$this->bracketStack->push(erazor__Parser_ParseContext::$literal);
+			}break;
 			}
-			$len = strlen($template);
-			if($len > $nextAt + 1 && _hx_char_at($template, $nextAt + 1) !== erazor_Parser::$at) {
-				return _hx_anonymous(array("block" => erazor_TBlock::literal($this->escapeLiteral(_hx_substr($template, 0, $nextAt))), "length" => $nextAt));
-			}
-			if($nextAt + 2 >= strlen($template)) {
-				$nextAt = -1;
-			} else {
-				$nextAt = _hx_index_of($template, erazor_Parser::$at, $nextAt + 2);
-			}
-			unset($len);
+			unset($char);
 		}
-		return _hx_anonymous(array("block" => erazor_TBlock::literal($this->escapeLiteral($template)), "length" => strlen($template)));
+		return _hx_anonymous(array("block" => erazor_TBlock::literal($this->escapeLiteral($template)), "length" => $len));
 	}
 	public function escapeLiteral($input) {
 		return str_replace(erazor_Parser::$at . erazor_Parser::$at, erazor_Parser::$at, $input);
 	}
 	public function parse($template) {
 		$output = new _hx_array(array());
+		$this->bracketStack = new _hx_array(array());
 		$this->conditionalStack = 0;
 		while($template !== "") {
 			$this->context = $this->parseContext($template);
@@ -224,6 +254,9 @@ class erazor_Parser {
 			}
 			$template = _hx_substr($template, _hx_len($block), null);
 			unset($block);
+		}
+		if($this->bracketStack->length !== 0) {
+			throw new HException(erazor_Parser::$bracketMismatch);
 		}
 		return $output;
 	}
@@ -238,6 +271,7 @@ class erazor_Parser {
 			throw new HException('Unable to call �'.$m.'�');
 	}
 	static $at = "@";
+	static $bracketMismatch = "Bracket mismatch! Inside template, non-paired brackets, '{' or '}', should be replaced by @{'{'} and @{'}'}.";
 	function __toString() { return 'erazor.Parser'; }
 }
 function erazor_Parser_0(&$acceptor, &$template, &$throwAtEnd, $chr) {
@@ -257,5 +291,17 @@ function erazor_Parser_2(&$first, &$self, &$template, $chr) {
 		$status = $self->isIdentifier($chr, $first);
 		$first = false;
 		return $status;
+	}
+}
+function erazor_Parser_3(&$퍁his, &$template) {
+	$퍁 = ($퍁his->bracketStack->pop());
+	switch($퍁->index) {
+	case 1:
+	{
+		return --$퍁his->conditionalStack < 0;
+	}break;
+	default:{
+		return true;
+	}break;
 	}
 }

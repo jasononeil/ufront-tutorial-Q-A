@@ -2,8 +2,15 @@
 
 class erazor_hscript_EnhancedInterp extends hscript_Interp {
 	public function __construct() { if(!php_Boot::$skip_constructor) {
+		_hx_anonymous(array());
 		parent::__construct();
 	}}
+	public function get($o, $f) {
+		if($o === null) {
+			throw new HException(hscript_Error::EInvalidAccess($f));
+		}
+		return erazor_hscript_EnhancedReflect::getProperty($o, $f);
+	}
 	public function call($o, $f, $args) {
 		while(true) {
 			try {

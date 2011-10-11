@@ -74,6 +74,8 @@ class ufront_web_HttpRequest {
 		else
 			throw new HException('Unable to call «'.$m.'»');
 	}
+	static function __meta__() { $»args = func_get_args(); return call_user_func_array(self::$__meta__, $»args); }
+	static $__meta__;
 	static $instance;
 	static function getInstance() {
 		if(null === ufront_web_HttpRequest::$instance) {
@@ -83,6 +85,7 @@ class ufront_web_HttpRequest {
 	}
 	function __toString() { return 'ufront.web.HttpRequest'; }
 }
+ufront_web_HttpRequest::$__meta__ = _hx_anonymous(array("fields" => _hx_anonymous(array("params" => _hx_anonymous(array("get" => new _hx_array(array("getParams")))), "queryString" => _hx_anonymous(array("get" => new _hx_array(array("getQueryString")))), "postString" => _hx_anonymous(array("get" => new _hx_array(array("getPostString")))), "query" => _hx_anonymous(array("get" => new _hx_array(array("getQuery")))), "post" => _hx_anonymous(array("get" => new _hx_array(array("getPost")))), "cookies" => _hx_anonymous(array("get" => new _hx_array(array("getCookies")))), "hostName" => _hx_anonymous(array("get" => new _hx_array(array("getHostName")))), "clientIP" => _hx_anonymous(array("get" => new _hx_array(array("getClientIP")))), "uri" => _hx_anonymous(array("get" => new _hx_array(array("getUri")))), "clientHeaders" => _hx_anonymous(array("get" => new _hx_array(array("getClientHeaders")))), "userAgent" => _hx_anonymous(array("get" => new _hx_array(array("getUserAgent")))), "httpMethod" => _hx_anonymous(array("get" => new _hx_array(array("getHttpMethod")))), "scriptDirectory" => _hx_anonymous(array("get" => new _hx_array(array("getScriptDirectory")))), "authorization" => _hx_anonymous(array("get" => new _hx_array(array("getAuthorization"))))))));
 function ufront_web_HttpRequest_0(&$»this) {
 	throw new HException(new thx_error_AbstractMethod(_hx_anonymous(array("fileName" => "HttpRequest.hx", "lineNumber" => 47, "className" => "ufront.web.HttpRequest", "methodName" => "getQueryString"))));
 }

@@ -7,6 +7,7 @@
 -cp src/
 --remap neko:php
 -D spod_macro
+-D getter_support
 -main Main
 
 # Documentation

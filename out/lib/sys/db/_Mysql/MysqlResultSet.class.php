@@ -141,5 +141,8 @@ class sys_db__Mysql_MysqlResultSet implements sys_db_ResultSet{
 		else
 			throw new HException('Unable to call «'.$m.'»');
 	}
+	static function __meta__() { $»args = func_get_args(); return call_user_func_array(self::$__meta__, $»args); }
+	static $__meta__;
 	function __toString() { return 'sys.db._Mysql.MysqlResultSet'; }
 }
+sys_db__Mysql_MysqlResultSet::$__meta__ = _hx_anonymous(array("fields" => _hx_anonymous(array("length" => _hx_anonymous(array("get" => new _hx_array(array("getLength")))), "nfields" => _hx_anonymous(array("get" => new _hx_array(array("getNFields"))))))));
