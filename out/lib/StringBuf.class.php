@@ -7,6 +7,13 @@ class StringBuf {
 	}}
 	public $b;
 	public function add($x) {
+		if(is_null($x)) {
+			$x = "null";
+		} else {
+			if(is_bool($x)) {
+				$x = (($x) ? "true" : "false");
+			}
+		}
 		$this->b .= $x;
 	}
 	public function addSub($s, $pos, $len) {

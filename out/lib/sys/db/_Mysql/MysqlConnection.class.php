@@ -25,12 +25,36 @@ class sys_db__Mysql_MysqlConnection implements sys_db_Connection{
 	}
 	public function addValue($s, $v) {
 		if(is_int($v) || is_null($v)) {
-			$s->b .= $v;
+			$x = $v;
+			if(is_null($x)) {
+				$x = "null";
+			} else {
+				if(is_bool($x)) {
+					$x = (($x) ? "true" : "false");
+				}
+			}
+			$s->b .= $x;
 		} else {
 			if(is_bool($v)) {
-				$s->b .= (($v) ? 1 : 0);
+				$x = (($v) ? 1 : 0);
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$s->b .= $x;
 			} else {
-				$s->b .= $this->quote(Std::string($v));
+				$x = $this->quote(Std::string($v));
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$s->b .= $x;
 			}
 		}
 	}

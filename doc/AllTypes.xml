@@ -963,63 +963,63 @@ Other things to do. Nested placeholders
 	<e path="haxe.rtti.TypeTree"/>
 	<e path="Void"/>
 </f></merge>
-		<mkPath set="method" line="233"><f a="p">
+		<mkPath set="method" line="242"><f a="p">
 	<c path="String"/>
 	<t path="haxe.rtti.Path"/>
 </f></mkPath>
-		<mkTypeParams set="method" line="237"><f a="p">
+		<mkTypeParams set="method" line="246"><f a="p">
 	<c path="String"/>
 	<t path="haxe.rtti.TypeParams"/>
 </f></mkTypeParams>
-		<mkRights set="method" line="244"><f a="r">
+		<mkRights set="method" line="253"><f a="r">
 	<c path="String"/>
 	<e path="haxe.rtti.Rights"/>
 </f></mkRights>
-		<xerror set="method" line="254"><f a="c">
+		<xerror set="method" line="263"><f a="c">
 	<c path="haxe.xml.Fast"/>
 	<d/>
 </f></xerror>
-		<xroot set="method" line="258"><f a="x">
+		<xroot set="method" line="267"><f a="x">
 	<c path="haxe.xml.Fast"/>
 	<e path="Void"/>
 </f></xroot>
-		<processElement public="1" set="method" line="264"><f a="x">
+		<processElement public="1" set="method" line="273"><f a="x">
 	<c path="Xml"/>
 	<e path="haxe.rtti.TypeTree"/>
 </f></processElement>
-		<xpath set="method" line="274"><f a="x">
+		<xpath set="method" line="283"><f a="x">
 	<c path="haxe.xml.Fast"/>
 	<t path="haxe.rtti.PathParams"/>
 </f></xpath>
-		<xclass set="method" line="285"><f a="x">
+		<xclass set="method" line="294"><f a="x">
 	<c path="haxe.xml.Fast"/>
 	<t path="haxe.rtti.Classdef"/>
 </f></xclass>
-		<xclassfield set="method" line="321"><f a="x">
+		<xclassfield set="method" line="330"><f a="x">
 	<c path="haxe.xml.Fast"/>
 	<t path="haxe.rtti.ClassField"/>
 </f></xclassfield>
-		<xenum set="method" line="343"><f a="x">
+		<xenum set="method" line="352"><f a="x">
 	<c path="haxe.xml.Fast"/>
 	<t path="haxe.rtti.Enumdef"/>
 </f></xenum>
-		<xenumfield set="method" line="363"><f a="x">
+		<xenumfield set="method" line="372"><f a="x">
 	<c path="haxe.xml.Fast"/>
 	<t path="haxe.rtti.EnumField"/>
 </f></xenumfield>
-		<xtypedef set="method" line="391"><f a="x">
+		<xtypedef set="method" line="400"><f a="x">
 	<c path="haxe.xml.Fast"/>
 	<t path="haxe.rtti.Typedef"/>
 </f></xtypedef>
-		<xtype set="method" line="414"><f a="x">
+		<xtype set="method" line="423"><f a="x">
 	<c path="haxe.xml.Fast"/>
 	<e path="haxe.rtti.CType"/>
 </f></xtype>
-		<xtypeparams set="method" line="465"><f a="x">
+		<xtypeparams set="method" line="474"><f a="x">
 	<c path="haxe.xml.Fast"/>
 	<c path="List"><e path="haxe.rtti.CType"/></c>
 </f></xtypeparams>
-		<defplat set="method" line="472"><f a=""><c path="List"><c path="String"/></c></f></defplat>
+		<defplat set="method" line="481"><f a=""><c path="List"><c path="String"/></c></f></defplat>
 		<new public="1" set="method" line="34"><f a=""><e path="Void"/></f></new>
 	</class>
 	<class path="ufront.web.PartialUrl" params="" file="/usr/lib/haxe/lib/ufront/0,1,2/ufront/web/PartialUrl.hx">
@@ -2472,32 +2472,6 @@ Other things to do. Nested placeholders
 	is less memory and CPU consuming, unless you really need indexed access.
 </haxe_doc>
 	</class>
-	<class path="ufront.web.routing.RouteUriBuilder" params="" file="/usr/lib/haxe/lib/ufront/0,1,2/ufront/web/routing/RouteUriBuilder.hx">
-		<getEncoded get="inline" set="null" line="81" static="1"><f a="p:k">
-	<c path="Hash"><c path="String"/></c>
-	<c path="String"/>
-	<c path="String"/>
-</f></getEncoded>
-		<getRestEncoded set="method" line="88" static="1"><f a="p:k">
-	<c path="Hash"><c path="String"/></c>
-	<c path="String"/>
-	<c path="String"/>
-</f></getRestEncoded>
-		<ast><t path="ufront.web.routing.UriSegments"/></ast>
-		<build public="1" set="method" line="15"><f a="params">
-	<c path="Hash"><c path="String"/></c>
-	<c path="String"/>
-</f></build>
-		<buildSegment set="method" line="35"><f a="segment:params">
-	<t path="ufront.web.routing.UriSegment"/>
-	<c path="Hash"><c path="String"/></c>
-	<c path="String"/>
-</f></buildSegment>
-		<new public="1" set="method" line="10"><f a="ast">
-	<t path="ufront.web.routing.UriSegments"/>
-	<e path="Void"/>
-</f></new>
-	</class>
 	<typedef path="sys.db.SId" params="" file="/usr/share/haxe/std/sys/db/Types.hx" module="sys.db.Types">
 		<c path="Int"/>
 		<haxe_doc> int with auto increment </haxe_doc>
@@ -2604,6 +2578,32 @@ Other things to do. Nested placeholders
 	<e path="Void"/>
 </f></unset>
 		<toInt public="1" get="inline" set="null" line="117"><f a=""><c path="Int"/></f></toInt>
+	</class>
+	<class path="ufront.web.routing.RouteUriBuilder" params="" file="/usr/lib/haxe/lib/ufront/0,1,2/ufront/web/routing/RouteUriBuilder.hx">
+		<getEncoded get="inline" set="null" line="81" static="1"><f a="p:k">
+	<c path="Hash"><c path="String"/></c>
+	<c path="String"/>
+	<c path="String"/>
+</f></getEncoded>
+		<getRestEncoded set="method" line="88" static="1"><f a="p:k">
+	<c path="Hash"><c path="String"/></c>
+	<c path="String"/>
+	<c path="String"/>
+</f></getRestEncoded>
+		<ast><t path="ufront.web.routing.UriSegments"/></ast>
+		<build public="1" set="method" line="15"><f a="params">
+	<c path="Hash"><c path="String"/></c>
+	<c path="String"/>
+</f></build>
+		<buildSegment set="method" line="35"><f a="segment:params">
+	<t path="ufront.web.routing.UriSegment"/>
+	<c path="Hash"><c path="String"/></c>
+	<c path="String"/>
+</f></buildSegment>
+		<new public="1" set="method" line="10"><f a="ast">
+	<t path="ufront.web.routing.UriSegments"/>
+	<e path="Void"/>
+</f></new>
 	</class>
 	<class path="Iterators" params="" file="/usr/lib/haxe/lib/thx/0,2,0/Iterators.hx">
 		<indexOf public="1" params="T" set="method" line="8" static="1"><f a="it:?v:?f">
@@ -2726,42 +2726,23 @@ Other things to do. Nested placeholders
 	<c path="sys.db.Connection"/>
 	<c path="sys.db.Connection"/>
 </f></setConnection>
-		<initialize public="1" set="method" line="399" static="1"><f a=""><e path="Void"/></f></initialize>
-		<cleanup public="1" set="method" line="407" static="1"><f a=""><e path="Void"/></f></cleanup>
-		<quoteAny set="method" line="499" static="1"><f a="v">
+		<initialize public="1" set="method" line="426" static="1"><f a=""><e path="Void"/></f></initialize>
+		<cleanup public="1" set="method" line="434" static="1"><f a=""><e path="Void"/></f></cleanup>
+		<quoteAny public="1" set="method" line="547" static="1"><f a="v">
 	<d/>
 	<c path="String"/>
 </f></quoteAny>
-		<quoteInt public="1" get="inline" set="null" line="505" static="1"><f a="v">
-	<c path="Int"/>
+		<quoteList public="1" set="method" line="553" static="1"><f a="v:it">
 	<c path="String"/>
-</f></quoteInt>
-		<quoteFloat public="1" get="inline" set="null" line="509" static="1"><f a="v">
-	<c path="Float"/>
+	<t path="Iterable"><d/></t>
 	<c path="String"/>
-</f></quoteFloat>
-		<quoteDate public="1" get="inline" set="null" line="513" static="1"><f a="v">
-	<c path="Date"/>
-	<c path="String"/>
-</f></quoteDate>
-		<quoteString public="1" get="inline" set="null" line="517" static="1"><f a="v">
-	<c path="String"/>
-	<c path="String"/>
-</f></quoteString>
-		<quoteBool public="1" get="inline" set="null" line="521" static="1"><f a="v">
-	<e path="Bool"/>
-	<c path="String"/>
-</f></quoteBool>
-		<quoteBytes public="1" get="inline" set="null" line="525" static="1"><f a="v">
-	<c path="haxe.io.Bytes"/>
-	<c path="String"/>
-</f></quoteBytes>
+</f></quoteList>
 		<table_infos><t path="sys.db.SpodInfos"/></table_infos>
 		<table_name><c path="String"/></table_name>
 		<table_fields><c path="List"><c path="String"/></c></table_fields>
 		<table_keys><c path="Array"><c path="String"/></c></table_keys>
 		<class_proto><a><prototype><d/></prototype></a></class_proto>
-		<all public="1" set="method" line="86"><f a="?lock">
+		<all public="1" set="method" line="88"><f a="?lock">
 	<e path="Bool"/>
 	<c path="List"><c path="sys.db.Manager.T"/></c>
 </f></all>
@@ -2790,118 +2771,137 @@ Other things to do. Nested placeholders
 	<d/>
 	<e path="Void"/>
 </f></delete>
-		<dynamicSearch public="1" set="method" line="110"><f a="x:?lock">
+		<dynamicSearch public="1" set="method" line="112"><f a="x:?lock">
 	<a/>
 	<e path="Bool"/>
 	<c path="List"><c path="sys.db.Manager.T"/></c>
 </f></dynamicSearch>
-		<quote set="method" line="119"><f a="s">
+		<quote set="method" line="121"><f a="s">
 	<c path="String"/>
 	<c path="String"/>
 </f></quote>
-		<doInsert set="method" line="125"><f a="x">
+		<doInsert set="method" line="127"><f a="x">
 	<c path="sys.db.Manager.T"/>
 	<e path="Void"/>
 </f></doInsert>
-		<doUpdate set="method" line="159"><f a="x">
+		<doUpdate set="method" line="181"><f a="x">
 	<c path="sys.db.Manager.T"/>
 	<e path="Void"/>
 </f></doUpdate>
-		<doDelete set="method" line="190"><f a="x">
+		<doDelete set="method" line="212"><f a="x">
 	<c path="sys.db.Manager.T"/>
 	<e path="Void"/>
 </f></doDelete>
-		<doLock set="method" line="200"><f a="i">
+		<doLock set="method" line="222"><f a="i">
 	<c path="sys.db.Manager.T"/>
 	<e path="Void"/>
 </f></doLock>
-		<objectToString set="method" line="224"><f a="it">
+		<objectToString set="method" line="234"><f a="it">
 	<c path="sys.db.Manager.T"/>
 	<c path="String"/>
 </f></objectToString>
-		<cacheObject set="method" line="249"><f a="x:lock">
+		<cacheObject set="method" line="259"><f a="x:lock">
 	<c path="sys.db.Manager.T"/>
 	<e path="Bool"/>
-	<e path="Void"/>
+	<c path="sys.db.Manager.T"/>
 </f></cacheObject>
-		<make set="method" line="256"><f a="x">
+		<make set="method" line="275"><f a="x">
 	<c path="sys.db.Manager.T"/>
 	<e path="Void"/>
 </f></make>
-		<unmake set="method" line="259"><f a="x">
+		<unmake set="method" line="278"><f a="x">
 	<c path="sys.db.Manager.T"/>
 	<e path="Void"/>
 </f></unmake>
-		<quoteField set="method" line="262"><f a="f">
+		<quoteField set="method" line="281"><f a="f">
 	<c path="String"/>
 	<c path="String"/>
 </f></quoteField>
-		<addKeys set="method" line="266"><f a="s:x">
+		<addKeys set="method" line="285"><f a="s:x">
 	<c path="StringBuf"/>
 	<a/>
 	<e path="Void"/>
 </f></addKeys>
-		<unsafeExecute set="method" line="282"><f a="sql">
+		<unsafeExecute set="method" line="301"><f a="sql">
 	<c path="String"/>
 	<c path="sys.db.ResultSet"/>
 </f></unsafeExecute>
-		<unsafeObject public="1" set="method" line="286"><f a="sql:lock">
+		<unsafeObject public="1" set="method" line="305"><f a="sql:lock">
 	<c path="String"/>
 	<e path="Bool"/>
 	<c path="sys.db.Manager.T"/>
 </f></unsafeObject>
-		<unsafeObjects public="1" set="method" line="302"><f a="sql:lock">
+		<unsafeObjects public="1" set="method" line="321"><f a="sql:lock">
 	<c path="String"/>
 	<e path="Bool"/>
 	<c path="List"><c path="sys.db.Manager.T"/></c>
 </f></unsafeObjects>
-		<unsafeCount public="1" set="method" line="322"><f a="sql">
+		<unsafeCount public="1" set="method" line="341"><f a="sql">
 	<c path="String"/>
 	<c path="Int"/>
 </f></unsafeCount>
-		<unsafeDelete public="1" set="method" line="326"><f a="sql">
+		<unsafeDelete public="1" set="method" line="345"><f a="sql">
 	<c path="String"/>
 	<e path="Void"/>
 </f></unsafeDelete>
-		<unsafeGet public="1" set="method" line="330"><f a="id:?lock">
+		<unsafeGet public="1" set="method" line="349"><f a="id:?lock">
 	<d/>
 	<e path="Bool"/>
 	<c path="sys.db.Manager.T"/>
 </f></unsafeGet>
-		<unsafeGetWithKeys public="1" set="method" line="349"><f a="keys:?lock">
+		<unsafeGetWithKeys public="1" set="method" line="368"><f a="keys:?lock">
 	<a/>
 	<e path="Bool"/>
 	<c path="sys.db.Manager.T"/>
 </f></unsafeGetWithKeys>
-		<addCondition set="method" line="362"><f a="s:x">
+		<unsafeGetId public="1" set="method" line="381"><f a="o">
+	<c path="sys.db.Manager.T"/>
+	<d/>
+</f></unsafeGetId>
+		<addCondition set="method" line="385"><f a="s:x">
 	<c path="StringBuf"/>
 	<a/>
 	<e path="Void"/>
 </f></addCondition>
-		<dbClass public="1" set="method" line="385"><f a=""><c path="Class"><d/></c></f></dbClass>
-		<getCnx set="method" line="389"><f a=""><c path="sys.db.Connection"/></f></getCnx>
-		<getLockMode set="method" line="393"><f a=""><c path="String"/></f></getLockMode>
-		<initRelation set="method" line="411"><f a="r">
+		<dbClass public="1" set="method" line="408"><f a=""><c path="Class"><d/></c></f></dbClass>
+		<dbInfos public="1" set="method" line="412"><f a=""><t path="sys.db.SpodInfos"/></f></dbInfos>
+		<getCnx set="method" line="416"><f a=""><c path="sys.db.Connection"/></f></getCnx>
+		<getLockMode set="method" line="420"><f a=""><c path="String"/></f></getLockMode>
+		<initRelation set="method" line="438"><f a="r">
 	<t path="sys.db.SpodRelation"/>
 	<e path="Void"/>
 </f></initRelation>
-		<makeCacheKey set="method" line="448"><f a="x">
+		<__get set="method" line="475"><f a="x:prop:key:lock">
+	<d/>
+	<c path="String"/>
+	<c path="String"/>
+	<e path="Bool"/>
+	<c path="sys.db.Manager.T"/>
+</f></__get>
+		<__set set="method" line="484"><f a="x:prop:key:v">
+	<d/>
+	<c path="String"/>
+	<c path="String"/>
+	<c path="sys.db.Manager.T"/>
+	<e path="Void"/>
+</f></__set>
+		<makeCacheKey set="method" line="496"><f a="x">
 	<c path="sys.db.Manager.T"/>
 	<c path="String"/>
 </f></makeCacheKey>
-		<addToCache set="method" line="467"><f a="x">
+		<addToCache set="method" line="515"><f a="x">
 	<c path="sys.db.Manager.T"/>
 	<e path="Void"/>
 </f></addToCache>
-		<removeFromCache set="method" line="471"><f a="x">
+		<removeFromCache set="method" line="519"><f a="x">
 	<c path="sys.db.Manager.T"/>
 	<e path="Void"/>
 </f></removeFromCache>
-		<getFromCacheKey set="method" line="475"><f a="key">
+		<getFromCacheKey set="method" line="523"><f a="key">
 	<c path="String"/>
 	<c path="sys.db.Manager.T"/>
 </f></getFromCacheKey>
-		<getFromCache set="method" line="479"><f a="x:lock">
+		<getFromCache set="method" line="527"><f a="x:lock">
 	<c path="sys.db.Manager.T"/>
 	<e path="Bool"/>
 	<c path="sys.db.Manager.T"/>
@@ -4788,11 +4788,11 @@ Other things to do. Nested placeholders
 	<class path="sys.db.Object" params="" file="/usr/share/haxe/std/sys/db/Object.hx">
 		<_locked set="null"><e path="Bool"/></_locked>
 		<_manager set="null"><c path="sys.db.Manager"><d/></c></_manager>
-		<insert public="1" set="method" line="40"><f a=""><e path="Void"/></f></insert>
-		<update public="1" set="method" line="44"><f a=""><e path="Void"/></f></update>
-		<lock public="1" set="method" line="48"><f a=""><e path="Void"/></f></lock>
-		<delete public="1" set="method" line="52"><f a=""><e path="Void"/></f></delete>
-		<toString public="1" set="method" line="56"><f a=""><unknown/></f></toString>
+		<insert public="1" set="method" line="43"><f a=""><e path="Void"/></f></insert>
+		<update public="1" set="method" line="47"><f a=""><e path="Void"/></f></update>
+		<lock public="1" set="method" line="51"><f a=""><e path="Void"/></f></lock>
+		<delete public="1" set="method" line="55"><f a=""><e path="Void"/></f></delete>
+		<toString public="1" set="method" line="59"><f a=""><c path="String"/></f></toString>
 		<new public="1" set="method" line="37"><f a=""><e path="Void"/></f></new>
 		<haxe_doc>
 	SPOD Object : the persistent object base type. See the tutorial on haXe
@@ -4825,6 +4825,16 @@ Other things to do. Nested placeholders
 		</date>
 		<countUpVotes public="1" set="method" line="38"><f a=""><c path="Int"/></f></countUpVotes>
 		<countDownVotes public="1" set="method" line="44"><f a=""><c path="Int"/></f></countDownVotes>
+		<get_user set="method" line="26"><f a=""><c path="model.User"/></f></get_user>
+		<set_user set="method" line="26"><f a="_v">
+	<c path="model.User"/>
+	<c path="model.User"/>
+</f></set_user>
+		<get_question set="method" line="29"><f a=""><c path="model.Question"/></f></get_question>
+		<set_question set="method" line="29"><f a="_v">
+	<c path="model.Question"/>
+	<c path="model.Question"/>
+</f></set_question>
 		<new public="1" set="method" line="20"><f a=""><e path="Void"/></f></new>
 		<haxe_doc> 
 Model for our answers to questions.  
@@ -5108,6 +5118,15 @@ Relationships:
 		Returns the index of the constructor of an enum
 	</haxe_doc>
 		</enumIndex>
+		<allEnums public="1" params="T" set="method" line="228" static="1">
+			<f a="e">
+				<c path="Enum"><c path="allEnums.T"/></c>
+				<c path="Array"><c path="allEnums.T"/></c>
+			</f>
+			<haxe_doc>
+		Returns the list of all enum values that don't take any parameter.
+	</haxe_doc>
+		</allEnums>
 		<haxe_doc>
 	The haXe Reflection API enables you to retreive informations about any value,
 	Classes and Enums at runtime.
@@ -5710,13 +5729,6 @@ Relationships:
 	<c path="ufront.web.mvc.ExceptionContext"/>
 	<e path="Void"/>
 </f></onException></class>
-	<class path="ufront.web.mvc.DependencyResolver" params="" file="/usr/lib/haxe/lib/ufront/0,1,2/ufront/web/mvc/DependencyResolver.hx">
-		<current public="1" line="10" static="1"><c path="ufront.web.mvc.IDependencyResolver"/></current>
-		<haxe_doc>
- * ...
- * @author Andreas Soderlund
- </haxe_doc>
-	</class>
 	<class path="model.Question" params="" file="src/model/Question.hx">
 		<extends path="sys.db.Object"/>
 		<__meta__ public="1" line="20" static="1"><d/></__meta__>
@@ -5749,6 +5761,11 @@ Relationships:
 			<f a=""><c path="List"><c path="model.Answer"/></c></f>
 			<haxe_doc> </haxe_doc>
 		</answers>
+		<get_user set="method" line="26"><f a=""><c path="model.User"/></f></get_user>
+		<set_user set="method" line="26"><f a="_v">
+	<c path="model.User"/>
+	<c path="model.User"/>
+</f></set_user>
 		<new public="1" set="method" line="20"><f a=""><e path="Void"/></f></new>
 		<haxe_doc> 
 Model for our questions.  
@@ -5757,6 +5774,13 @@ Relationships:
  - OneToOne: Question.userID = User.id
  - OneToMany: Answer.questionID = Question.id
 </haxe_doc>
+	</class>
+	<class path="ufront.web.mvc.DependencyResolver" params="" file="/usr/lib/haxe/lib/ufront/0,1,2/ufront/web/mvc/DependencyResolver.hx">
+		<current public="1" line="10" static="1"><c path="ufront.web.mvc.IDependencyResolver"/></current>
+		<haxe_doc>
+ * ...
+ * @author Andreas Soderlund
+ </haxe_doc>
 	</class>
 	<class path="sys.db.ResultSet" params="" file="/usr/share/haxe/std/sys/db/ResultSet.hx" interface="1">
 		<length public="1" get="getLength" set="null"><c path="Int"/></length>
@@ -6349,29 +6373,6 @@ Relationships:
  	</haxe_doc>
 		</loadLib>
 	</class>
-	<class path="ufront.web.mvc.attributes.FilterAttribute" params="" file="/usr/lib/haxe/lib/ufront/0,1,2/ufront/web/mvc/attributes/FilterAttribute.hx">
-		<order public="1"><c path="Int"/></order>
-		<new public="1" set="method" line="7"><f a=""><e path="Void"/></f></new>
-	</class>
-	<class path="ufront.web.mvc.attributes.AuthorizeAttribute" params="" file="/usr/lib/haxe/lib/ufront/0,1,2/ufront/web/mvc/attributes/AuthorizeAttribute.hx">
-		<extends path="ufront.web.mvc.attributes.FilterAttribute"/>
-		<implements path="ufront.web.mvc.IAuthorizationFilter"/>
-		<acl public="1"><c path="ufront.acl.Acl"/></acl>
-		<roles public="1"><c path="Array"><c path="String"/></c></roles>
-		<users public="1"><c path="Array"><c path="String"/></c></users>
-		<currentRoles public="1"><c path="Array"><c path="String"/></c></currentRoles>
-		<currentUser public="1"><c path="String"/></currentUser>
-		<onAuthorization public="1" set="method" line="24"><f a="e">
-	<c path="ufront.web.mvc.AuthorizationContext"/>
-	<e path="Void"/>
-</f></onAuthorization>
-		<isAllowed set="method" line="45"><f a="resource:privilege">
-	<c path="String"/>
-	<c path="String"/>
-	<e path="Bool"/>
-</f></isAllowed>
-		<new public="1" set="method" line="15"><f a=""><e path="Void"/></f></new>
-	</class>
 	<class path="Date" params="" file="/usr/share/haxe/std/php/_std/Date.hx">
 		<now public="1" set="method" line="75" static="1">
 			<f a=""><c path="Date"/></f>
@@ -6478,6 +6479,94 @@ Relationships:
 	available in the [DateTools] class.
 </haxe_doc>
 	</class>
+	<class path="ufront.web.mvc.ControllerBase" params="" file="/usr/lib/haxe/lib/ufront/0,1,2/ufront/web/mvc/ControllerBase.hx">
+		<implements path="haxe.rtti.Infos"/>
+		<implements path="ufront.web.mvc.IController"/>
+		<__rtti public="1" line="15" static="1"><c path="String"/></__rtti>
+		<controllerContext public="1">
+			<c path="ufront.web.mvc.ControllerContext"/>
+			<haxe_doc>
+	 * If null, this value is automatically created in execute().
+	 </haxe_doc>
+		</controllerContext>
+		<_valueProvider><c path="ufront.web.mvc.IValueProvider"/></_valueProvider>
+		<valueProvider public="1" get="getValueProvider" set="setValueProvider"><c path="ufront.web.mvc.IValueProvider"/></valueProvider>
+		<getValueProvider set="method" line="24"><f a=""><c path="ufront.web.mvc.IValueProvider"/></f></getValueProvider>
+		<setValueProvider set="method" line="31"><f a="valueProvider">
+	<c path="ufront.web.mvc.IValueProvider"/>
+	<c path="ufront.web.mvc.IValueProvider"/>
+</f></setValueProvider>
+		<executeCore set="method" line="39"><f a="async">
+	<c path="hxevents.Async"/>
+	<e path="Void"/>
+</f></executeCore>
+		<execute public="1" set="method" line="41"><f a="requestContext:async">
+	<c path="ufront.web.routing.RequestContext"/>
+	<c path="hxevents.Async"/>
+	<e path="Void"/>
+</f></execute>
+		<getViewHelpers public="1" set="method" line="50"><f a=""><c path="Array"><c path="ufront.web.mvc.IViewHelper"/></c></f></getViewHelpers>
+		<new public="1" set="method" line="37"><f a=""><e path="Void"/></f></new>
+		<haxe_doc>
+ * ...
+ * @author Andreas Soderlund
+ </haxe_doc>
+	</class>
+	<class path="ufront.web.mvc.Controller" params="" file="/usr/lib/haxe/lib/ufront/0,1,2/ufront/web/mvc/Controller.hx">
+		<extends path="ufront.web.mvc.ControllerBase"/>
+		<implements path="ufront.web.mvc.IExceptionFilter"/>
+		<implements path="ufront.web.mvc.IResultFilter"/>
+		<implements path="ufront.web.mvc.IAuthorizationFilter"/>
+		<implements path="ufront.web.mvc.IActionFilter"/>
+		<__rtti public="1" line="11" static="1"><c path="String"/></__rtti>
+		<_invoker><c path="ufront.web.mvc.IActionInvoker"/></_invoker>
+		<invoker public="1" get="getInvoker" set="setInvoker"><c path="ufront.web.mvc.IActionInvoker"/></invoker>
+		<getInvoker set="method" line="15"><f a=""><c path="ufront.web.mvc.IActionInvoker"/></f></getInvoker>
+		<setInvoker set="method" line="22"><f a="i">
+	<c path="ufront.web.mvc.IActionInvoker"/>
+	<c path="ufront.web.mvc.IActionInvoker"/>
+</f></setInvoker>
+		<executeCore set="method" line="33" override="1"><f a="async">
+	<c path="hxevents.Async"/>
+	<e path="Void"/>
+</f></executeCore>
+		<onActionExecuting public="1" set="method" line="45"><f a="filterContext">
+	<c path="ufront.web.mvc.ActionExecutingContext"/>
+	<e path="Void"/>
+</f></onActionExecuting>
+		<onActionExecuted public="1" set="method" line="46"><f a="filterContext">
+	<c path="ufront.web.mvc.ActionExecutedContext"/>
+	<e path="Void"/>
+</f></onActionExecuted>
+		<onAuthorization public="1" set="method" line="47"><f a="filterContext">
+	<c path="ufront.web.mvc.AuthorizationContext"/>
+	<e path="Void"/>
+</f></onAuthorization>
+		<onException public="1" set="method" line="48"><f a="filterContext">
+	<c path="ufront.web.mvc.ExceptionContext"/>
+	<e path="Void"/>
+</f></onException>
+		<onResultExecuted public="1" set="method" line="49"><f a="filterContext">
+	<c path="ufront.web.mvc.ResultExecutedContext"/>
+	<e path="Void"/>
+</f></onResultExecuted>
+		<onResultExecuting public="1" set="method" line="50"><f a="filterContext">
+	<c path="ufront.web.mvc.ResultExecutingContext"/>
+	<e path="Void"/>
+</f></onResultExecuting>
+		<new public="1" set="method" line="28"><f a=""><e path="Void"/></f></new>
+		<haxe_doc>
+ * The invoker property (IActionInvoker) must be set to use execute().
+ </haxe_doc>
+	</class>
+	<class path="controller.InstallationController" params="" file="src/controller/InstallationController.hx">
+		<extends path="ufront.web.mvc.Controller"/>
+		<__rtti public="1" line="6" static="1"><c path="String"/></__rtti>
+		<information public="1" set="method" line="8"><f a=""><c path="String"/></f></information>
+		<createtables public="1" set="method" line="21"><f a=""><c path="String"/></f></createtables>
+		<sampledata public="1" set="method" line="37"><f a=""><c path="String"/></f></sampledata>
+		<new public="1" set="method" line="6"><f a=""><e path="Void"/></f></new>
+	</class>
 	<class path="ufront.web.mvc.ControllerContext" params="" file="/usr/lib/haxe/lib/ufront/0,1,2/ufront/web/mvc/ControllerContext.hx">
 		<controller public="1"><c path="ufront.web.mvc.ControllerBase"/></controller>
 		<requestContext public="1"><c path="ufront.web.routing.RequestContext"/></requestContext>
@@ -6491,6 +6580,71 @@ Relationships:
 	<c path="ufront.web.routing.RequestContext"/>
 	<e path="Void"/>
 </f></new>
+	</class>
+	<class path="ufront.web.mvc.attributes.FilterAttribute" params="" file="/usr/lib/haxe/lib/ufront/0,1,2/ufront/web/mvc/attributes/FilterAttribute.hx">
+		<order public="1"><c path="Int"/></order>
+		<new public="1" set="method" line="7"><f a=""><e path="Void"/></f></new>
+	</class>
+	<class path="ufront.web.mvc.attributes.AuthorizeAttribute" params="" file="/usr/lib/haxe/lib/ufront/0,1,2/ufront/web/mvc/attributes/AuthorizeAttribute.hx">
+		<extends path="ufront.web.mvc.attributes.FilterAttribute"/>
+		<implements path="ufront.web.mvc.IAuthorizationFilter"/>
+		<acl public="1"><c path="ufront.acl.Acl"/></acl>
+		<roles public="1"><c path="Array"><c path="String"/></c></roles>
+		<users public="1"><c path="Array"><c path="String"/></c></users>
+		<currentRoles public="1"><c path="Array"><c path="String"/></c></currentRoles>
+		<currentUser public="1"><c path="String"/></currentUser>
+		<onAuthorization public="1" set="method" line="24"><f a="e">
+	<c path="ufront.web.mvc.AuthorizationContext"/>
+	<e path="Void"/>
+</f></onAuthorization>
+		<isAllowed set="method" line="45"><f a="resource:privilege">
+	<c path="String"/>
+	<c path="String"/>
+	<e path="Bool"/>
+</f></isAllowed>
+		<new public="1" set="method" line="15"><f a=""><e path="Void"/></f></new>
+	</class>
+	<class path="model.Vote" params="" file="src/model/Vote.hx">
+		<extends path="sys.db.Object"/>
+		<__meta__ public="1" line="24" static="1"><d/></__meta__>
+		<manager public="1" line="42" static="1"><c path="sys.db.Manager"><c path="model.Vote"/></c></manager>
+		<id public="1">
+			<t path="sys.db.SUId"/>
+			<haxe_doc> The unique ID of this model </haxe_doc>
+		</id>
+		<user public="1" get="get_user" set="set_user">
+			<c path="model.User"/>
+			<haxe_doc> The userID of the user who gave this answer </haxe_doc>
+		</user>
+		<answer public="1" get="get_answer" set="set_answer">
+			<c path="model.Answer"/>
+			<haxe_doc> The questionID of the question we're answering </haxe_doc>
+		</answer>
+		<vote public="1">
+			<t path="sys.db.SBool"/>
+			<haxe_doc> true=1, vote up.  false=0, vote down </haxe_doc>
+		</vote>
+		<voteUp public="1" set="method" line="38"><f a=""><e path="Void"/></f></voteUp>
+		<voteDown public="1" set="method" line="39"><f a=""><e path="Void"/></f></voteDown>
+		<get_user set="method" line="30"><f a=""><c path="model.User"/></f></get_user>
+		<set_user set="method" line="30"><f a="_v">
+	<c path="model.User"/>
+	<c path="model.User"/>
+</f></set_user>
+		<get_answer set="method" line="33"><f a=""><c path="model.Answer"/></f></get_answer>
+		<set_answer set="method" line="33"><f a="_v">
+	<c path="model.Answer"/>
+	<c path="model.Answer"/>
+</f></set_answer>
+		<new public="1" set="method" line="24"><f a=""><e path="Void"/></f></new>
+		<haxe_doc> 
+Model for our answers to questions.  
+
+Relationships:
+ - OneToOne: Vote.userID = User.id
+ - OneToOne: Answer.questionID = Question.id
+ - OneToMany: Votes.answerID = Answer.id
+</haxe_doc>
 	</class>
 	<class path="Dates" params="" file="/usr/lib/haxe/lib/thx/0,2,0/Dates.hx">
 		<format public="1" set="method" line="13" static="1"><f a="d:?param:?params:?culture">
@@ -6703,38 +6857,6 @@ Relationships:
  * @author Franco Ponticelli
  </haxe_doc>
 	</class>
-	<class path="model.Vote" params="" file="src/model/Vote.hx">
-		<extends path="sys.db.Object"/>
-		<__meta__ public="1" line="22" static="1"><d/></__meta__>
-		<manager public="1" line="40" static="1"><c path="sys.db.Manager"><c path="model.Vote"/></c></manager>
-		<id public="1">
-			<t path="sys.db.SUId"/>
-			<haxe_doc> The unique ID of this model </haxe_doc>
-		</id>
-		<user public="1" get="get_user" set="set_user">
-			<c path="model.User"/>
-			<haxe_doc> The userID of the user who gave this answer </haxe_doc>
-		</user>
-		<answer public="1" get="get_answer" set="set_answer">
-			<c path="model.Answer"/>
-			<haxe_doc> The questionID of the question we're answering </haxe_doc>
-		</answer>
-		<vote public="1">
-			<t path="sys.db.SBool"/>
-			<haxe_doc> true=1, vote up.  false=0, vote down </haxe_doc>
-		</vote>
-		<voteUp set="method" line="36"><f a=""><e path="Void"/></f></voteUp>
-		<voteDown set="method" line="37"><f a=""><e path="Void"/></f></voteDown>
-		<new public="1" set="method" line="22"><f a=""><e path="Void"/></f></new>
-		<haxe_doc> 
-Model for our answers to questions.  
-
-Relationships:
- - OneToOne: Vote.userID = User.id
- - OneToOne: Answer.questionID = Question.id
- - OneToMany: Votes.answerID = Answer.id
-</haxe_doc>
-	</class>
 	<class path="ufront.web.mvc.FilterInfo" params="" file="/usr/lib/haxe/lib/ufront/0,1,2/ufront/web/mvc/FilterInfo.hx">
 		<authorizationFilters public="1" set="null"><c path="Array"><c path="ufront.web.mvc.IAuthorizationFilter"/></c></authorizationFilters>
 		<actionFilters public="1" set="null"><c path="Array"><c path="ufront.web.mvc.IActionFilter"/></c></actionFilters>
@@ -6944,7 +7066,7 @@ Relationships:
 	<class path="StringBuf" params="" file="/usr/share/haxe/std/php/_std/StringBuf.hx">
 		<b><c path="String"/></b>
 		<add public="1" get="inline" set="null" line="33">
-			<f a="?x">
+			<f a="x">
 				<d/>
 				<e path="Void"/>
 			</f>
@@ -6952,7 +7074,7 @@ Relationships:
 		Adds the representation of any value to the string buffer.
 	</haxe_doc>
 		</add>
-		<addSub public="1" get="inline" set="null" line="37">
+		<addSub public="1" get="inline" set="null" line="38">
 			<f a="s:pos:?len">
 				<c path="String"/>
 				<c path="Int"/>
@@ -6963,7 +7085,7 @@ Relationships:
 		Adds a part of a string to the string buffer.
 	</haxe_doc>
 		</addSub>
-		<addChar public="1" get="inline" set="null" line="41">
+		<addChar public="1" get="inline" set="null" line="42">
 			<f a="c">
 				<c path="Int"/>
 				<e path="Void"/>
@@ -6972,7 +7094,7 @@ Relationships:
 		Adds a character to the string buffer.
 	</haxe_doc>
 		</addChar>
-		<toString public="1" get="inline" set="null" line="45">
+		<toString public="1" get="inline" set="null" line="46">
 			<f a=""><c path="String"/></f>
 			<haxe_doc>
 		Returns the content of the string buffer.
@@ -7354,7 +7476,7 @@ Relationships:
 	</class>
 	<class path="Main" params="" file="src/Main.hx">
 		<main set="method" line="9" static="1"><f a=""><e path="Void"/></f></main>
-		<connectToDB public="1" set="method" line="49" static="1"><f a=""><e path="Void"/></f></connectToDB>
+		<connectToDB public="1" set="method" line="51" static="1"><f a=""><e path="Void"/></f></connectToDB>
 	</class>
 	<class path="ufront.web.mvc.ActionExecutingContext" params="" file="/usr/lib/haxe/lib/ufront/0,1,2/ufront/web/mvc/ActionExecutingContext.hx">
 		<actionName public="1" set="null"><c path="String"/></actionName>
@@ -8006,86 +8128,6 @@ customs for missing features
 	<c path="ufront.web.routing.RouteCollection"/>
 	<e path="Void"/>
 </f></new>
-	</class>
-	<class path="ufront.web.mvc.ControllerBase" params="" file="/usr/lib/haxe/lib/ufront/0,1,2/ufront/web/mvc/ControllerBase.hx">
-		<implements path="haxe.rtti.Infos"/>
-		<implements path="ufront.web.mvc.IController"/>
-		<__rtti public="1" line="15" static="1"><c path="String"/></__rtti>
-		<controllerContext public="1">
-			<c path="ufront.web.mvc.ControllerContext"/>
-			<haxe_doc>
-	 * If null, this value is automatically created in execute().
-	 </haxe_doc>
-		</controllerContext>
-		<_valueProvider><c path="ufront.web.mvc.IValueProvider"/></_valueProvider>
-		<valueProvider public="1" get="getValueProvider" set="setValueProvider"><c path="ufront.web.mvc.IValueProvider"/></valueProvider>
-		<getValueProvider set="method" line="24"><f a=""><c path="ufront.web.mvc.IValueProvider"/></f></getValueProvider>
-		<setValueProvider set="method" line="31"><f a="valueProvider">
-	<c path="ufront.web.mvc.IValueProvider"/>
-	<c path="ufront.web.mvc.IValueProvider"/>
-</f></setValueProvider>
-		<executeCore set="method" line="39"><f a="async">
-	<c path="hxevents.Async"/>
-	<e path="Void"/>
-</f></executeCore>
-		<execute public="1" set="method" line="41"><f a="requestContext:async">
-	<c path="ufront.web.routing.RequestContext"/>
-	<c path="hxevents.Async"/>
-	<e path="Void"/>
-</f></execute>
-		<getViewHelpers public="1" set="method" line="50"><f a=""><c path="Array"><c path="ufront.web.mvc.IViewHelper"/></c></f></getViewHelpers>
-		<new public="1" set="method" line="37"><f a=""><e path="Void"/></f></new>
-		<haxe_doc>
- * ...
- * @author Andreas Soderlund
- </haxe_doc>
-	</class>
-	<class path="ufront.web.mvc.Controller" params="" file="/usr/lib/haxe/lib/ufront/0,1,2/ufront/web/mvc/Controller.hx">
-		<extends path="ufront.web.mvc.ControllerBase"/>
-		<implements path="ufront.web.mvc.IExceptionFilter"/>
-		<implements path="ufront.web.mvc.IResultFilter"/>
-		<implements path="ufront.web.mvc.IAuthorizationFilter"/>
-		<implements path="ufront.web.mvc.IActionFilter"/>
-		<__rtti public="1" line="11" static="1"><c path="String"/></__rtti>
-		<_invoker><c path="ufront.web.mvc.IActionInvoker"/></_invoker>
-		<invoker public="1" get="getInvoker" set="setInvoker"><c path="ufront.web.mvc.IActionInvoker"/></invoker>
-		<getInvoker set="method" line="15"><f a=""><c path="ufront.web.mvc.IActionInvoker"/></f></getInvoker>
-		<setInvoker set="method" line="22"><f a="i">
-	<c path="ufront.web.mvc.IActionInvoker"/>
-	<c path="ufront.web.mvc.IActionInvoker"/>
-</f></setInvoker>
-		<executeCore set="method" line="33" override="1"><f a="async">
-	<c path="hxevents.Async"/>
-	<e path="Void"/>
-</f></executeCore>
-		<onActionExecuting public="1" set="method" line="45"><f a="filterContext">
-	<c path="ufront.web.mvc.ActionExecutingContext"/>
-	<e path="Void"/>
-</f></onActionExecuting>
-		<onActionExecuted public="1" set="method" line="46"><f a="filterContext">
-	<c path="ufront.web.mvc.ActionExecutedContext"/>
-	<e path="Void"/>
-</f></onActionExecuted>
-		<onAuthorization public="1" set="method" line="47"><f a="filterContext">
-	<c path="ufront.web.mvc.AuthorizationContext"/>
-	<e path="Void"/>
-</f></onAuthorization>
-		<onException public="1" set="method" line="48"><f a="filterContext">
-	<c path="ufront.web.mvc.ExceptionContext"/>
-	<e path="Void"/>
-</f></onException>
-		<onResultExecuted public="1" set="method" line="49"><f a="filterContext">
-	<c path="ufront.web.mvc.ResultExecutedContext"/>
-	<e path="Void"/>
-</f></onResultExecuted>
-		<onResultExecuting public="1" set="method" line="50"><f a="filterContext">
-	<c path="ufront.web.mvc.ResultExecutingContext"/>
-	<e path="Void"/>
-</f></onResultExecuting>
-		<new public="1" set="method" line="28"><f a=""><e path="Void"/></f></new>
-		<haxe_doc>
- * The invoker property (IActionInvoker) must be set to use execute().
- </haxe_doc>
 	</class>
 	<class path="AppConfig" params="" file="src/AppConfig.hx">
 		<dbServer public="1" line="4" static="1"><c path="String"/></dbServer>
@@ -8862,7 +8904,7 @@ customs for missing features
 	<class path="Float" params="" file="/usr/share/haxe/std/StdTypes.hx" module="StdTypes" extern="1"><haxe_doc>
 	The standard Float type, this is a double-precision IEEE 64bit float.
 </haxe_doc></class>
-	<class path="Int" params="" file="/usr/share/haxe/std/StdTypes.hx" module="sys.db.Types" extern="1">
+	<class path="Int" params="" file="/usr/share/haxe/std/StdTypes.hx" module="StdTypes" extern="1">
 		<extends path="Float"/>
 		<haxe_doc>
 	The standard Int type. Its precision depends on the platform.
@@ -8997,35 +9039,35 @@ customs for missing features
 	<c path="String"/>
 	<d/>
 </f></convert>
-		<hasNext public="1" set="method" line="144"><f a=""><e path="Bool"/></f></hasNext>
+		<hasNext public="1" set="method" line="146"><f a=""><e path="Bool"/></f></hasNext>
 		<cRow><c path="ArrayAccess"><c path="String"/></c></cRow>
-		<fetchRow set="method" line="151"><f a=""><e path="Bool"/></f></fetchRow>
-		<next public="1" set="method" line="156"><f a=""><d/></f></next>
-		<results public="1" set="method" line="171"><f a=""><c path="List"><d/></c></f></results>
-		<getResult public="1" set="method" line="178"><f a="n">
+		<fetchRow set="method" line="153"><f a=""><e path="Bool"/></f></fetchRow>
+		<next public="1" set="method" line="158"><f a=""><d/></f></next>
+		<results public="1" set="method" line="173"><f a=""><c path="List"><d/></c></f></results>
+		<getResult public="1" set="method" line="180"><f a="n">
 	<c path="Int"/>
 	<c path="String"/>
 </f></getResult>
-		<getIntResult public="1" set="method" line="185"><f a="n">
+		<getIntResult public="1" set="method" line="187"><f a="n">
 	<c path="Int"/>
 	<c path="Int"/>
 </f></getIntResult>
-		<getFloatResult public="1" set="method" line="189"><f a="n">
+		<getFloatResult public="1" set="method" line="191"><f a="n">
 	<c path="Int"/>
 	<c path="Float"/>
 </f></getFloatResult>
-		<getFieldsNames public="1" set="method" line="193"><f a=""><c path="Array"><c path="String"/></c></f></getFieldsNames>
+		<getFieldsNames public="1" set="method" line="195"><f a=""><c path="Array"><c path="String"/></c></f></getFieldsNames>
 		<new public="1" set="method" line="95"><f a="r:c">
 	<e path="Void"/>
 	<e path="Void"/>
 	<e path="Void"/>
 </f></new>
 	</class>
-	<class path="sys.db.Mysql" params="" file="/usr/share/haxe/std/php/_std/sys/db/Mysql.hx"><connect public="1" set="method" line="204" static="1"><f a="params">
+	<class path="sys.db.Mysql" params="" file="/usr/share/haxe/std/php/_std/sys/db/Mysql.hx"><connect public="1" set="method" line="206" static="1"><f a="params">
 	<a>
 		<user><c path="String"/></user>
-		<socket><c path="String"/></socket>
-		<port><c path="Int"/></port>
+		<socket><t path="Null"><c path="String"/></t></socket>
+		<port><t path="Null"><c path="Int"/></t></port>
 		<pass><c path="String"/></pass>
 		<host><c path="String"/></host>
 		<database><c path="String"/></database>
@@ -9287,7 +9329,7 @@ customs for missing features
 </a></c>
 			<t path="Null"><t path="haxe.macro.Expr"/></t>
 		</ESwitch>
-		<EReturn a="e"><t path="Null"><t path="haxe.macro.Expr"/></t></EReturn>
+		<EReturn a="?e"><t path="haxe.macro.Expr"/></EReturn>
 		<EParenthesis a="e"><t path="haxe.macro.Expr"/></EParenthesis>
 		<EObjectDecl a="fields"><c path="Array"><a>
 	<field><c path="String"/></field>
@@ -9297,6 +9339,10 @@ customs for missing features
 			<t path="haxe.macro.TypePath"/>
 			<c path="Array"><t path="haxe.macro.Expr"/></c>
 		</ENew>
+		<EIn a="e1:e2">
+			<t path="haxe.macro.Expr"/>
+			<t path="haxe.macro.Expr"/>
+		</EIn>
 		<EIf a="econd:eif:eelse">
 			<t path="haxe.macro.Expr"/>
 			<t path="haxe.macro.Expr"/>
@@ -9306,8 +9352,7 @@ customs for missing features
 			<t path="Null"><c path="String"/></t>
 			<t path="haxe.macro.Function"/>
 		</EFunction>
-		<EFor a="v:it:expr">
-			<c path="String"/>
+		<EFor a="it:expr">
 			<t path="haxe.macro.Expr"/>
 			<t path="haxe.macro.Expr"/>
 		</EFor>
@@ -9322,6 +9367,10 @@ customs for missing features
 		</EDisplay>
 		<EContinue/>
 		<EConst a="c"><e path="haxe.macro.Constant"/></EConst>
+		<ECheckType a="e:t">
+			<t path="haxe.macro.Expr"/>
+			<e path="haxe.macro.ComplexType"/>
+		</ECheckType>
 		<ECast a="e:t">
 			<t path="haxe.macro.Expr"/>
 			<t path="Null"><e path="haxe.macro.ComplexType"/></t>
@@ -9403,21 +9452,44 @@ customs for missing features
 		<ADynamic/>
 	</enum>
 	<enum path="haxe.macro.FieldType" params="" file="/usr/share/haxe/std/haxe/macro/Expr.hx" module="haxe.macro.Expr">
-		<FVar a="t:e">
+		<FVar a="t:?e">
 			<t path="Null"><e path="haxe.macro.ComplexType"/></t>
-			<t path="Null"><t path="haxe.macro.Expr"/></t>
+			<t path="haxe.macro.Expr"/>
 		</FVar>
-		<FProp a="get:set:t">
+		<FProp a="get:set:t:?e">
 			<c path="String"/>
 			<c path="String"/>
 			<e path="haxe.macro.ComplexType"/>
+			<t path="haxe.macro.Expr"/>
 		</FProp>
 		<FFun a="f"><t path="haxe.macro.Function"/></FFun>
+	</enum>
+	<typedef path="haxe.macro.TypeDefinition" params="" file="/usr/share/haxe/std/haxe/macro/Expr.hx" module="haxe.macro.Expr"><a>
+	<pos><t path="haxe.macro.Position"/></pos>
+	<params><c path="Array"><a>
+	<name><c path="String"/></name>
+	<constraints><c path="Array"><e path="haxe.macro.ComplexType"/></c></constraints>
+</a></c></params>
+	<pack><c path="Array"><c path="String"/></c></pack>
+	<name><c path="String"/></name>
+	<meta><t path="haxe.macro.Metadata"/></meta>
+	<kind><e path="haxe.macro.TypeDefKind"/></kind>
+	<isExtern><e path="Bool"/></isExtern>
+	<fields><c path="Array"><t path="haxe.macro.Field"/></c></fields>
+</a></typedef>
+	<enum path="haxe.macro.TypeDefKind" params="" file="/usr/share/haxe/std/haxe/macro/Expr.hx" module="haxe.macro.Expr">
+		<TDStructure/>
+		<TDEnum/>
+		<TDClass a="?extend:?implement:?isInterface">
+			<t path="haxe.macro.TypePath"/>
+			<c path="Array"><t path="haxe.macro.TypePath"/></c>
+			<e path="Bool"/>
+		</TDClass>
 	</enum>
 	<class path="haxe.macro.Error" params="" file="/usr/share/haxe/std/haxe/macro/Expr.hx" module="haxe.macro.Expr">
 		<message public="1"><c path="String"/></message>
 		<pos public="1"><t path="haxe.macro.Position"/></pos>
-		<new public="1" set="method" line="185"><f a="m:p">
+		<new public="1" set="method" line="204"><f a="m:p">
 	<c path="String"/>
 	<t path="haxe.macro.Position"/>
 	<e path="Void"/>
@@ -9972,6 +10044,17 @@ Model for our users.
  * @author Andreas Soderlund
  </haxe_doc>
 	</class>
+	<class path="sys.db.TableCreate" params="" file="/usr/share/haxe/std/sys/db/TableCreate.hx">
+		<getTypeSQL public="1" set="method" line="30" static="1"><f a="t">
+	<e path="sys.db.SpodType"/>
+	<c path="String"/>
+</f></getTypeSQL>
+		<create public="1" set="method" line="56" static="1"><f a="manager:?engine">
+	<c path="sys.db.Manager"><d/></c>
+	<c path="String"/>
+	<e path="Void"/>
+</f></create>
+	</class>
 	<class path="thx.culture.core.NumberInfo" params="" file="/usr/lib/haxe/lib/thx/0,2,0/thx/culture/core/NumberInfo.hx">
 		<decimals public="1" set="null"><c path="Int"/></decimals>
 		<decimalsSeparator public="1" set="null"><c path="String"/></decimalsSeparator>
@@ -10218,7 +10301,7 @@ Model for our users.
 		<rename public="1" get="inline" set="null" line="53" static="1"><f a="path:newpath">
 	<c path="String"/>
 	<c path="String"/>
-	<unknown/>
+	<e path="Void"/>
 </f></rename>
 		<stat public="1" set="method" line="57" static="1"><f a="path">
 	<c path="String"/>
@@ -10228,27 +10311,27 @@ Model for our users.
 	<c path="String"/>
 	<c path="String"/>
 </f></fullPath>
-		<kind public="1" set="method" line="80" static="1"><f a="path">
+		<kind public="1" set="method" line="84" static="1"><f a="path">
 	<c path="String"/>
 	<e path="php.FileKind"/>
 </f></kind>
-		<isDirectory public="1" get="inline" set="null" line="89" static="1"><f a="path">
+		<isDirectory public="1" get="inline" set="null" line="93" static="1"><f a="path">
 	<c path="String"/>
 	<e path="Bool"/>
 </f></isDirectory>
-		<createDirectory public="1" get="inline" set="null" line="93" static="1"><f a="path">
+		<createDirectory public="1" get="inline" set="null" line="97" static="1"><f a="path">
 	<c path="String"/>
-	<unknown/>
+	<e path="Void"/>
 </f></createDirectory>
-		<deleteFile public="1" get="inline" set="null" line="97" static="1"><f a="path">
+		<deleteFile public="1" get="inline" set="null" line="101" static="1"><f a="path">
 	<c path="String"/>
-	<unknown/>
+	<e path="Void"/>
 </f></deleteFile>
-		<deleteDirectory public="1" get="inline" set="null" line="101" static="1"><f a="path">
+		<deleteDirectory public="1" get="inline" set="null" line="105" static="1"><f a="path">
 	<c path="String"/>
-	<unknown/>
+	<e path="Void"/>
 </f></deleteDirectory>
-		<readDirectory public="1" set="method" line="105" static="1"><f a="path">
+		<readDirectory public="1" set="method" line="109" static="1"><f a="path">
 	<c path="String"/>
 	<c path="Array"><c path="String"/></c>
 </f></readDirectory>
@@ -10324,18 +10407,26 @@ Model for our users.
 	<c path="String"/>
 	<e path="Void"/>
 </f></__end_element_handler>
-		<__character_data_handler set="method" line="63" static="1"><f a="parser:data">
+		<__decodeattr set="method" line="63" static="1"><f a="value">
+	<c path="String"/>
+	<c path="String"/>
+</f></__decodeattr>
+		<__decodeent set="method" line="68" static="1"><f a="value">
+	<c path="String"/>
+	<c path="String"/>
+</f></__decodeent>
+		<__character_data_handler set="method" line="73" static="1"><f a="parser:data">
 	<d/>
 	<c path="String"/>
 	<e path="Void"/>
 </f></__character_data_handler>
-		<__default_handler set="method" line="70" static="1"><f a="parser:data">
+		<__default_handler set="method" line="81" static="1"><f a="parser:data">
 	<d/>
 	<c path="String"/>
 	<e path="Void"/>
 </f></__default_handler>
-		<reHeader line="77" static="1"><c path="EReg"/></reHeader>
-		<parse public="1" set="method" line="79" static="1">
+		<reHeader line="93" static="1"><c path="EReg"/></reHeader>
+		<parse public="1" set="method" line="95" static="1">
 			<f a="str">
 				<c path="String"/>
 				<c path="Xml"/>
@@ -10344,7 +10435,7 @@ Model for our users.
 		Parse a String into an Xml object.
 	</haxe_doc>
 		</parse>
-		<createElement public="1" set="method" line="116" static="1">
+		<createElement public="1" set="method" line="132" static="1">
 			<f a="name">
 				<c path="String"/>
 				<c path="Xml"/>
@@ -10353,7 +10444,7 @@ Model for our users.
 		Creates a node of the given type.
 	</haxe_doc>
 		</createElement>
-		<createPCData public="1" set="method" line="125" static="1">
+		<createPCData public="1" set="method" line="141" static="1">
 			<f a="data">
 				<c path="String"/>
 				<c path="Xml"/>
@@ -10362,7 +10453,7 @@ Model for our users.
 		Creates a node of the given type.
 	</haxe_doc>
 		</createPCData>
-		<createCData public="1" set="method" line="132" static="1">
+		<createCData public="1" set="method" line="148" static="1">
 			<f a="data">
 				<c path="String"/>
 				<c path="Xml"/>
@@ -10371,7 +10462,7 @@ Model for our users.
 		Creates a node of the given type.
 	</haxe_doc>
 		</createCData>
-		<createComment public="1" set="method" line="139" static="1">
+		<createComment public="1" set="method" line="155" static="1">
 			<f a="data">
 				<c path="String"/>
 				<c path="Xml"/>
@@ -10380,7 +10471,7 @@ Model for our users.
 		Creates a node of the given type.
 	</haxe_doc>
 		</createComment>
-		<createDocType public="1" set="method" line="146" static="1">
+		<createDocType public="1" set="method" line="162" static="1">
 			<f a="data">
 				<c path="String"/>
 				<c path="Xml"/>
@@ -10389,7 +10480,7 @@ Model for our users.
 		Creates a node of the given type.
 	</haxe_doc>
 		</createDocType>
-		<createProlog public="1" set="method" line="153" static="1">
+		<createProlog public="1" set="method" line="169" static="1">
 			<f a="data">
 				<c path="String"/>
 				<c path="Xml"/>
@@ -10398,7 +10489,7 @@ Model for our users.
 		Creates a node of the given type.
 	</haxe_doc>
 		</createProlog>
-		<createDocument public="1" set="method" line="160" static="1">
+		<createDocument public="1" set="method" line="176" static="1">
 			<f a=""><c path="Xml"/></f>
 			<haxe_doc>
 		Creates a node of the given type.
@@ -10436,18 +10527,18 @@ Model for our users.
 		<_attributes><c path="Hash"><c path="String"/></c></_attributes>
 		<_children><c path="Array"><c path="Xml"/></c></_children>
 		<_parent><c path="Xml"/></_parent>
-		<getNodeName set="method" line="167"><f a=""><c path="String"/></f></getNodeName>
-		<setNodeName set="method" line="173"><f a="n">
+		<getNodeName set="method" line="183"><f a=""><c path="String"/></f></getNodeName>
+		<setNodeName set="method" line="189"><f a="n">
 	<c path="String"/>
 	<c path="String"/>
 </f></setNodeName>
-		<getNodeValue set="method" line="179"><f a=""><c path="String"/></f></getNodeValue>
-		<setNodeValue set="method" line="185"><f a="v">
+		<getNodeValue set="method" line="195"><f a=""><c path="String"/></f></getNodeValue>
+		<setNodeValue set="method" line="201"><f a="v">
 	<c path="String"/>
 	<c path="String"/>
 </f></setNodeValue>
-		<getParent set="method" line="191"><f a=""><c path="Xml"/></f></getParent>
-		<get public="1" set="method" line="195">
+		<getParent set="method" line="207"><f a=""><c path="Xml"/></f></getParent>
+		<get public="1" set="method" line="211">
 			<f a="att">
 				<c path="String"/>
 				<c path="String"/>
@@ -10457,7 +10548,7 @@ Model for our users.
 		Attributes are case-sensitive.
 	</haxe_doc>
 		</get>
-		<set public="1" set="method" line="202">
+		<set public="1" set="method" line="218">
 			<f a="att:value">
 				<c path="String"/>
 				<c path="String"/>
@@ -10468,7 +10559,7 @@ Model for our users.
 		Attributes are case-sensitive.
 	</haxe_doc>
 		</set>
-		<remove public="1" set="method" line="208">
+		<remove public="1" set="method" line="224">
 			<f a="att">
 				<c path="String"/>
 				<e path="Void"/>
@@ -10478,7 +10569,7 @@ Model for our users.
 		Attributes are case-sensitive.
 	</haxe_doc>
 		</remove>
-		<exists public="1" set="method" line="214">
+		<exists public="1" set="method" line="230">
 			<f a="att">
 				<c path="String"/>
 				<e path="Bool"/>
@@ -10488,27 +10579,27 @@ Model for our users.
 		Attributes are case-sensitive.
 	</haxe_doc>
 		</exists>
-		<attributes public="1" set="method" line="220">
+		<attributes public="1" set="method" line="236">
 			<f a=""><t path="Iterator"><c path="String"/></t></f>
 			<haxe_doc>
 		Returns an [Iterator] on all the attributes values.
 	</haxe_doc>
 		</attributes>
-		<iterator public="1" set="method" line="226">
+		<iterator public="1" set="method" line="242">
 			<f a=""><t path="Iterator"><c path="Xml"/></t></f>
 			<haxe_doc>
 		Returns an iterator of all child nodes.
 		Only works if the current node is an Element or a Document.
 	</haxe_doc>
 		</iterator>
-		<elements public="1" set="method" line="243">
+		<elements public="1" set="method" line="259">
 			<f a=""><t path="Iterator"><c path="Xml"/></t></f>
 			<haxe_doc>
 		Returns an iterator of all child nodes which are Elements.
 		Only works if the current node is an Element or a Document.
 	</haxe_doc>
 		</elements>
-		<elementsNamed public="1" set="method" line="279">
+		<elementsNamed public="1" set="method" line="295">
 			<f a="name">
 				<c path="String"/>
 				<t path="Iterator"><c path="Xml"/></t>
@@ -10518,19 +10609,19 @@ Model for our users.
 		Only works if the current node is an Element or a Document.
 	</haxe_doc>
 		</elementsNamed>
-		<firstChild public="1" set="method" line="316">
+		<firstChild public="1" set="method" line="332">
 			<f a=""><c path="Xml"/></f>
 			<haxe_doc>
 		Returns the first child node.
 	</haxe_doc>
 		</firstChild>
-		<firstElement public="1" set="method" line="322">
+		<firstElement public="1" set="method" line="338">
 			<f a=""><c path="Xml"/></f>
 			<haxe_doc>
 		Returns the first child node which is an Element.
 	</haxe_doc>
 		</firstElement>
-		<addChild public="1" set="method" line="335">
+		<addChild public="1" set="method" line="351">
 			<f a="x">
 				<c path="Xml"/>
 				<e path="Void"/>
@@ -10540,7 +10631,7 @@ Model for our users.
 		One node can only be inside one given node which is indicated by the [parent] property.
 	</haxe_doc>
 		</addChild>
-		<removeChild public="1" set="method" line="342">
+		<removeChild public="1" set="method" line="358">
 			<f a="x">
 				<c path="Xml"/>
 				<e path="Bool"/>
@@ -10550,7 +10641,7 @@ Model for our users.
 		Returns true if the child was successfuly removed.
 	</haxe_doc>
 		</removeChild>
-		<insertChild public="1" set="method" line="350">
+		<insertChild public="1" set="method" line="366">
 			<f a="x:pos">
 				<c path="Xml"/>
 				<c path="Int"/>
@@ -10560,13 +10651,13 @@ Model for our users.
 		Inserts a child at the given position among the other childs.
 	</haxe_doc>
 		</insertChild>
-		<toString public="1" set="method" line="357">
+		<toString public="1" set="method" line="373">
 			<f a=""><c path="String"/></f>
 			<haxe_doc>
 		Returns a String representation of the Xml node.
 	</haxe_doc>
 		</toString>
-		<new set="method" line="114"><f a=""><e path="Void"/></f></new>
+		<new set="method" line="130"><f a=""><e path="Void"/></f></new>
 		<haxe_doc>
 	The standard Xml class and parsing.
 	More API to manipulate XML are available in the [haxe.xml] package.

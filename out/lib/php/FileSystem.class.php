@@ -6,7 +6,7 @@ class php_FileSystem {
 		return file_exists($path);
 	}
 	static function rename($path, $newpath) {
-		return rename($path, $newpath);
+		rename($path, $newpath);
 	}
 	static function stat($path) {
 		$fp = fopen($path, "r");
@@ -15,7 +15,12 @@ class php_FileSystem {
 		return _hx_anonymous(array("gid" => $fstat['gid'], "uid" => $fstat['uid'], "atime" => Date::fromTime($fstat['atime'] * 1000), "mtime" => Date::fromTime($fstat['mtime'] * 1000), "ctime" => Date::fromTime($fstat['ctime'] * 1000), "dev" => $fstat['dev'], "ino" => $fstat['ino'], "nlink" => $fstat['nlink'], "rdev" => $fstat['rdev'], "size" => $fstat['size'], "mode" => $fstat['mode']));
 	}
 	static function fullPath($relpath) {
-		return realpath($relpath);
+		$p = realpath($relpath);
+		if(($p === false)) {
+			return null;
+		} else {
+			return $p;
+		}
 	}
 	static function kind($path) {
 		$k = filetype($path);
@@ -35,13 +40,13 @@ class php_FileSystem {
 		return is_dir($path);
 	}
 	static function createDirectory($path) {
-		return @mkdir($path, 493);
+		@mkdir($path, 493);
 	}
 	static function deleteFile($path) {
-		return @unlink($path);
+		@unlink($path);
 	}
 	static function deleteDirectory($path) {
-		return @rmdir($path);
+		@rmdir($path);
 	}
 	static function readDirectory($path) {
 		$l = array();

@@ -117,7 +117,9 @@
 				<a href="#" onclick="javascript:history.back(-1); return false" class="index">Back</a> | <a href="../index.html" class="index">Index</a><div class="classname"><span class="kwd">class </span>Type</div><div class="classdoc">
 	The haXe Reflection API enables you to retreive informations about any value,
 	Classes and Enums at runtime.
-</div><dl><dt><span class="kwd">static </span><span class="kwd">function </span>createEmptyInstance&lt;T&gt;(cl : <a href="Class.html" class="type">Class</a>&lt;T&gt;) : T</dt><dd>
+</div><dl><dt><span class="kwd">static </span><span class="kwd">function </span>allEnums&lt;T&gt;(e : <a href="Enum.html" class="type">Enum</a>&lt;T&gt;) : <a href="Array.html" class="type">Array</a>&lt;T&gt;</dt><dd>
+		Returns the list of all enum values that don't take any parameter.
+</dd><dt><span class="kwd">static </span><span class="kwd">function </span>createEmptyInstance&lt;T&gt;(cl : <a href="Class.html" class="type">Class</a>&lt;T&gt;) : T</dt><dd>
 		Similar to <code>Reflect.createInstance</code> excepts that the constructor is not called.
 		This enables you to create an instance without any side-effect.
 </dd><dt><span class="kwd">static </span><span class="kwd">function </span>createEnum&lt;T&gt;(e : <a href="Enum.html" class="type">Enum</a>&lt;T&gt;, constr : <a href="String.html" class="type">String</a>, ?params : <a href="Array.html" class="type">Array</a>&lt;<a href="Dynamic.html" class="type">Dynamic</a>&gt;) : T</dt><dd>

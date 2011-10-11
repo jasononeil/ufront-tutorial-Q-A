@@ -36,7 +36,17 @@ class ufront_web_HttpCookie {
 	}
 	public function description() {
 		$buf = new StringBuf();
-		$buf->b .= $this->value;
+		{
+			$x = $this->value;
+			if(is_null($x)) {
+				$x = "null";
+			} else {
+				if(is_bool($x)) {
+					$x = (($x) ? "true" : "false");
+				}
+			}
+			$buf->b .= $x;
+		}
 		if($this->expires !== null) {
 			ufront_web_HttpCookie::addPair($buf, "expires", DateTools::format($this->expires, "%a, %d-%b-%Y %H:%M:%S GMT"), null);
 		}
@@ -64,13 +74,53 @@ class ufront_web_HttpCookie {
 		if(!$allowNullValue && null === $value) {
 			return;
 		}
-		$buf->b .= "; ";
-		$buf->b .= $name;
+		{
+			$x = "; ";
+			if(is_null($x)) {
+				$x = "null";
+			} else {
+				if(is_bool($x)) {
+					$x = (($x) ? "true" : "false");
+				}
+			}
+			$buf->b .= $x;
+		}
+		{
+			$x = $name;
+			if(is_null($x)) {
+				$x = "null";
+			} else {
+				if(is_bool($x)) {
+					$x = (($x) ? "true" : "false");
+				}
+			}
+			$buf->b .= $x;
+		}
 		if(null === $value) {
 			return;
 		}
-		$buf->b .= "=";
-		$buf->b .= $value;
+		{
+			$x = "=";
+			if(is_null($x)) {
+				$x = "null";
+			} else {
+				if(is_bool($x)) {
+					$x = (($x) ? "true" : "false");
+				}
+			}
+			$buf->b .= $x;
+		}
+		{
+			$x = $value;
+			if(is_null($x)) {
+				$x = "null";
+			} else {
+				if(is_bool($x)) {
+					$x = (($x) ? "true" : "false");
+				}
+			}
+			$buf->b .= $x;
+		}
 	}
 	function __toString() { return $this->toString(); }
 }

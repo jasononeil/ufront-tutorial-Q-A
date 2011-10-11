@@ -17,7 +17,18 @@ class Strings {
 		$buf = new StringBuf();
 		while(true) {
 			if(!Strings::$_reFormat->match($pattern)) {
-				$buf->b .= $pattern;
+				{
+					$x = $pattern;
+					if(is_null($x)) {
+						$x = "null";
+					} else {
+						if(is_bool($x)) {
+							$x = (($x) ? "true" : "false");
+						}
+					}
+					$buf->b .= $x;
+					unset($x);
+				}
 				break;
 			}
 			$pos = Std::parseInt(Strings::$_reFormat->matched(1));
@@ -41,8 +52,30 @@ class Strings {
 				unset($_g);
 			}
 			$pattern = Strings::$_reFormat->matchedRight();
-			$buf->b .= Strings::$_reFormat->matchedLeft();
-			$buf->b .= Dynamics::format($values[$pos], $f, $params, $nullstring, $culture);
+			{
+				$x = Strings::$_reFormat->matchedLeft();
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$buf->b .= $x;
+				unset($x);
+			}
+			{
+				$x = Dynamics::format($values[$pos], $f, $params, $nullstring, $culture);
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$buf->b .= $x;
+				unset($x);
+			}
 			unset($pos,$params,$p,$f);
 		}
 		return $buf->b;

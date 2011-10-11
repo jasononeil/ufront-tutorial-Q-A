@@ -13,7 +13,18 @@ class erazor_ScriptBuilder {
 			while($_g < $blocks->length) {
 				$block = $blocks[$_g];
 				++$_g;
-				$buffer->b .= $this->blockToString($block);
+				{
+					$x = $this->blockToString($block);
+					if(is_null($x)) {
+						$x = "null";
+					} else {
+						if(is_bool($x)) {
+							$x = (($x) ? "true" : "false");
+						}
+					}
+					$buffer->b .= $x;
+					unset($x);
+				}
 				unset($block);
 			}
 		}

@@ -37,6 +37,9 @@ class Main
 			.addRoute("/q/{questionname}/{answernumber}/voteup/", { controller : "question", action : "voteup" } )
 			.addRoute("/q/{questionname}/{answernumber}/votedown/", { controller : "question", action : "votedown" } )
 			.addRoute("/ask/", { controller : "question", action : "ask" } )
+			.addRoute("/install/", { controller : "installation", action : "information" } )
+			.addRoute("/install/createtables/", { controller : "installation", action : "createtables" } )
+			.addRoute("/install/sampledata/", { controller : "installation", action : "sampledata" } )
 		;
 		
 		// Run the application.  

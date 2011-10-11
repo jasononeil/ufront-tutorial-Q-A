@@ -6,15 +6,7 @@ class model_Answer extends sys_db_Object {
 		parent::__construct();
 	}}
 	public $id;
-	public function get_user() { return call_user_func($this->get_user); }
-	public $get_user;
-	public function set_user($v) { return call_user_func($this->set_user, $v); }
-	public $set_user;
 	public $user;
-	public function get_question() { return call_user_func($this->get_question); }
-	public $get_question;
-	public function set_question($v) { return call_user_func($this->set_question, $v); }
-	public $set_question;
 	public $question;
 	public $text;
 	public $date;
@@ -23,6 +15,18 @@ class model_Answer extends sys_db_Object {
 	}
 	public function countDownVotes() {
 		return model_Vote::$manager->unsafeCount("SELECT COUNT(*) FROM Vote WHERE answerID = " . sys_db_Manager::quoteAny($this->id) . " AND vote = 0");
+	}
+	public function get_user() {
+		return model_User::$manager->h__get($this, "user", "userID", false);
+	}
+	public function set_user($_v) {
+		return model_User::$manager->h__set($this, "user", "userID", $_v);
+	}
+	public function get_question() {
+		return model_Question::$manager->h__get($this, "question", "questionID", false);
+	}
+	public function set_question($_v) {
+		return model_Question::$manager->h__set($this, "question", "questionID", $_v);
 	}
 	public function __call($m, $a) {
 		if(isset($this->$m) && is_callable($this->$m))

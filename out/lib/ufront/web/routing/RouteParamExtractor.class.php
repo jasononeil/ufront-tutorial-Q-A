@@ -88,7 +88,17 @@ class ufront_web_routing_RouteParamExtractor {
 	public function buildPattern($parts) {
 		$pattern = new StringBuf();
 		$map = new _hx_array(array());
-		$pattern->b .= "^";
+		{
+			$x = "^";
+			if(is_null($x)) {
+				$x = "null";
+			} else {
+				if(is_bool($x)) {
+					$x = (($x) ? "true" : "false");
+				}
+			}
+			$pattern->b .= $x;
+		}
 		{
 			$_g1 = 0; $_g = $parts->length;
 			while($_g1 < $_g) {
@@ -99,76 +109,202 @@ class ufront_web_routing_RouteParamExtractor {
 				$value = $퍁->params[0];
 				{
 					if(0 === $i) {
-						$pattern->b .= thx_text_ERegs::escapeERegChars($value);
+						$x = thx_text_ERegs::escapeERegChars($value);
+						if(is_null($x)) {
+							$x = "null";
+						} else {
+							if(is_bool($x)) {
+								$x = (($x) ? "true" : "false");
+							}
+						}
+						$pattern->b .= $x;
 					} else {
-						$pattern->b .= thx_text_ERegs::escapeERegChars($value);
+						$x = thx_text_ERegs::escapeERegChars($value);
+						if(is_null($x)) {
+							$x = "null";
+						} else {
+							if(is_bool($x)) {
+								$x = (($x) ? "true" : "false");
+							}
+						}
+						$pattern->b .= $x;
 					}
 				}break;
 				case 1:
 				$name = $퍁->params[0];
 				{
 					$map->push($name);
-					$pattern->b .= "(.+?)";
+					{
+						$x = "(.+?)";
+						if(is_null($x)) {
+							$x = "null";
+						} else {
+							if(is_bool($x)) {
+								$x = (($x) ? "true" : "false");
+							}
+						}
+						$pattern->b .= $x;
+					}
 				}break;
 				case 2:
 				$name = $퍁->params[0];
 				{
 					$map->push($name);
-					$pattern->b .= "(.+?)" . "?";
+					{
+						$x = "(.+?)" . "?";
+						if(is_null($x)) {
+							$x = "null";
+						} else {
+							if(is_bool($x)) {
+								$x = (($x) ? "true" : "false");
+							}
+						}
+						$pattern->b .= $x;
+					}
 				}break;
 				case 3:
 				$left = $퍁->params[1]; $name = $퍁->params[0];
 				{
 					$map->push($name);
-					$pattern->b .= "(?:" . thx_text_ERegs::escapeERegChars($left) . "(.+?)" . ")?";
+					{
+						$x = "(?:" . thx_text_ERegs::escapeERegChars($left) . "(.+?)" . ")?";
+						if(is_null($x)) {
+							$x = "null";
+						} else {
+							if(is_bool($x)) {
+								$x = (($x) ? "true" : "false");
+							}
+						}
+						$pattern->b .= $x;
+					}
 				}break;
 				case 4:
 				$right = $퍁->params[1]; $name = $퍁->params[0];
 				{
 					$map->push($name);
-					$pattern->b .= "(?:" . "(.+?)" . thx_text_ERegs::escapeERegChars($right) . ")?";
+					{
+						$x = "(?:" . "(.+?)" . thx_text_ERegs::escapeERegChars($right) . ")?";
+						if(is_null($x)) {
+							$x = "null";
+						} else {
+							if(is_bool($x)) {
+								$x = (($x) ? "true" : "false");
+							}
+						}
+						$pattern->b .= $x;
+					}
 				}break;
 				case 5:
 				$right = $퍁->params[2]; $left = $퍁->params[1]; $name = $퍁->params[0];
 				{
 					$map->push($name);
-					$pattern->b .= "(?:" . thx_text_ERegs::escapeERegChars($left) . "(.+?)" . thx_text_ERegs::escapeERegChars($right) . ")?";
+					{
+						$x = "(?:" . thx_text_ERegs::escapeERegChars($left) . "(.+?)" . thx_text_ERegs::escapeERegChars($right) . ")?";
+						if(is_null($x)) {
+							$x = "null";
+						} else {
+							if(is_bool($x)) {
+								$x = (($x) ? "true" : "false");
+							}
+						}
+						$pattern->b .= $x;
+					}
 				}break;
 				case 6:
 				$name = $퍁->params[0];
 				{
 					$map->push($name);
-					$pattern->b .= "(.+?)";
+					{
+						$x = "(.+?)";
+						if(is_null($x)) {
+							$x = "null";
+						} else {
+							if(is_bool($x)) {
+								$x = (($x) ? "true" : "false");
+							}
+						}
+						$pattern->b .= $x;
+					}
 				}break;
 				case 7:
 				$name = $퍁->params[0];
 				{
 					$map->push($name);
-					$pattern->b .= "(.+?)" . "?";
+					{
+						$x = "(.+?)" . "?";
+						if(is_null($x)) {
+							$x = "null";
+						} else {
+							if(is_bool($x)) {
+								$x = (($x) ? "true" : "false");
+							}
+						}
+						$pattern->b .= $x;
+					}
 				}break;
 				case 8:
 				$left = $퍁->params[1]; $name = $퍁->params[0];
 				{
 					$map->push($name);
-					$pattern->b .= "(?:" . thx_text_ERegs::escapeERegChars($left) . "(.+?)" . ")?";
+					{
+						$x = "(?:" . thx_text_ERegs::escapeERegChars($left) . "(.+?)" . ")?";
+						if(is_null($x)) {
+							$x = "null";
+						} else {
+							if(is_bool($x)) {
+								$x = (($x) ? "true" : "false");
+							}
+						}
+						$pattern->b .= $x;
+					}
 				}break;
 				case 9:
 				$right = $퍁->params[1]; $name = $퍁->params[0];
 				{
 					$map->push($name);
-					$pattern->b .= "(?:" . "(.+?)" . thx_text_ERegs::escapeERegChars($right) . ")?";
+					{
+						$x = "(?:" . "(.+?)" . thx_text_ERegs::escapeERegChars($right) . ")?";
+						if(is_null($x)) {
+							$x = "null";
+						} else {
+							if(is_bool($x)) {
+								$x = (($x) ? "true" : "false");
+							}
+						}
+						$pattern->b .= $x;
+					}
 				}break;
 				case 10:
 				$right = $퍁->params[2]; $left = $퍁->params[1]; $name = $퍁->params[0];
 				{
 					$map->push($name);
-					$pattern->b .= "(?:" . thx_text_ERegs::escapeERegChars($left) . "(.+?)" . thx_text_ERegs::escapeERegChars($right) . ")?";
+					{
+						$x = "(?:" . thx_text_ERegs::escapeERegChars($left) . "(.+?)" . thx_text_ERegs::escapeERegChars($right) . ")?";
+						if(is_null($x)) {
+							$x = "null";
+						} else {
+							if(is_bool($x)) {
+								$x = (($x) ? "true" : "false");
+							}
+						}
+						$pattern->b .= $x;
+					}
 				}break;
 				}
 				unset($i);
 			}
 		}
-		$pattern->b .= "\$";
+		{
+			$x = "\$";
+			if(is_null($x)) {
+				$x = "null";
+			} else {
+				if(is_bool($x)) {
+					$x = (($x) ? "true" : "false");
+				}
+			}
+			$pattern->b .= $x;
+		}
 		return _hx_anonymous(array("map" => $map, "pattern" => $pattern->b));
 	}
 	public function e($s) {

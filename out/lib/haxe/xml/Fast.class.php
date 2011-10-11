@@ -46,7 +46,16 @@ class haxe_xml_Fast {
 		$»it = $this->x->iterator();
 		while($»it->hasNext()) {
 			$x = $»it->next();
-			$s->b .= $x->toString();
+			$x1 = $x->toString();
+			if(is_null($x1)) {
+				$x1 = "null";
+			} else {
+				if(is_bool($x1)) {
+					$x1 = (($x1) ? "true" : "false");
+				}
+			}
+			$s->b .= $x1;
+			unset($x1);
 		}
 		return $s->b;
 	}

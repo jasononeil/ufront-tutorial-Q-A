@@ -58,6 +58,9 @@ class sys_db__Mysql_MysqlResultSet implements sys_db_ResultSet{
 		case "datetime":case "date":{
 			return Date::fromString($v);
 		}break;
+		case "blob":{
+			return haxe_io_Bytes::ofData($v);
+		}break;
 		default:{
 			return $v;
 		}break;

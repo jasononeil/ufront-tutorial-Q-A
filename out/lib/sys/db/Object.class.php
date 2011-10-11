@@ -2,8 +2,11 @@
 
 class sys_db_Object {
 	public function __construct() {
-		;
-	}
+		if(!php_Boot::$skip_constructor) {
+		if($this->_manager === null) {
+			$this->_manager = Type::getClass($this)->manager;
+		}
+	}}
 	public $_locked;
 	public $_manager;
 	public function insert() {

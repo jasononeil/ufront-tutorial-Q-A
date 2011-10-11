@@ -48,7 +48,7 @@ class Date {
 			throw new HException('Unable to call «'.$m.'»');
 	}
 	static function now() {
-		return Date::fromPhpTime(time());
+		return Date::fromPhpTime(round(microtime(true), 3));
 	}
 	static function fromPhpTime($t) {
 		$d = new Date(2000, 1, 1, 0, 0, 0);

@@ -337,10 +337,11 @@ function _hx_get_object_vars($o) {
 	if(isset($o->»dynamics))
 		$a = array_merge($a, array_keys($o->»dynamics));
 	$arr = array();
-	while($k = current($a)) {
+	for($i=0;$i<count($a); $i++)
+	{
+		$k = '' . $a[$i];
 		if(substr($k, 0, 1) != '»')
 			$arr[] = $k;
-		next($a);
 	}
 	return $arr;
 }
@@ -569,8 +570,18 @@ function _hx_string_rec($o, $s) {
 		if(is_callable($o)) return '«function»';
 		$str = '[';
 		$s .= "	";
-		for($i = 0; $i < count($o); $i++)
-			$str .= ($i > 0 ? ', ' : '') . _hx_string_rec($o[$i], $s);
+		$first = true;
+		$assoc = true;
+		foreach($o as $k => $v)
+		{
+			if ($first && $k === 0)
+				$assoc = false;
+			$str .= ($first ? '' : ', ') . ($assoc 
+				? _hx_string_rec($k, $s) . '=>' . _hx_string_rec($o[$k], $s)
+				: _hx_string_rec($o[$k], $s)
+			);
+			$first = false;
+		}
 		$str .= ']';
 		return $str;
 	}

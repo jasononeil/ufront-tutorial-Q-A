@@ -21,8 +21,6 @@ class sys_db_Manager {
 			}
 		}
 		$this->class_proto = $classval;
-		$this->class_proto->prototype->_manager = $this;
-		sys_db_Manager::$init_list->add($this);
 	}}
 	public $table_infos;
 	public $table_name;
@@ -39,9 +37,39 @@ class sys_db_Manager {
 	public $delete;
 	public function dynamicSearch($x, $lock) {
 		$s = new StringBuf();
-		$s->b .= "SELECT * FROM ";
-		$s->b .= $this->table_name;
-		$s->b .= " WHERE ";
+		{
+			$x1 = "SELECT * FROM ";
+			if(is_null($x1)) {
+				$x1 = "null";
+			} else {
+				if(is_bool($x1)) {
+					$x1 = (($x1) ? "true" : "false");
+				}
+			}
+			$s->b .= $x1;
+		}
+		{
+			$x1 = $this->table_name;
+			if(is_null($x1)) {
+				$x1 = "null";
+			} else {
+				if(is_bool($x1)) {
+					$x1 = (($x1) ? "true" : "false");
+				}
+			}
+			$s->b .= $x1;
+		}
+		{
+			$x1 = " WHERE ";
+			if(is_null($x1)) {
+				$x1 = "null";
+			} else {
+				if(is_bool($x1)) {
+					$x1 = (($x1) ? "true" : "false");
+				}
+			}
+			$s->b .= $x1;
+		}
 		$this->addCondition($s, $x);
 		return $this->unsafeObjects($s->b, $lock);
 	}
@@ -53,6 +81,7 @@ class sys_db_Manager {
 		$s = new StringBuf();
 		$fields = new HList();
 		$values = new HList();
+		$pos = 0;
 		if(null == $this->table_fields) throw new HException('null iterable');
 		$»it = $this->table_fields->iterator();
 		while($»it->hasNext()) {
@@ -61,14 +90,115 @@ class sys_db_Manager {
 			if($v !== null) {
 				$fields->add($this->quoteField($f));
 				$values->add($v);
+			} else {
+				$inf = $this->table_infos->fields[$pos];
+				if(!$inf->isNull) {
+					$»t = ($inf->t);
+					switch($»t->index) {
+					case 3:
+					case 23:
+					case 1:
+					case 6:
+					case 7:
+					case 22:
+					case 5:
+					{
+						$x->{$f} = 0;
+					}break;
+					case 8:
+					{
+						$x->{$f} = false;
+					}break;
+					case 12:
+					case 14:
+					case 9:
+					case 13:
+					case 20:
+					{
+						$x->{$f} = "";
+					}break;
+					case 15:
+					case 21:
+					case 16:
+					case 18:
+					case 17:
+					{
+						$x->{$f} = haxe_io_Bytes::alloc(0);
+					}break;
+					case 10:
+					case 11:
+					{
+					}break;
+					case 0:
+					case 2:
+					case 4:
+					case 25:
+					case 24:
+					case 19:
+					{
+					}break;
+					}
+				}
+				unset($inf);
 			}
+			$pos++;
 			unset($v);
 		}
-		$s->b .= "INSERT INTO ";
-		$s->b .= $this->table_name;
-		$s->b .= " (";
-		$s->b .= $fields->join(",");
-		$s->b .= ") VALUES (";
+		{
+			$x1 = "INSERT INTO ";
+			if(is_null($x1)) {
+				$x1 = "null";
+			} else {
+				if(is_bool($x1)) {
+					$x1 = (($x1) ? "true" : "false");
+				}
+			}
+			$s->b .= $x1;
+		}
+		{
+			$x1 = $this->table_name;
+			if(is_null($x1)) {
+				$x1 = "null";
+			} else {
+				if(is_bool($x1)) {
+					$x1 = (($x1) ? "true" : "false");
+				}
+			}
+			$s->b .= $x1;
+		}
+		{
+			$x1 = " (";
+			if(is_null($x1)) {
+				$x1 = "null";
+			} else {
+				if(is_bool($x1)) {
+					$x1 = (($x1) ? "true" : "false");
+				}
+			}
+			$s->b .= $x1;
+		}
+		{
+			$x1 = $fields->join(",");
+			if(is_null($x1)) {
+				$x1 = "null";
+			} else {
+				if(is_bool($x1)) {
+					$x1 = (($x1) ? "true" : "false");
+				}
+			}
+			$s->b .= $x1;
+		}
+		{
+			$x1 = ") VALUES (";
+			if(is_null($x1)) {
+				$x1 = "null";
+			} else {
+				if(is_bool($x1)) {
+					$x1 = (($x1) ? "true" : "false");
+				}
+			}
+			$s->b .= $x1;
+		}
 		$first = true;
 		if(null == $values) throw new HException('null iterable');
 		$»it = $values->iterator();
@@ -77,11 +207,30 @@ class sys_db_Manager {
 			if($first) {
 				$first = false;
 			} else {
-				$s->b .= ", ";
+				$x1 = ", ";
+				if(is_null($x1)) {
+					$x1 = "null";
+				} else {
+					if(is_bool($x1)) {
+						$x1 = (($x1) ? "true" : "false");
+					}
+				}
+				$s->b .= $x1;
+				unset($x1);
 			}
 			$this->getCnx()->addValue($s, $v);
 		}
-		$s->b .= ")";
+		{
+			$x1 = ")";
+			if(is_null($x1)) {
+				$x1 = "null";
+			} else {
+				if(is_bool($x1)) {
+					$x1 = (($x1) ? "true" : "false");
+				}
+			}
+			$s->b .= $x1;
+		}
 		$this->unsafeExecute($s->b);
 		$x->_lock = true;
 		if($this->table_keys->length === 1 && Reflect::field($x, $this->table_keys[0]) === null) {
@@ -95,9 +244,39 @@ class sys_db_Manager {
 		}
 		$this->unmake($x);
 		$s = new StringBuf();
-		$s->b .= "UPDATE ";
-		$s->b .= $this->table_name;
-		$s->b .= " SET ";
+		{
+			$x1 = "UPDATE ";
+			if(is_null($x1)) {
+				$x1 = "null";
+			} else {
+				if(is_bool($x1)) {
+					$x1 = (($x1) ? "true" : "false");
+				}
+			}
+			$s->b .= $x1;
+		}
+		{
+			$x1 = $this->table_name;
+			if(is_null($x1)) {
+				$x1 = "null";
+			} else {
+				if(is_bool($x1)) {
+					$x1 = (($x1) ? "true" : "false");
+				}
+			}
+			$s->b .= $x1;
+		}
+		{
+			$x1 = " SET ";
+			if(is_null($x1)) {
+				$x1 = "null";
+			} else {
+				if(is_bool($x1)) {
+					$x1 = (($x1) ? "true" : "false");
+				}
+			}
+			$s->b .= $x1;
+		}
 		$cache = Reflect::field($x, "__cache__");
 		$mod = false;
 		if(null == $this->table_fields) throw new HException('null iterable');
@@ -108,12 +287,43 @@ class sys_db_Manager {
 			$vc = Reflect::field($cache, $f);
 			if(!_hx_equal($v, $vc)) {
 				if($mod) {
-					$s->b .= ", ";
+					$x1 = ", ";
+					if(is_null($x1)) {
+						$x1 = "null";
+					} else {
+						if(is_bool($x1)) {
+							$x1 = (($x1) ? "true" : "false");
+						}
+					}
+					$s->b .= $x1;
+					unset($x1);
 				} else {
 					$mod = true;
 				}
-				$s->b .= $this->quoteField($f);
-				$s->b .= " = ";
+				{
+					$x1 = $this->quoteField($f);
+					if(is_null($x1)) {
+						$x1 = "null";
+					} else {
+						if(is_bool($x1)) {
+							$x1 = (($x1) ? "true" : "false");
+						}
+					}
+					$s->b .= $x1;
+					unset($x1);
+				}
+				{
+					$x1 = " = ";
+					if(is_null($x1)) {
+						$x1 = "null";
+					} else {
+						if(is_bool($x1)) {
+							$x1 = (($x1) ? "true" : "false");
+						}
+					}
+					$s->b .= $x1;
+					unset($x1);
+				}
 				$this->getCnx()->addValue($s, $v);
 				$cache->{$f} = $v;
 			}
@@ -122,15 +332,55 @@ class sys_db_Manager {
 		if(!$mod) {
 			return;
 		}
-		$s->b .= " WHERE ";
+		{
+			$x1 = " WHERE ";
+			if(is_null($x1)) {
+				$x1 = "null";
+			} else {
+				if(is_bool($x1)) {
+					$x1 = (($x1) ? "true" : "false");
+				}
+			}
+			$s->b .= $x1;
+		}
 		$this->addKeys($s, $x);
 		$this->unsafeExecute($s->b);
 	}
 	public function doDelete($x) {
 		$s = new StringBuf();
-		$s->b .= "DELETE FROM ";
-		$s->b .= $this->table_name;
-		$s->b .= " WHERE ";
+		{
+			$x1 = "DELETE FROM ";
+			if(is_null($x1)) {
+				$x1 = "null";
+			} else {
+				if(is_bool($x1)) {
+					$x1 = (($x1) ? "true" : "false");
+				}
+			}
+			$s->b .= $x1;
+		}
+		{
+			$x1 = $this->table_name;
+			if(is_null($x1)) {
+				$x1 = "null";
+			} else {
+				if(is_bool($x1)) {
+					$x1 = (($x1) ? "true" : "false");
+				}
+			}
+			$s->b .= $x1;
+		}
+		{
+			$x1 = " WHERE ";
+			if(is_null($x1)) {
+				$x1 = "null";
+			} else {
+				if(is_bool($x1)) {
+					$x1 = (($x1) ? "true" : "false");
+				}
+			}
+			$s->b .= $x1;
+		}
 		$this->addKeys($s, $x);
 		$this->unsafeExecute($s->b);
 		$this->removeFromCache($x);
@@ -139,44 +389,91 @@ class sys_db_Manager {
 		if($i->_lock) {
 			return;
 		}
-		$i->_lock = true;
-		sys_db_Manager::$object_cache->remove($this->makeCacheKey($i));
 		$s = new StringBuf();
-		$s->b .= "SELECT * FROM ";
-		$s->b .= $this->table_name;
-		$s->b .= " WHERE ";
+		{
+			$x = "SELECT * FROM ";
+			if(is_null($x)) {
+				$x = "null";
+			} else {
+				if(is_bool($x)) {
+					$x = (($x) ? "true" : "false");
+				}
+			}
+			$s->b .= $x;
+		}
+		{
+			$x = $this->table_name;
+			if(is_null($x)) {
+				$x = "null";
+			} else {
+				if(is_bool($x)) {
+					$x = (($x) ? "true" : "false");
+				}
+			}
+			$s->b .= $x;
+		}
+		{
+			$x = " WHERE ";
+			if(is_null($x)) {
+				$x = "null";
+			} else {
+				if(is_bool($x)) {
+					$x = (($x) ? "true" : "false");
+				}
+			}
+			$s->b .= $x;
+		}
 		$this->addKeys($s, $i);
-		$i2 = $this->unsafeObject($s->b, $i->_lock);
-		{
-			$_g = 0; $_g1 = Reflect::fields($i);
-			while($_g < $_g1->length) {
-				$f = $_g1[$_g];
-				++$_g;
-				Reflect::deleteField($i, $f);
-				unset($f);
-			}
-		}
-		{
-			$_g = 0; $_g1 = Reflect::fields($i2);
-			while($_g < $_g1->length) {
-				$f = $_g1[$_g];
-				++$_g;
-				$i->{$f} = Reflect::field($i2, $f);
-				unset($f);
-			}
-		}
-		$i->{"__cache__"} = Reflect::field($i2, "__cache__");
-		$this->make($i);
-		$this->addToCache($i);
+		$this->unsafeObject($s->b, true);
 	}
 	public function objectToString($it) {
 		$s = new StringBuf();
-		$s->b .= $this->table_name;
+		{
+			$x = $this->table_name;
+			if(is_null($x)) {
+				$x = "null";
+			} else {
+				if(is_bool($x)) {
+					$x = (($x) ? "true" : "false");
+				}
+			}
+			$s->b .= $x;
+		}
 		if($this->table_keys->length === 1) {
-			$s->b .= "#";
-			$s->b .= Reflect::field($it, $this->table_keys[0]);
+			{
+				$x = "#";
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$s->b .= $x;
+			}
+			{
+				$x = Reflect::field($it, $this->table_keys[0]);
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$s->b .= $x;
+			}
 		} else {
-			$s->b .= "(";
+			{
+				$x = "(";
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$s->b .= $x;
+			}
 			$first = true;
 			{
 				$_g = 0; $_g1 = $this->table_keys;
@@ -186,23 +483,86 @@ class sys_db_Manager {
 					if($first) {
 						$first = false;
 					} else {
-						$s->b .= ",";
+						$x = ",";
+						if(is_null($x)) {
+							$x = "null";
+						} else {
+							if(is_bool($x)) {
+								$x = (($x) ? "true" : "false");
+							}
+						}
+						$s->b .= $x;
+						unset($x);
 					}
-					$s->b .= $this->quoteField($f);
-					$s->b .= ":";
-					$s->b .= Reflect::field($it, $f);
+					{
+						$x = $this->quoteField($f);
+						if(is_null($x)) {
+							$x = "null";
+						} else {
+							if(is_bool($x)) {
+								$x = (($x) ? "true" : "false");
+							}
+						}
+						$s->b .= $x;
+						unset($x);
+					}
+					{
+						$x = ":";
+						if(is_null($x)) {
+							$x = "null";
+						} else {
+							if(is_bool($x)) {
+								$x = (($x) ? "true" : "false");
+							}
+						}
+						$s->b .= $x;
+						unset($x);
+					}
+					{
+						$x = Reflect::field($it, $f);
+						if(is_null($x)) {
+							$x = "null";
+						} else {
+							if(is_bool($x)) {
+								$x = (($x) ? "true" : "false");
+							}
+						}
+						$s->b .= $x;
+						unset($x);
+					}
 					unset($f);
 				}
 			}
-			$s->b .= ")";
+			{
+				$x = ")";
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$s->b .= $x;
+			}
 		}
 		return $s->b;
 	}
 	public function cacheObject($x, $lock) {
-		$this->addToCache($x);
-		call_user_func_array($__dollar__objsetproto, array($x, $this->class_proto->prototype));
-		$x->{"__cache__"} = call_user_func_array($__dollar__new, array($x));
-		$x->_lock = $lock;
+		$o = Type::createEmptyInstance($this->class_proto);
+		{
+			$_g = 0; $_g1 = Reflect::fields($x);
+			while($_g < $_g1->length) {
+				$f = $_g1[$_g];
+				++$_g;
+				$o->{$f} = Reflect::field($x, $f);
+				unset($f);
+			}
+		}
+		$o->_manager = $this;
+		$o->{"__cache__"} = $x;
+		$this->addToCache($o);
+		$o->_lock = $lock;
+		return $o;
 	}
 	public function make($x) {
 	}
@@ -221,10 +581,41 @@ class sys_db_Manager {
 				if($first) {
 					$first = false;
 				} else {
-					$s->b .= " AND ";
+					$x1 = " AND ";
+					if(is_null($x1)) {
+						$x1 = "null";
+					} else {
+						if(is_bool($x1)) {
+							$x1 = (($x1) ? "true" : "false");
+						}
+					}
+					$s->b .= $x1;
+					unset($x1);
 				}
-				$s->b .= $this->quoteField($k);
-				$s->b .= " = ";
+				{
+					$x1 = $this->quoteField($k);
+					if(is_null($x1)) {
+						$x1 = "null";
+					} else {
+						if(is_bool($x1)) {
+							$x1 = (($x1) ? "true" : "false");
+						}
+					}
+					$s->b .= $x1;
+					unset($x1);
+				}
+				{
+					$x1 = " = ";
+					if(is_null($x1)) {
+						$x1 = "null";
+					} else {
+						if(is_bool($x1)) {
+							$x1 = (($x1) ? "true" : "false");
+						}
+					}
+					$s->b .= $x1;
+					unset($x1);
+				}
 				$f = Reflect::field($x, $k);
 				if($f === null) {
 					throw new HException("Missing key " . $k);
@@ -250,7 +641,7 @@ class sys_db_Manager {
 		if($c !== null) {
 			return $c;
 		}
-		$this->cacheObject($r, $lock);
+		$r = $this->cacheObject($r, $lock);
 		$this->make($r);
 		return $r;
 	}
@@ -269,7 +660,7 @@ class sys_db_Manager {
 			if($c !== null) {
 				$l2->add($c);
 			} else {
-				$this->cacheObject($x, $lock);
+				$x = $this->cacheObject($x, $lock);
 				$this->make($x);
 				$l2->add($x);
 			}
@@ -298,11 +689,61 @@ class sys_db_Manager {
 			return $x;
 		}
 		$s = new StringBuf();
-		$s->b .= "SELECT * FROM ";
-		$s->b .= $this->table_name;
-		$s->b .= " WHERE ";
-		$s->b .= $this->quoteField($this->table_keys[0]);
-		$s->b .= " = ";
+		{
+			$x1 = "SELECT * FROM ";
+			if(is_null($x1)) {
+				$x1 = "null";
+			} else {
+				if(is_bool($x1)) {
+					$x1 = (($x1) ? "true" : "false");
+				}
+			}
+			$s->b .= $x1;
+		}
+		{
+			$x1 = $this->table_name;
+			if(is_null($x1)) {
+				$x1 = "null";
+			} else {
+				if(is_bool($x1)) {
+					$x1 = (($x1) ? "true" : "false");
+				}
+			}
+			$s->b .= $x1;
+		}
+		{
+			$x1 = " WHERE ";
+			if(is_null($x1)) {
+				$x1 = "null";
+			} else {
+				if(is_bool($x1)) {
+					$x1 = (($x1) ? "true" : "false");
+				}
+			}
+			$s->b .= $x1;
+		}
+		{
+			$x1 = $this->quoteField($this->table_keys[0]);
+			if(is_null($x1)) {
+				$x1 = "null";
+			} else {
+				if(is_bool($x1)) {
+					$x1 = (($x1) ? "true" : "false");
+				}
+			}
+			$s->b .= $x1;
+		}
+		{
+			$x1 = " = ";
+			if(is_null($x1)) {
+				$x1 = "null";
+			} else {
+				if(is_bool($x1)) {
+					$x1 = (($x1) ? "true" : "false");
+				}
+			}
+			$s->b .= $x1;
+		}
 		$this->getCnx()->addValue($s, $id);
 		return $this->unsafeObject($s->b, $lock);
 	}
@@ -315,11 +756,44 @@ class sys_db_Manager {
 			return $x;
 		}
 		$s = new StringBuf();
-		$s->b .= "SELECT * FROM ";
-		$s->b .= $this->table_name;
-		$s->b .= " WHERE ";
+		{
+			$x1 = "SELECT * FROM ";
+			if(is_null($x1)) {
+				$x1 = "null";
+			} else {
+				if(is_bool($x1)) {
+					$x1 = (($x1) ? "true" : "false");
+				}
+			}
+			$s->b .= $x1;
+		}
+		{
+			$x1 = $this->table_name;
+			if(is_null($x1)) {
+				$x1 = "null";
+			} else {
+				if(is_bool($x1)) {
+					$x1 = (($x1) ? "true" : "false");
+				}
+			}
+			$s->b .= $x1;
+		}
+		{
+			$x1 = " WHERE ";
+			if(is_null($x1)) {
+				$x1 = "null";
+			} else {
+				if(is_bool($x1)) {
+					$x1 = (($x1) ? "true" : "false");
+				}
+			}
+			$s->b .= $x1;
+		}
 		$this->addKeys($s, $keys);
 		return $this->unsafeObject($s->b, $lock);
+	}
+	public function unsafeGetId($o) {
+		return (($o === null) ? null : Reflect::field($o, $this->table_keys[0]));
 	}
 	public function addCondition($s, $x) {
 		$first = true;
@@ -331,25 +805,76 @@ class sys_db_Manager {
 				if($first) {
 					$first = false;
 				} else {
-					$s->b .= " AND ";
+					$x1 = " AND ";
+					if(is_null($x1)) {
+						$x1 = "null";
+					} else {
+						if(is_bool($x1)) {
+							$x1 = (($x1) ? "true" : "false");
+						}
+					}
+					$s->b .= $x1;
+					unset($x1);
 				}
-				$s->b .= $this->quoteField($f);
+				{
+					$x1 = $this->quoteField($f);
+					if(is_null($x1)) {
+						$x1 = "null";
+					} else {
+						if(is_bool($x1)) {
+							$x1 = (($x1) ? "true" : "false");
+						}
+					}
+					$s->b .= $x1;
+					unset($x1);
+				}
 				$d = Reflect::field($x, $f);
 				if($d === null) {
-					$s->b .= " IS NULL";
+					$x1 = " IS NULL";
+					if(is_null($x1)) {
+						$x1 = "null";
+					} else {
+						if(is_bool($x1)) {
+							$x1 = (($x1) ? "true" : "false");
+						}
+					}
+					$s->b .= $x1;
+					unset($x1);
 				} else {
-					$s->b .= " = ";
+					{
+						$x1 = " = ";
+						if(is_null($x1)) {
+							$x1 = "null";
+						} else {
+							if(is_bool($x1)) {
+								$x1 = (($x1) ? "true" : "false");
+							}
+						}
+						$s->b .= $x1;
+						unset($x1);
+					}
 					$this->getCnx()->addValue($s, $d);
 				}
 				unset($f,$d);
 			}
 		}
 		if($first) {
-			$s->b .= "1";
+			$x1 = "1";
+			if(is_null($x1)) {
+				$x1 = "null";
+			} else {
+				if(is_bool($x1)) {
+					$x1 = (($x1) ? "true" : "false");
+				}
+			}
+			$s->b .= $x1;
 		}
 	}
 	public function dbClass() {
 		return $this->class_proto;
+	}
+	public function dbInfos() {
+		return $this->table_infos;
 	}
 	public function getCnx() {
 		return sys_db_Manager::$cnx;
@@ -375,6 +900,23 @@ class sys_db_Manager {
 		$this->class_proto->prototype->{"get_" . $r->prop} = array(new _hx_lambda(array(&$hkey, &$hprop, &$lock, &$manager, &$r, &$spod), "sys_db_Manager_1"), 'execute');
 		$this->class_proto->prototype->{"set_" . $r->prop} = array(new _hx_lambda(array(&$hkey, &$hprop, &$lock, &$manager, &$r, &$spod), "sys_db_Manager_2"), 'execute');
 	}
+	public function h__get($x, $prop, $key, $lock) {
+		$v = Reflect::field($x, $prop);
+		if($v !== null) {
+			return $v->value;
+		}
+		$x1 = $this->unsafeGet(Reflect::field($x, $key), $lock);
+		$x1->{$prop} = _hx_anonymous(array("value" => $x1));
+		return $x1;
+	}
+	public function h__set($x, $prop, $key, $v) {
+		$x->{$prop} = _hx_anonymous(array("value" => $v));
+		if($v === null) {
+			$x->{$key} = null;
+		} else {
+			$x->{$key} = Reflect::field($v, $this->table_keys[0]);
+		}
+	}
 	public function makeCacheKey($x) {
 		if($this->table_keys->length === 1) {
 			$k = Reflect::field($x, $this->table_keys[0]);
@@ -393,12 +935,44 @@ class sys_db_Manager {
 				if($k === null) {
 					throw new HException("Missing key " . $k);
 				}
-				$s->b .= $v;
-				$s->b .= "#";
+				{
+					$x1 = $v;
+					if(is_null($x1)) {
+						$x1 = "null";
+					} else {
+						if(is_bool($x1)) {
+							$x1 = (($x1) ? "true" : "false");
+						}
+					}
+					$s->b .= $x1;
+					unset($x1);
+				}
+				{
+					$x1 = "#";
+					if(is_null($x1)) {
+						$x1 = "null";
+					} else {
+						if(is_bool($x1)) {
+							$x1 = (($x1) ? "true" : "false");
+						}
+					}
+					$s->b .= $x1;
+					unset($x1);
+				}
 				unset($v,$k);
 			}
 		}
-		$s->b .= $this->table_name;
+		{
+			$x1 = $this->table_name;
+			if(is_null($x1)) {
+				$x1 = "null";
+			} else {
+				if(is_bool($x1)) {
+					$x1 = (($x1) ? "true" : "false");
+				}
+			}
+			$s->b .= $x1;
+		}
 		return $s->b;
 	}
 	public function addToCache($x) {
@@ -413,7 +987,6 @@ class sys_db_Manager {
 	public function getFromCache($x, $lock) {
 		$c = sys_db_Manager::$object_cache->get($this->makeCacheKey($x));
 		if($c !== null && $lock && !$c->_lock) {
-			$c->_lock = true;
 			{
 				$_g = 0; $_g1 = Reflect::fields($c);
 				while($_g < $_g1->length) {
@@ -432,6 +1005,7 @@ class sys_db_Manager {
 					unset($f);
 				}
 			}
+			$c->_lock = true;
 			$c->{"__cache__"} = $x;
 			$this->make($c);
 		}
@@ -483,23 +1057,26 @@ class sys_db_Manager {
 		sys_db_Manager::$cnx->addValue($s, $v);
 		return $s->b;
 	}
-	static function quoteInt($v) {
-		return sys_db_Manager::quoteAny($v);
-	}
-	static function quoteFloat($v) {
-		return sys_db_Manager::quoteAny($v);
-	}
-	static function quoteDate($v) {
-		return sys_db_Manager::quoteAny($v);
-	}
-	static function quoteString($v) {
-		return sys_db_Manager::quoteAny($v);
-	}
-	static function quoteBool($v) {
-		return sys_db_Manager::quoteAny($v);
-	}
-	static function quoteBytes($v) {
-		return sys_db_Manager::quoteAny($v);
+	static function quoteList($v, $it) {
+		$b = new StringBuf();
+		$first = true;
+		if($it !== null) {
+			if(null == $it) throw new HException('null iterable');
+			$»it = $it->iterator();
+			while($»it->hasNext()) {
+				$v1 = $»it->next();
+				if($first) {
+					$first = false;
+				} else {
+					$b->b .= chr(44);
+				}
+				sys_db_Manager::$cnx->addValue($b, $v1);
+			}
+		}
+		if($first) {
+			return "FALSE";
+		}
+		return $v . " IN (" . $b->b . ")";
 	}
 	function __toString() { return 'sys.db.Manager'; }
 }

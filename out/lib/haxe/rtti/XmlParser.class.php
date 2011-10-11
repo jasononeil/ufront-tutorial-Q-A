@@ -221,6 +221,7 @@ class haxe_rtti_XmlParser {
 					}
 				}
 				if($tinf->path === $inf->path) {
+					$sameType = true;
 					if($tinf->module === $inf->module && $tinf->doc === $inf->doc && $tinf->isPrivate == $inf->isPrivate) {
 						$퍁 = ($ct);
 						switch($퍁->index) {
@@ -237,6 +238,7 @@ class haxe_rtti_XmlParser {
 								}
 							}break;
 							default:{
+								$sameType = false;
 							}break;
 							}
 						}break;
@@ -253,6 +255,7 @@ class haxe_rtti_XmlParser {
 								}
 							}break;
 							default:{
+								$sameType = false;
 							}break;
 							}
 						}break;
@@ -274,10 +277,13 @@ class haxe_rtti_XmlParser {
 						}break;
 						case 0:
 						{
+							$sameType = false;
 						}break;
 						}
 					}
-					throw new HException("Incompatibilities between " . $tinf->path . " in " . $tinf->platforms->join(",") . " and " . $this->curplatform);
+					$msg = haxe_rtti_XmlParser_2($this, $_g, $ct, $cur, $curpack, $e, $inf, $pack, $prev, $sameType, $t, $tinf);
+					throw new HException("Incompatibilities between " . $tinf->path . " in " . $tinf->platforms->join(",") . " and " . $this->curplatform . " (" . $msg . ")");
+					unset($sameType,$msg);
 				}
 				unset($tinf,$e,$ct);
 			}
@@ -295,10 +301,10 @@ class haxe_rtti_XmlParser {
 		return $pl;
 	}
 	public function mkRights($r) {
-		return haxe_rtti_XmlParser_2($this, $r);
+		return haxe_rtti_XmlParser_3($this, $r);
 	}
 	public function xerror($c) {
-		haxe_rtti_XmlParser_3($this, $c);
+		haxe_rtti_XmlParser_4($this, $c);
 	}
 	public function xroot($x) {
 		if(null == $x->x) throw new HException('null iterable');
@@ -310,7 +316,7 @@ class haxe_rtti_XmlParser {
 	}
 	public function processElement($x) {
 		$c = new haxe_xml_Fast($x);
-		return haxe_rtti_XmlParser_4($this, $c, $x);
+		return haxe_rtti_XmlParser_5($this, $c, $x);
 	}
 	public function xpath($x) {
 		$path = $this->mkPath($x->att->resolve("path"));
@@ -435,7 +441,7 @@ class haxe_rtti_XmlParser {
 		return _hx_anonymous(array("path" => $this->mkPath($x->att->resolve("path")), "module" => (($x->has->resolve("module")) ? $this->mkPath($x->att->resolve("module")) : null), "doc" => $doc, "isPrivate" => $x->x->exists("private"), "params" => $this->mkTypeParams($x->att->resolve("params")), "type" => $t, "types" => $types, "platforms" => $this->defplat()));
 	}
 	public function xtype($x) {
-		return haxe_rtti_XmlParser_5($this, $x);
+		return haxe_rtti_XmlParser_6($this, $x);
 	}
 	public function xtypeparams($x) {
 		$p = new HList();
@@ -468,8 +474,8 @@ class haxe_rtti_XmlParser {
 }
 function haxe_rtti_XmlParser_0(&$l, $e1, $e2) {
 	{
-		$n1 = haxe_rtti_XmlParser_6($퍁his, $e1, $e2, $l);
-		$n2 = haxe_rtti_XmlParser_7($퍁his, $e1, $e2, $l, $n1);
+		$n1 = haxe_rtti_XmlParser_7($퍁his, $e1, $e2, $l);
+		$n2 = haxe_rtti_XmlParser_8($퍁his, $e1, $e2, $l, $n1);
 		if($n1 > $n2) {
 			return 1;
 		}
@@ -498,7 +504,26 @@ function haxe_rtti_XmlParser_1(&$a, &$fl, $f1, $f2) {
 		return -1;
 	}
 }
-function haxe_rtti_XmlParser_2(&$퍁his, &$r) {
+function haxe_rtti_XmlParser_2(&$퍁his, &$_g, &$ct, &$cur, &$curpack, &$e, &$inf, &$pack, &$prev, &$sameType, &$t, &$tinf) {
+	if($tinf->module !== $inf->module) {
+		return "module " . $inf->module . " should be " . $tinf->module;
+	} else {
+		if($tinf->doc !== $inf->doc) {
+			return "documentation is different";
+		} else {
+			if($tinf->isPrivate != $inf->isPrivate) {
+				return "private flag is different";
+			} else {
+				if(!$sameType) {
+					return "type kind is different";
+				} else {
+					return "could not merge definition";
+				}
+			}
+		}
+	}
+}
+function haxe_rtti_XmlParser_3(&$퍁his, &$r) {
 	switch($r) {
 	case "null":{
 		return haxe_rtti_Rights::$RNo;
@@ -517,10 +542,10 @@ function haxe_rtti_XmlParser_2(&$퍁his, &$r) {
 	}break;
 	}
 }
-function haxe_rtti_XmlParser_3(&$퍁his, &$c) {
+function haxe_rtti_XmlParser_4(&$퍁his, &$c) {
 	throw new HException("Invalid " . $c->getName());
 }
-function haxe_rtti_XmlParser_4(&$퍁his, &$c, &$x) {
+function haxe_rtti_XmlParser_5(&$퍁his, &$c, &$x) {
 	switch($c->getName()) {
 	case "class":{
 		return haxe_rtti_TypeTree::TClassdecl($퍁his->xclass($c));
@@ -536,7 +561,7 @@ function haxe_rtti_XmlParser_4(&$퍁his, &$c, &$x) {
 	}break;
 	}
 }
-function haxe_rtti_XmlParser_5(&$퍁his, &$x) {
+function haxe_rtti_XmlParser_6(&$퍁his, &$x) {
 	switch($x->getName()) {
 	case "unknown":{
 		return haxe_rtti_CType::$CUnknown;
@@ -597,7 +622,7 @@ function haxe_rtti_XmlParser_5(&$퍁his, &$x) {
 	}break;
 	}
 }
-function haxe_rtti_XmlParser_6(&$퍁his, &$e1, &$e2, &$l) {
+function haxe_rtti_XmlParser_7(&$퍁his, &$e1, &$e2, &$l) {
 	$퍁 = ($e1);
 	switch($퍁->index) {
 	case 0:
@@ -610,7 +635,7 @@ function haxe_rtti_XmlParser_6(&$퍁his, &$e1, &$e2, &$l) {
 	}break;
 	}
 }
-function haxe_rtti_XmlParser_7(&$퍁his, &$e1, &$e2, &$l, &$n1) {
+function haxe_rtti_XmlParser_8(&$퍁his, &$e1, &$e2, &$l, &$n1) {
 	$퍁 = ($e2);
 	switch($퍁->index) {
 	case 0:

@@ -18,6 +18,8 @@ Relationships:
 
 // Basic indexes to search by these fields
 @:index(answerID)
+@:index(userID)
+@:index(vote)
 
 class Vote extends sys.db.Object 
 {	
@@ -33,8 +35,8 @@ class Vote extends sys.db.Object
 	/** true=1, vote up.  false=0, vote down */
 	public var vote:SBool;
 	
-	private function voteUp() { vote = true; }
-	private function voteDown() { vote = false; }
+	public function voteUp() { vote = true; }
+	public function voteDown() { vote = false; }
 	
 	// Each SPOD needs its own manager.  This line creates the Manager for this SPOD.
 	public static var manager = new sys.db.Manager<Vote>(Vote);

@@ -16,7 +16,18 @@ class thx_culture_FormatDate {
 		while($pos < $len) {
 			$c = _hx_char_at($pattern, $pos);
 			if($c !== "%") {
-				$buf->b .= $c;
+				{
+					$x = $c;
+					if(is_null($x)) {
+						$x = "null";
+					} else {
+						if(is_bool($x)) {
+							$x = (($x) ? "true" : "false");
+						}
+					}
+					$buf->b .= $x;
+					unset($x);
+				}
 				$pos++;
 				continue;
 			}
@@ -24,34 +35,114 @@ class thx_culture_FormatDate {
 			$c = _hx_char_at($pattern, $pos);
 			switch($c) {
 			case "a":{
-				$buf->b .= $info->abbrDays[$date->getDay()];
+				$x = $info->abbrDays[$date->getDay()];
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$buf->b .= $x;
 			}break;
 			case "A":{
-				$buf->b .= $info->days[$date->getDay()];
+				$x = $info->days[$date->getDay()];
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$buf->b .= $x;
 			}break;
 			case "b":case "h":{
-				$buf->b .= $info->abbrMonths[$date->getMonth()];
+				$x = $info->abbrMonths[$date->getMonth()];
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$buf->b .= $x;
 			}break;
 			case "B":{
-				$buf->b .= $info->months[$date->getMonth()];
+				$x = $info->months[$date->getMonth()];
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$buf->b .= $x;
 			}break;
 			case "c":{
-				$buf->b .= thx_culture_FormatDate::dateTime($date, $culture);
+				$x = thx_culture_FormatDate::dateTime($date, $culture);
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$buf->b .= $x;
 			}break;
 			case "C":{
-				$buf->b .= thx_culture_FormatNumber::digits("" . Math::floor($date->getFullYear() / 100), $culture);
+				$x = thx_culture_FormatNumber::digits("" . Math::floor($date->getFullYear() / 100), $culture);
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$buf->b .= $x;
 			}break;
 			case "d":{
-				$buf->b .= thx_culture_FormatNumber::digits(str_pad("" . $date->getDate(), 2, "0", STR_PAD_LEFT), $culture);
+				$x = thx_culture_FormatNumber::digits(str_pad("" . $date->getDate(), 2, "0", STR_PAD_LEFT), $culture);
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$buf->b .= $x;
 			}break;
 			case "D":{
-				$buf->b .= thx_culture_FormatDate::format("%m/%d/%y", $date, $culture, null);
+				$x = thx_culture_FormatDate::format("%m/%d/%y", $date, $culture, null);
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$buf->b .= $x;
 			}break;
 			case "e":{
-				$buf->b .= thx_culture_FormatNumber::digits(thx_culture_FormatDate_0($buf, $c, $culture, $date, $info, $leadingspace, $len, $pattern, $pos), $culture);
+				$x = thx_culture_FormatNumber::digits(thx_culture_FormatDate_0($buf, $c, $culture, $date, $info, $leadingspace, $len, $pattern, $pos), $culture);
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$buf->b .= $x;
 			}break;
 			case "f":{
-				$buf->b .= thx_culture_FormatNumber::digits(thx_culture_FormatDate_1($buf, $c, $culture, $date, $info, $leadingspace, $len, $pattern, $pos), $culture);
+				$x = thx_culture_FormatNumber::digits(thx_culture_FormatDate_1($buf, $c, $culture, $date, $info, $leadingspace, $len, $pattern, $pos), $culture);
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$buf->b .= $x;
 			}break;
 			case "G":{
 				throw new HException("Not Implemented Yet");
@@ -60,62 +151,208 @@ class thx_culture_FormatDate {
 				throw new HException("Not Implemented Yet");
 			}break;
 			case "H":{
-				$buf->b .= thx_culture_FormatNumber::digits(str_pad("" . $date->getHours(), 2, "0", STR_PAD_LEFT), $culture);
+				$x = thx_culture_FormatNumber::digits(str_pad("" . $date->getHours(), 2, "0", STR_PAD_LEFT), $culture);
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$buf->b .= $x;
 			}break;
 			case "i":{
-				$buf->b .= thx_culture_FormatNumber::digits(thx_culture_FormatDate_2($buf, $c, $culture, $date, $info, $leadingspace, $len, $pattern, $pos), $culture);
+				$x = thx_culture_FormatNumber::digits(thx_culture_FormatDate_2($buf, $c, $culture, $date, $info, $leadingspace, $len, $pattern, $pos), $culture);
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$buf->b .= $x;
 			}break;
 			case "I":{
-				$buf->b .= thx_culture_FormatNumber::digits(str_pad("" . $date->getHours() % 12, 2, "0", STR_PAD_LEFT), $culture);
+				$x = thx_culture_FormatNumber::digits(str_pad("" . $date->getHours() % 12, 2, "0", STR_PAD_LEFT), $culture);
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$buf->b .= $x;
 			}break;
 			case "j":{
 				throw new HException("Not Implemented Yet");
 			}break;
 			case "k":{
-				$buf->b .= thx_culture_FormatNumber::digits(thx_culture_FormatDate_3($buf, $c, $culture, $date, $info, $leadingspace, $len, $pattern, $pos), $culture);
+				$x = thx_culture_FormatNumber::digits(thx_culture_FormatDate_3($buf, $c, $culture, $date, $info, $leadingspace, $len, $pattern, $pos), $culture);
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$buf->b .= $x;
 			}break;
 			case "l":{
-				$buf->b .= thx_culture_FormatNumber::digits(thx_culture_FormatDate_4($buf, $c, $culture, $date, $info, $leadingspace, $len, $pattern, $pos), $culture);
+				$x = thx_culture_FormatNumber::digits(thx_culture_FormatDate_4($buf, $c, $culture, $date, $info, $leadingspace, $len, $pattern, $pos), $culture);
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$buf->b .= $x;
 			}break;
 			case "m":{
-				$buf->b .= thx_culture_FormatNumber::digits(str_pad("" . ($date->getMonth() + 1), 2, "0", STR_PAD_LEFT), $culture);
+				$x = thx_culture_FormatNumber::digits(str_pad("" . ($date->getMonth() + 1), 2, "0", STR_PAD_LEFT), $culture);
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$buf->b .= $x;
 			}break;
 			case "M":{
-				$buf->b .= thx_culture_FormatNumber::digits(str_pad("" . $date->getMinutes(), 2, "0", STR_PAD_LEFT), $culture);
+				$x = thx_culture_FormatNumber::digits(str_pad("" . $date->getMinutes(), 2, "0", STR_PAD_LEFT), $culture);
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$buf->b .= $x;
 			}break;
 			case "n":{
-				$buf->b .= "\x0A";
+				$x = "\x0A";
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$buf->b .= $x;
 			}break;
 			case "p":{
-				$buf->b .= thx_culture_FormatDate_5($buf, $c, $culture, $date, $info, $leadingspace, $len, $pattern, $pos);
+				$x = thx_culture_FormatDate_5($buf, $c, $culture, $date, $info, $leadingspace, $len, $pattern, $pos);
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$buf->b .= $x;
 			}break;
 			case "P":{
-				$buf->b .= strtolower((thx_culture_FormatDate_6($buf, $c, $culture, $date, $info, $leadingspace, $len, $pattern, $pos)));
+				$x = strtolower((thx_culture_FormatDate_6($buf, $c, $culture, $date, $info, $leadingspace, $len, $pattern, $pos)));
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$buf->b .= $x;
 			}break;
 			case "q":{
-				$buf->b .= thx_culture_FormatNumber::digits(thx_culture_FormatDate_7($buf, $c, $culture, $date, $info, $leadingspace, $len, $pattern, $pos), $culture);
+				$x = thx_culture_FormatNumber::digits(thx_culture_FormatDate_7($buf, $c, $culture, $date, $info, $leadingspace, $len, $pattern, $pos), $culture);
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$buf->b .= $x;
 			}break;
 			case "r":{
-				$buf->b .= thx_culture_FormatDate::format("%I:%M:%S %p", $date, $culture, null);
+				$x = thx_culture_FormatDate::format("%I:%M:%S %p", $date, $culture, null);
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$buf->b .= $x;
 			}break;
 			case "R":{
-				$buf->b .= thx_culture_FormatDate::format("%H:%M", $date, $culture, null);
+				$x = thx_culture_FormatDate::format("%H:%M", $date, $culture, null);
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$buf->b .= $x;
 			}break;
 			case "s":{
-				$buf->b .= "" . intval($date->getTime() / 1000);
+				$x = "" . intval($date->getTime() / 1000);
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$buf->b .= $x;
 			}break;
 			case "S":{
-				$buf->b .= thx_culture_FormatNumber::digits(str_pad("" . $date->getSeconds(), 2, "0", STR_PAD_LEFT), $culture);
+				$x = thx_culture_FormatNumber::digits(str_pad("" . $date->getSeconds(), 2, "0", STR_PAD_LEFT), $culture);
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$buf->b .= $x;
 			}break;
 			case "t":{
-				$buf->b .= "\x09";
+				$x = "\x09";
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$buf->b .= $x;
 			}break;
 			case "T":{
-				$buf->b .= thx_culture_FormatDate::format("%H:%M:%S", $date, $culture, null);
+				$x = thx_culture_FormatDate::format("%H:%M:%S", $date, $culture, null);
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$buf->b .= $x;
 			}break;
 			case "u":{
 				$d = $date->getDay();
-				$buf->b .= thx_culture_FormatNumber::digits(thx_culture_FormatDate_8($buf, $c, $culture, $d, $date, $info, $leadingspace, $len, $pattern, $pos), $culture);
+				{
+					$x = thx_culture_FormatNumber::digits(thx_culture_FormatDate_8($buf, $c, $culture, $d, $date, $info, $leadingspace, $len, $pattern, $pos), $culture);
+					if(is_null($x)) {
+						$x = "null";
+					} else {
+						if(is_bool($x)) {
+							$x = (($x) ? "true" : "false");
+						}
+					}
+					$buf->b .= $x;
+				}
 			}break;
 			case "U":{
 				throw new HException("Not Implemented Yet");
@@ -124,34 +361,106 @@ class thx_culture_FormatDate {
 				throw new HException("Not Implemented Yet");
 			}break;
 			case "w":{
-				$buf->b .= thx_culture_FormatNumber::digits("" . $date->getDay(), $culture);
+				$x = thx_culture_FormatNumber::digits("" . $date->getDay(), $culture);
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$buf->b .= $x;
 			}break;
 			case "W":{
 				throw new HException("Not Implemented Yet");
 			}break;
 			case "x":{
-				$buf->b .= thx_culture_FormatDate::date($date, $culture);
+				$x = thx_culture_FormatDate::date($date, $culture);
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$buf->b .= $x;
 			}break;
 			case "X":{
-				$buf->b .= thx_culture_FormatDate::time($date, $culture);
+				$x = thx_culture_FormatDate::time($date, $culture);
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$buf->b .= $x;
 			}break;
 			case "y":{
-				$buf->b .= thx_culture_FormatNumber::digits(_hx_substr(("" . $date->getFullYear()), -2, null), $culture);
+				$x = thx_culture_FormatNumber::digits(_hx_substr(("" . $date->getFullYear()), -2, null), $culture);
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$buf->b .= $x;
 			}break;
 			case "Y":{
-				$buf->b .= thx_culture_FormatNumber::digits("" . $date->getFullYear(), $culture);
+				$x = thx_culture_FormatNumber::digits("" . $date->getFullYear(), $culture);
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$buf->b .= $x;
 			}break;
 			case "z":{
-				$buf->b .= "+0000";
+				$x = "+0000";
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$buf->b .= $x;
 			}break;
 			case "Z":{
-				$buf->b .= "GMT";
+				$x = "GMT";
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$buf->b .= $x;
 			}break;
 			case "%":{
-				$buf->b .= "%";
+				$x = "%";
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$buf->b .= $x;
 			}break;
 			default:{
-				$buf->b .= "%" . $c;
+				$x = "%" . $c;
+				if(is_null($x)) {
+					$x = "null";
+				} else {
+					if(is_bool($x)) {
+						$x = (($x) ? "true" : "false");
+					}
+				}
+				$buf->b .= $x;
 			}break;
 			}
 			$pos++;

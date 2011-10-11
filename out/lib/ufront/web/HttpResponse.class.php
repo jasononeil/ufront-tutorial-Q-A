@@ -33,14 +33,30 @@ class ufront_web_HttpResponse {
 	}
 	public function write($s) {
 		if(null !== $s) {
-			$this->_buff->b .= $s;
+			$x = $s;
+			if(is_null($x)) {
+				$x = "null";
+			} else {
+				if(is_bool($x)) {
+					$x = (($x) ? "true" : "false");
+				}
+			}
+			$this->_buff->b .= $x;
 		}
 	}
 	public function writeChar($c) {
 		$this->_buff->b .= chr($c);
 	}
 	public function writeBytes($b, $pos, $len) {
-		$this->_buff->b .= $b->readString($pos, $len);
+		$x = $b->readString($pos, $len);
+		if(is_null($x)) {
+			$x = "null";
+		} else {
+			if(is_bool($x)) {
+				$x = (($x) ? "true" : "false");
+			}
+		}
+		$this->_buff->b .= $x;
 	}
 	public function setHeader($name, $value) {
 		if(null === $name) {

@@ -278,5 +278,21 @@ class Type {
 	static function enumIndex($e) {
 		return $e->index;
 	}
+	static function allEnums($e) {
+		$all = new _hx_array(array());
+		{
+			$_g = 0; $_g1 = Type::getEnumConstructs($e);
+			while($_g < $_g1->length) {
+				$c = $_g1[$_g];
+				++$_g;
+				$v = Reflect::field($e, $c);
+				if(!Reflect::isFunction($v)) {
+					$all->push($v);
+				}
+				unset($v,$c);
+			}
+		}
+		return $all;
+	}
 	function __toString() { return 'Type'; }
 }

@@ -50,7 +50,7 @@ class Xml {
 		if($this->nodeType != Xml::$Element) {
 			throw new HException("bad nodeType");
 		}
-		$this->_attributes->set($att, str_replace("'", "&apos;", htmlspecialchars($value, ENT_COMPAT, "UTF-8")));
+		$this->_attributes->set($att, Xml::__decodeattr($value));
 	}
 	public function remove($att) {
 		if($this->nodeType != Xml::$Element) {
@@ -232,14 +232,27 @@ class Xml {
 	static function __end_element_handler($parser, $name) {
 		Xml::$build = Xml::$build->getParent();
 	}
+	static function __decodeattr($value) {
+		return str_replace("'", "&apos;", htmlspecialchars($value, ENT_COMPAT, "UTF-8"));
+	}
+	static function __decodeent($value) {
+		return str_replace("'", "&apos;", htmlentities($value, ENT_COMPAT, "UTF-8"));
+	}
 	static function __character_data_handler($parser, $data) {
-		if(strlen($data) === 1 && htmlentities($data) !== $data || htmlentities($data) === $data) {
-			Xml::$build->addChild(Xml::createPCData(htmlentities($data)));
+		$d = Xml::__decodeent($data);
+		if(strlen($data) === 1 && $d !== $data || $d === $data) {
+			Xml::$build->addChild(Xml::createPCData($d));
 		} else {
 			Xml::$build->addChild(Xml::createCData($data));
 		}
 	}
 	static function __default_handler($parser, $data) {
+		if($data === "<![CDATA[") {
+			return;
+		}
+		if($data === "]]>") {
+			return;
+		}
 		if("<!--" === _hx_substr($data, 0, 4)) {
 			Xml::$build->addChild(Xml::createComment(_hx_substr($data, 4, strlen($data) - 7)));
 		} else {
