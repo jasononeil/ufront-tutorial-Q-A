@@ -8,11 +8,21 @@ class model_Question extends sys_db_Object {
 	public $id;
 	public $user;
 	public $title;
+	public $slug;
 	public $text;
 	public $date;
 	public $answered;
 	public function answers() {
 		return model_Answer::$manager->unsafeObjects("SELECT * FROM Answer WHERE questionID = " . sys_db_Manager::quoteAny($this->id), null);
+	}
+	public function numberOfAnswers() {
+		return model_Answer::$manager->unsafeCount("SELECT COUNT(*) FROM Answer WHERE questionID = " . sys_db_Manager::quoteAny($this->id));
+	}
+	public function insert() {
+		$urlslug = str_replace(" ", "-", strtolower($this->title));
+		$urlslug = _hx_deref(new EReg("[^A-Za-z0-9-]", "g"))->replace($urlslug, "");
+		$this->slug = $urlslug;
+		parent::insert();
 	}
 	public function get_user() {
 		return model_User::$manager->h__get($this, "user", "userID", false);
@@ -35,5 +45,5 @@ class model_Question extends sys_db_Object {
 	static $manager;
 	function __toString() { return 'model.Question'; }
 }
-model_Question::$__meta__ = _hx_anonymous(array("obj" => _hx_anonymous(array("rtti" => new _hx_array(array("oy9:relationsaoy3:keyy6:userIDy4:lockfy4:propy4:usery4:typey10:model.Usery6:isNullfy7:cascadefghR1ay2:idhy4:namey8:Questiony6:fieldsaoy1:tjy15:sys.db.SpodType:2:0R11R10R8fgoR14jR15:9:1i255R11y5:titleR8fgoR14jR15:13:0R11y4:textR8tgoR14jR15:11:0R11y4:dateR8fgoR14jR15:8:0R11y8:answeredR8fgoR14jR15:1:0R11R2R8fghy7:hfieldsbR10r5R19r13R16r7R17r9R18r11R2r15hy7:indexesaoy4:keysaR2hy6:uniquefgoR22aR18hR23fgoR22aR19hR23fghg"))))));
+model_Question::$__meta__ = _hx_anonymous(array("obj" => _hx_anonymous(array("rtti" => new _hx_array(array("oy9:relationsaoy3:keyy6:userIDy4:lockfy4:propy4:usery4:typey10:model.Usery6:isNullfy7:cascadefghR1ay2:idhy4:namey8:Questiony6:fieldsaoy1:tjy15:sys.db.SpodType:2:0R11R10R8fgoR14jR15:9:1i255R11y5:titleR8fgoR14jR15:9:1i255R11y4:slugR8fgoR14jR15:13:0R11y4:textR8tgoR14jR15:11:0R11y4:dateR8fgoR14jR15:8:0R11y8:answeredR8fgoR14jR15:1:0R11R2R8fghy7:hfieldsbR17r9R16r7R18r11R19r13R20r15R2r17R10r5hy7:indexesaoy4:keysaR2hy6:uniquefgoR23aR19hR24fgoR23aR17hR24fgoR23aR20hR24fghg"))))));
 model_Question::$manager = new sys_db_Manager(_hx_qtype("model.Question"));

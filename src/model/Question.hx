@@ -2,6 +2,7 @@ package model;
 import sys.db.Types;
 import model.User;
 import model.Answer;
+using StringTools;
 
 /** 
 Model for our questions.  
@@ -15,6 +16,7 @@ Relationships:
 // add basic indexes to search by
 @:index(userID)
 @:index(date)
+@:index(slug)
 @:index(answered)
 
 class Question extends sys.db.Object 
@@ -27,6 +29,9 @@ class Question extends sys.db.Object
 	
 	/** The title of this question */
 	public var title:SString<255>;
+	
+	/** A slug for the URL, based on the title */
+	public var slug:SString<255>;
 	
 	/** Any extra text content (HTML) to be included in this question.  Can be null. */
 	public var text:Null<SSmallText>;
@@ -42,6 +47,21 @@ class Question extends sys.db.Object
 	{
 		// Search the Answer table for Answer.questionID = id, orderBy
 		return Answer.manager.search($questionID == id);
+	}
+	
+	public function numberOfAnswers():Int
+	{
+		return Answer.manager.count($questionID == id);
+	}
+	
+	public override function insert()
+	{
+		// make lower case, replace ' ' with '-'
+		var urlslug = title.toLowerCase().replace(" ","-");
+		// delete any non standard characters
+		urlslug = ~/[^A-Za-z0-9-]/g.replace(urlslug,"");
+		this.slug = urlslug;
+		super.insert();
 	}
 	
 	// Each SPOD needs its own manager.  This line creates the Manager for this SPOD.
