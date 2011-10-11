@@ -3,3 +3,4 @@ src/AppConfig.hx
 .paths
 .project
 .settings
+.*~

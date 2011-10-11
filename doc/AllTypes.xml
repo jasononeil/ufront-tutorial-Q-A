@@ -5731,8 +5731,8 @@ Relationships:
 </f></onException></class>
 	<class path="model.Question" params="" file="src/model/Question.hx">
 		<extends path="sys.db.Object"/>
-		<__meta__ public="1" line="20" static="1"><d/></__meta__>
-		<manager public="1" line="48" static="1"><c path="sys.db.Manager"><c path="model.Question"/></c></manager>
+		<__meta__ public="1" line="22" static="1"><d/></__meta__>
+		<manager public="1" line="68" static="1"><c path="sys.db.Manager"><c path="model.Question"/></c></manager>
 		<id public="1">
 			<t path="sys.db.SUId"/>
 			<haxe_doc> The unique ID of this model </haxe_doc>
@@ -5745,6 +5745,10 @@ Relationships:
 			<t path="sys.db.SString"><c path="I255"/></t>
 			<haxe_doc> The title of this question </haxe_doc>
 		</title>
+		<slug public="1">
+			<t path="sys.db.SString"><c path="I255"/></t>
+			<haxe_doc> A slug for the URL, based on the title </haxe_doc>
+		</slug>
 		<text public="1">
 			<t path="Null"><t path="sys.db.SSmallText"/></t>
 			<haxe_doc> Any extra text content (HTML) to be included in this question.  Can be null. </haxe_doc>
@@ -5757,16 +5761,18 @@ Relationships:
 			<e path="Bool"/>
 			<haxe_doc> Is this asker satisfied with the snwer to this question? </haxe_doc>
 		</answered>
-		<answers public="1" set="method" line="41">
+		<answers public="1" set="method" line="46">
 			<f a=""><c path="List"><c path="model.Answer"/></c></f>
 			<haxe_doc> </haxe_doc>
 		</answers>
-		<get_user set="method" line="26"><f a=""><c path="model.User"/></f></get_user>
-		<set_user set="method" line="26"><f a="_v">
+		<numberOfAnswers public="1" set="method" line="52"><f a=""><c path="Int"/></f></numberOfAnswers>
+		<insert public="1" set="method" line="57" override="1"><f a=""><e path="Void"/></f></insert>
+		<get_user set="method" line="28"><f a=""><c path="model.User"/></f></get_user>
+		<set_user set="method" line="28"><f a="_v">
 	<c path="model.User"/>
 	<c path="model.User"/>
 </f></set_user>
-		<new public="1" set="method" line="20"><f a=""><e path="Void"/></f></new>
+		<new public="1" set="method" line="22"><f a=""><e path="Void"/></f></new>
 		<haxe_doc> 
 Model for our questions.  
 
@@ -9910,31 +9916,31 @@ Model for our users.
 	<class path="controller.QuestionController" params="" file="src/controller/QuestionController.hx">
 		<extends path="ufront.web.mvc.Controller"/>
 		<__rtti public="1" line="5" static="1"><c path="String"/></__rtti>
-		<list public="1" set="method" line="7"><f a=""><c path="String"/></f></list>
-		<view public="1" set="method" line="12"><f a="name">
+		<list public="1" set="method" line="7"><f a=""><c path="ufront.web.mvc.ViewResult"/></f></list>
+		<view public="1" set="method" line="15"><f a="name">
 	<c path="String"/>
 	<c path="String"/>
 </f></view>
-		<answer public="1" set="method" line="17"><f a="name">
+		<answer public="1" set="method" line="20"><f a="name">
 	<c path="String"/>
 	<c path="String"/>
 </f></answer>
-		<viewanswer public="1" set="method" line="22"><f a="questionname:answernumber">
+		<viewanswer public="1" set="method" line="25"><f a="questionname:answernumber">
 	<c path="String"/>
 	<c path="String"/>
 	<c path="String"/>
 </f></viewanswer>
-		<voteup public="1" set="method" line="27"><f a="questionname:answernumber">
+		<voteup public="1" set="method" line="30"><f a="questionname:answernumber">
 	<c path="String"/>
 	<c path="String"/>
 	<c path="String"/>
 </f></voteup>
-		<votedown public="1" set="method" line="32"><f a="questionname:answernumber">
+		<votedown public="1" set="method" line="35"><f a="questionname:answernumber">
 	<c path="String"/>
 	<c path="String"/>
 	<c path="String"/>
 </f></votedown>
-		<ask public="1" set="method" line="37"><f a=""><c path="String"/></f></ask>
+		<ask public="1" set="method" line="40"><f a=""><c path="String"/></f></ask>
 		<new public="1" set="method" line="5"><f a=""><e path="Void"/></f></new>
 	</class>
 	<typedef path="thx.sys.FileSystem" params="" file="/usr/lib/haxe/lib/thx/0,2,0/thx/sys/FileSystem.hx">

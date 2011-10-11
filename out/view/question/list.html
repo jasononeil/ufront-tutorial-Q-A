@@ -1,0 +1,13 @@
+<h1>Questions</h1>
+@for (question in questions)
+{
+	<div class="question">
+		<h2>@question.title</h2>
+		<h4 class="user">User: @question.get_user()</h4>
+		<h4 class="user">User: @question.userID</h4>
+		<h4 class="user">User: @question.user</h4>
+		<h4 class="date">Date: @question.date</h4>
+		<h4 class="date">Number of Answers: @question.numberOfAnswers()</h4>
+		<p>@question.text</p>
+	</div>
+}

@@ -6,7 +6,10 @@ class QuestionController extends Controller
 {
 	public function list()
 	{
-		return "List all questions.";
+		var questionList = model.Question.manager.all();
+		return new ViewResult( { 
+			questions : questionList
+		});
 	}
 	
 	public function view(name:String)
